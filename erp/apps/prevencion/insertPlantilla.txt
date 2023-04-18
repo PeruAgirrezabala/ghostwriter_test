@@ -1,0 +1,11 @@
+INSERT INTO PLANTILLAS 
+                            (nombre,
+                            descripcion,
+                            ref,
+                            tipo) 
+                       VALUES (
+                            'NO FORMACION 20H PRL', 
+                            '', 
+                            'PRL_COORD_12',
+                            2
+                        )

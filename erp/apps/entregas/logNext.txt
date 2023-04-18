@@ -1,0 +1,4 @@
+SELECT count(*) FROM ACTIVIDAD
+            WHERE categoria_id=1
+            AND fecha>='2021-07-19'
+            AND fecha<='2021-08-18'

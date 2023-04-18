@@ -1,0 +1,23 @@
+SELECT 
+                PROVEEDORES.id as tercero,
+                PROVEEDORES.nombre,
+                OFERTAS_DETALLES_TERCEROS.cantidad,
+                OFERTAS_DETALLES_TERCEROS.unitario,
+                OFERTAS_DETALLES_TERCEROS.titulo,
+                OFERTAS_DETALLES_TERCEROS.descripcion,
+                OFERTAS_DETALLES_TERCEROS.incremento,
+                OFERTAS_DETALLES_TERCEROS.dto1,
+                OFERTAS_DETALLES_TERCEROS.pvp,
+                OFERTAS_DETALLES_TERCEROS.pvp_dto,
+                OFERTAS_DETALLES_TERCEROS.pvp_total, 
+                OFERTAS_DETALLES_TERCEROS.id as detalle
+            FROM 
+                PROVEEDORES, OFERTAS_DETALLES_TERCEROS, OFERTAS  
+            WHERE 
+                OFERTAS_DETALLES_TERCEROS.tercero_id = PROVEEDORES.id
+            AND
+                OFERTAS_DETALLES_TERCEROS.oferta_id = OFERTAS.id 
+            AND 
+                OFERTAS.id = 545 
+            ORDER BY 
+                OFERTAS_DETALLES_TERCEROS.id ASC

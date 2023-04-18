@@ -1,0 +1,32 @@
+SELECT 
+                    MATERIALES_STOCK.id, 
+                    MATERIALES_STOCK.material_id, 
+                    MATERIALES_STOCK.stock, 
+                    MATERIALES_STOCK.ubicacion_id, 
+                    MATERIALES_STOCK.proyecto_id, 
+                    MATERIALES_STOCK.pedido_detalle_id, 
+                    MATERIALES.ref, 
+                    MATERIALES.nombre,
+                    PEDIDOS_PROV.pedido_genelek
+                    FROM 
+                    MATERIALES_STOCK
+                    INNER JOIN MATERIALES 
+                    ON MATERIALES_STOCK.material_id = MATERIALES.id
+                    INNER JOIN PEDIDOS_PROV_DETALLES
+                    ON MATERIALES_STOCK.pedido_detalle_id = PEDIDOS_PROV_DETALLES.id
+                    INNER JOIN PEDIDOS_PROV
+                    ON PEDIDOS_PROV_DETALLES.pedido_id = PEDIDOS_PROV.id
+                    WHERE MATERIALES_STOCK.proyecto_id=1197
+                    AND PEDIDOS_PROV_DETALLES.proyecto_id=11
+                    AND MATERIALES_STOCK.pedido_detalle_id NOT IN( SELECT ENVIOS_CLI_DETALLES.pedido_detalle_id FROM ENVIOS_CLI_DETALLES WHERE pedido_detalle_id!=0 OR pedido_detalle_id!='' )
+                    AND MATERIALES_STOCK.id NOT IN(SELECT 
+                    MATERIALES_STOCK.id
+                    FROM 
+                    MATERIALES_STOCK
+                    INNER JOIN MATERIALES 
+                    ON MATERIALES_STOCK.material_id = MATERIALES.id
+					INNER JOIN MATERIALES_GRUPOS
+                    ON MATERIALES_GRUPOS.materiales_stock_id = MATERIALES_STOCK.id
+					INNER JOIN MATERIALES_GRUPOS_NOMBRES
+                    ON MATERIALES_GRUPOS.grupos_nombres_id = MATERIALES_GRUPOS_NOMBRES.id
+                    WHERE MATERIALES_STOCK.proyecto_id=1197) 

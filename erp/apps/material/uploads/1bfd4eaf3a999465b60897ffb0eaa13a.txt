@@ -1,0 +1,15 @@
+TUDELA
+
+- CIC_TUDELA_1b
+	- Servidor Web --> PCweb (a través de RD)
+	- La topología de 
+
+- USUARIOS WEB
+
+CIC	CIC_Tudela		C_948415707_T
+P815	P815_Urzante		P_948850247_U
+P601	P601_Volatin		P_948847136_V
+P607	P607_Uvesa		P_948848181_U
+P621	P621_Oleofat		P_948415873_O
+P626	P626_Agora		P_848419098_A
+P629	P629_RiberaVapor	P_948415902_R

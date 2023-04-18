@@ -1,0 +1,25 @@
+SELECT DISTINCT
+                    TAREAS.id as tarea,
+                    TAREAS.nombre,
+                    PROYECTOS_TAREAS.cantidad,
+                    PROYECTOS_TAREAS.titulo,
+                    PROYECTOS_TAREAS.descripcion,
+                    PROYECTOS_TAREAS.tecnico_id,
+                    PROYECTOS_TAREAS.id as detalle,
+                    PROYECTOS_TAREAS.fecha_entrega
+                FROM 
+                    TAREAS, PERFILES, PERFILES_HORAS, PROYECTOS_TAREAS, PROYECTOS, erp_users  
+                WHERE 
+                    PROYECTOS_TAREAS.tarea_id = TAREAS.id
+                AND
+                    TAREAS.perfil_id = PERFILES.id
+                AND
+                    PERFILES_HORAS.perfil_id = PERFILES.id
+                            AND
+                    PERFILES_HORAS.id = PROYECTOS_TAREAS.tipo_hora_id
+                AND
+                    PROYECTOS_TAREAS.proyecto_id = PROYECTOS.id 
+                AND 
+                    PROYECTOS.id = 1
+                ORDER BY 
+                    PROYECTOS_TAREAS.id ASC

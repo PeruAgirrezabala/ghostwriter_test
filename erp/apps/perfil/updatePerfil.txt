@@ -1,0 +1,12 @@
+UPDATE erp_users SET 
+        nombre = 'Alexander',
+        apellidos = 'Altzibar Burgoa',
+        user_name = 'alex@genelek.com',
+        user_email = 'alex@genelek.com',
+        telefono = '747492565',
+        NIF = '44348105B',
+        user_password = 'd41d8cd98f00b204e9800998ecf8427e',
+        firma_path = '/erp/apps/jornada/signatures/alexanderaltzibar.png',
+        avatar = '026-man.png'
+
+        WHERE id =86

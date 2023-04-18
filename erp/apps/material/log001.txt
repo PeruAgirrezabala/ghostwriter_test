@@ -1,0 +1,10 @@
+SELECT 
+                        PEDIDOS_PROV_DETALLES.cliente_id, 
+                        PEDIDOS_PROV_DETALLES.proyecto_id, 
+                        PEDIDOS_PROV.proveedor_id,
+                        PEDIDOS_PROV_DETALLES.material_id,
+                        PEDIDOS_PROV_DETALLES.unidades
+                      FROM PEDIDOS_PROV 
+                        INNER JOIN PEDIDOS_PROV_DETALLES ON 
+                        PEDIDOS_PROV.id=PEDIDOS_PROV_DETALLES.pedido_id 
+                      WHERE PEDIDOS_PROV_DETALLES.id=21321

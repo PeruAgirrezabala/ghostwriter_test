@@ -1,0 +1,8 @@
+UPDATE ACTIVIDAD 
+                    SET
+                        estado_id = 3, 
+                        fecha_factu = '',
+                        fecha_solucion = '2021-03-02', 
+                        solucion = 'sA SOLUSIONAU8', 
+                        observaciones = ''
+                WHERE id = 89

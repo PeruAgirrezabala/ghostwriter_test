@@ -1,0 +1,12 @@
+UPDATE CALIDAD_NOCONFORMIDADES SET 
+                        detectado = 84,
+                        detectado_por = 'genelek',
+                        proyecto_id = 1350, 
+                        fecha = '2022-11-23', 
+                        descripcion = 'Se reclaman posiciones pendientes de servir, entre ellas la ref. P14211 (mail 28/11/2022 a Circutor). No se recibe el material según la confirmación del pedido, ni nueva fecha de entrega.',
+                        resolucion = 'Se acuerda devolver la unidad de la ref. P14211 recibida, y sustituirlas por la nueva referencia al mismo coste. ', 
+                        causa = 'Aunque a ellos les consta haber salido del almacén, el material no lo hemos recibido y tampoco nos lo han facturado. En ese impas de tiempo, se produce una rotura de stock, y siendo una referencia descatalogada no lo pueden suministran. 
+Nos informan que la ref. P14211 está descatalogado y su sustito es la ref. P14035. ', 
+                        cierre = 'Se reciben las 2 unidades de reposición que faltaban.',
+                        fecha_cierre = '2023-02-13' 
+                    WHERE id = 37

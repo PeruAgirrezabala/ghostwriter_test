@@ -1,0 +1,31 @@
+SELECT 
+                    TAREAS.id as tarea,
+                    TAREAS.nombre,
+                    PROYECTOS_HORAS_IMPUTADAS.cantidad,
+                    PROYECTOS_HORAS_IMPUTADAS.titulo,
+                    PROYECTOS_HORAS_IMPUTADAS.descripcion,
+                    erp_users.nombre,
+                    erp_users.apellidos,
+                    PROYECTOS_HORAS_IMPUTADAS.id as detalle,
+                    PROYECTOS_HORAS_IMPUTADAS.fecha, 
+                    PROYECTOS.nombre
+                FROM 
+                    TAREAS, PERFILES, PERFILES_HORAS, PROYECTOS_HORAS_IMPUTADAS, PROYECTOS, erp_users  
+                WHERE 
+                    PROYECTOS_HORAS_IMPUTADAS.tarea_id = TAREAS.id
+                AND
+                    TAREAS.perfil_id = PERFILES.id
+                AND
+                    PERFILES_HORAS.perfil_id = PERFILES.id
+                            AND
+                    PERFILES_HORAS.id = PROYECTOS_HORAS_IMPUTADAS.tipo_hora_id
+                AND
+                    PROYECTOS_HORAS_IMPUTADAS.proyecto_id = PROYECTOS.id 
+                AND 
+                    PROYECTOS_HORAS_IMPUTADAS.tecnico_id = erp_users.id 
+                AND
+                    MONTH(PROYECTOS_HORAS_IMPUTADAS.fecha) = 05 
+                AND 
+                    PROYECTOS_HORAS_IMPUTADAS.recnico_id = 69
+                ORDER BY 
+                    PROYECTOS_HORAS_IMPUTADAS.id ASC

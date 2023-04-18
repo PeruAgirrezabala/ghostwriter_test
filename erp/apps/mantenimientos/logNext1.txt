@@ -1,0 +1,26 @@
+SELECT 
+                ACTIVIDAD.id,
+                ACTIVIDAD.ref as ref_act,
+                ACTIVIDAD.fecha,
+                PROYECTOS.ref as ref_mant,
+                PROYECTOS.nombre,
+                ACTIVIDAD_ESTADOS.nombre,
+                ACTIVIDAD_ESTADOS.color,
+                CLIENTES_INSTALACIONES.nombre
+            FROM 
+                ACTIVIDAD
+            INNER JOIN PROYECTOS ON
+                ACTIVIDAD.item_id=PROYECTOS.id
+            INNER JOIN ACTIVIDAD_ESTADOS ON
+                ACTIVIDAD.estado_id=ACTIVIDAD_ESTADOS.id
+            INNER JOIN CLIENTES_INSTALACIONES ON
+                ACTIVIDAD.estado_id=ACTIVIDAD_ESTADOS.id
+            WHERE 
+                categoria_id=1
+            AND
+                ACTIVIDAD.instalacion=CLIENTES_INSTALACIONES.id
+            AND
+                ACTIVIDAD.estado_id!=3
+            AND 
+                fecha<='2023-03-27'
+            ORDER BY fecha DESC

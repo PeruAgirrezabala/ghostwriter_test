@@ -1,0 +1,3 @@
+SELECT ACTIVIDAD.id, ACTIVIDAD.ref, ACTIVIDAD.nombre
+                    FROM ACTIVIDAD
+                WHERE id=422

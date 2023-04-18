@@ -1,0 +1,8 @@
+SELECT
+                        PEDIDOS_PROV_DETALLES.id,
+                        PEDIDOS_PROV_DETALLES.material_id,
+                        PEDIDOS_PROV_DETALLES.unidades,
+                        PEDIDOS_PROV_DETALLES.proyecto_id,
+                        PEDIDOS_PROV_DETALLES.pedido_id
+                        FROM PEDIDOS_PROV_DETALLES 
+                        WHERE PEDIDOS_PROV_DETALLES.id=21475

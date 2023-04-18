@@ -1,0 +1,5 @@
+INSERT INTO erp_roles 
+                            (nombre)
+                       VALUES (
+                            'UsuarioCalidad' 
+                        )

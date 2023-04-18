@@ -1,0 +1,8 @@
+SELECT ACTIVIDAD.nombre, ACTIVIDAD.id, ACTIVIDAD.categoria_id, ACTIVIDAD.fecha, ACTIVIDAD.fecha_fin 
+                FROM ACTIVIDAD 
+                WHERE ((ACTIVIDAD.fecha >= '2023-04-24' AND ACTIVIDAD.fecha_fin <= '2023-04-30')
+                OR (ACTIVIDAD.fecha >= '2023-04-24' AND ACTIVIDAD.fecha <= '2023-04-30')
+                OR (ACTIVIDAD.fecha_fin >= '2023-04-24' AND ACTIVIDAD.fecha_fin <= '2023-04-30'))
+                
+                AND NOT (ACTIVIDAD.fecha_fin='0000-00-00')
+                ORDER BY ACTIVIDAD.fecha ASC

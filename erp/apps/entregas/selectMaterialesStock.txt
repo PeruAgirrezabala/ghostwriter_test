@@ -1,0 +1,4 @@
+SELECT
+                            MATERIALES_STOCK.material_id,
+                            MATERIALES_STOCK.stock
+                          FROM MATERIALES_STOCK WHERE MATERIALES_STOCK.pedido_detalle_id=18508

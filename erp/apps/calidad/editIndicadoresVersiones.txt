@@ -1,0 +1,6 @@
+UPDATE 
+                    CALIDAD_INDICADORES_VERSIONES
+                SET
+                    CALIDAD_INDICADORES_VERSIONES.valor=2
+                WHERE
+                    CALIDAD_INDICADORES_VERSIONES.id = 18

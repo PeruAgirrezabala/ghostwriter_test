@@ -1,0 +1,20 @@
+SELECT 
+                ACTIVIDAD_DETALLES.id as detid,
+                ACTIVIDAD_DETALLES.nombre,  
+                ACTIVIDAD_DETALLES.descripcion,
+                ACTIVIDAD_DETALLES.fecha,
+                ACTIVIDAD_DETALLES.fecha_mod,
+                erp_users.nombre,
+                erp_users.apellidos,
+                (SELECT sum(cantidad) FROM ACTIVIDAD_DETALLES_HORAS WHERE actividad_detalle_id = detid) as totalhoras,
+                ACTIVIDAD_DETALLES.completado
+            FROM 
+                ACTIVIDAD_DETALLES, erp_users, ACTIVIDAD
+            WHERE
+                ACTIVIDAD_DETALLES.erpuser_id = erp_users.id
+            AND
+                ACTIVIDAD_DETALLES.actividad_id = ACTIVIDAD.id
+            AND
+                ACTIVIDAD_DETALLES.actividad_id = 269 
+            ORDER BY 
+                ACTIVIDAD_DETALLES.id ASC

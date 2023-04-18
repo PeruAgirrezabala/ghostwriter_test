@@ -1,0 +1,1 @@
+UPDATE MATERIALES_STOCK SET ubicacion_id=2 WHERE pedido_detalle_id=20136

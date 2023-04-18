@@ -1,0 +1,12 @@
+INSERT INTO CLIENTES_DOC 
+                            (nombre,
+                            descripcion,
+                            cliente_id,
+                            org_id,
+                            periodicidad_id) 
+                       VALUES (
+                            'test', 
+                            '', 
+                            274, 
+                            6, 
+                            6)

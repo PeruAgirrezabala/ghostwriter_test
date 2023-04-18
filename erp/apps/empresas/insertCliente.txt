@@ -1,0 +1,33 @@
+INSERT INTO CLIENTES 
+                            (nombre,
+                            direccion,
+                            poblacion,
+                            provincia,
+                            cp,
+                            pais,
+                            telefono,
+                            NIF,
+                            email,
+                            contacto,
+                            web,
+                            URL_PRL,
+                            URL_PRL_U,
+                            URL_PRL_P,
+                            img) 
+                       VALUES (
+                            'INSTITUT CATALA DE LA SALUT', 
+                            '', 
+                            'TARRAGONA', 
+                            'TARRAGONA',  
+                            '43007', 
+                            'ESPAÑA', 
+                            '',  
+                            '', 
+                            '', 
+                            '', 
+                            '',
+                            '',
+                            '',
+                            '',
+                            '/erp/img/default.png'
+                        )

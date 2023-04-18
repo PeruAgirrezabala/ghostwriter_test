@@ -1,0 +1,29 @@
+SELECT 
+                    USERS_DOC.id as file, 
+                    USERS_DOC.nombre, 
+                    ORGANISMOS.nombre, 
+                    (SELECT doc_path FROM USERS_DOC_VERSIONES WHERE doc_id = file ORDER BY fecha_exp DESC, id DESC LIMIT 1) as path,
+                    (SELECT fecha_exp FROM USERS_DOC_VERSIONES WHERE doc_id = file ORDER BY fecha_exp DESC, id DESC LIMIT 1) as fecha_exp,
+                    (SELECT fecha_cad FROM USERS_DOC_VERSIONES WHERE doc_id = file ORDER BY fecha_exp DESC, id DESC LIMIT 1) as fecha_cad,
+                    (SELECT id FROM USERS_DOC_VERSIONES WHERE doc_id = file ORDER BY fecha_exp DESC, id DESC LIMIT 1) as ver_id, 
+                    erp_users.nombre,
+                    erp_users.apellidos, 
+                    PERIODICIDADES.intervalo, 
+                    erp_users.id,
+                    PERIODICIDADES.nombre
+                FROM 
+                    USERS_DOC 
+                INNER JOIN erp_users
+                    ON erp_users.id = USERS_DOC.erpuser_id 
+                INNER JOIN ORGANISMOS
+                    ON ORGANISMOS.id = USERS_DOC.org_id 
+                INNER JOIN PERIODICIDADES
+                    ON PERIODICIDADES.id = USERS_DOC.periodicidad_id 
+                WHERE
+                    erp_users.empresa_id = 1
+                    AND erp_users.activo = 'on'
+                 AND USERS_DOC.erpuser_id = 97 
+                ORDER BY 
+                    ORGANISMOS.nombre ASC, 
+                    USERS_DOC.nombre ASC,
+                    erp_users.nombre ASC

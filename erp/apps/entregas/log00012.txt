@@ -1,0 +1,15 @@
+SELECT 
+                ENSAYOS_PLANTILLAS.id,
+                ENSAYOS_PLANTILLAS.plantilla_id,
+                ENSAYOS_PLANTILLAS.nombre,
+                ENSAYOS_PLANTILLAS.grupo_id,
+                ENSAYOS_PLANTILLA_GRUPO.nombre,
+                ENSAYOS_PRUEBAS.estado_id,
+                ENSAYOS_PRUEBAS.id,
+                ENSAYOS_PRUEBAS.texto
+              FROM ENSAYOS_PLANTILLAS, ENSAYOS_PLANTILLA_GRUPO, ENSAYOS_PRUEBAS
+              WHERE ENSAYOS_PLANTILLAS.plantilla_id =99
+              AND ENSAYOS_PLANTILLAS.grupo_id = ENSAYOS_PLANTILLA_GRUPO.id
+              AND ENSAYOS_PLANTILLAS.id = ENSAYOS_PRUEBAS.ensayoplantilla_id
+              AND ENSAYOS_PRUEBAS.ensayo_id=20
+              ORDER BY ENSAYOS_PLANTILLAS.id ASC ,ENSAYOS_PLANTILLAS.grupo_id ASC

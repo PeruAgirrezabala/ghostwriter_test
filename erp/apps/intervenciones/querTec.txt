@@ -1,0 +1,10 @@
+SELECT 
+                        erp_users.id, erp_users.nombre, erp_users.apellidos
+                    FROM 
+                        erp_users, INTERVENCIONES_TECNICOS  
+                    WHERE 
+                        INTERVENCIONES_TECNICOS.erpuser_id = erp_users.id 
+                    AND
+                        INTERVENCIONES_TECNICOS.int_id = 8
+                    ORDER BY 
+                        erp_users.nombre ASC

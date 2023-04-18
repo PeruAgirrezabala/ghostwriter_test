@@ -1,0 +1,10 @@
+SELECT 
+                                            OFERTAS.id,
+                                            OFERTAS.titulo,
+                                            n_ver
+                                        FROM 
+                                            OFERTAS
+                                        WHERE
+                                            OFERTAS.0_ver=850
+                                        AND NOT
+                                            OFERTAS.id=850 ORDER BY OFERTAS.id ASC 

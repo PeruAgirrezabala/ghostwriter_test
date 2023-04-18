@@ -1,0 +1,9 @@
+INSERT INTO CLIENTES_INSTALACIONES 
+                            (cliente_id,
+                            direccion,
+                            nombre) 
+                       VALUES (
+                            '329', 
+                            'Direccion 00', 
+                            'Nombre 00'
+                        )

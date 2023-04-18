@@ -1,0 +1,11 @@
+INSERT INTO PROCEDIMIENTOS 
+                            (nombre,
+                            descripcion,
+                            ref,
+                            tipodoc_id) 
+                       VALUES (
+                            'PROCEDIMIENTO REVISION EXTINTORES', 
+                            '', 
+                            'PROC_EXTIN_INCEN',
+                            6
+                        )

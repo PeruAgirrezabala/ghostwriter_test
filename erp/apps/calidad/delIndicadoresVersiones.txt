@@ -1,0 +1,5 @@
+DELETE 
+                        FROM 
+                            CALIDAD_INDICADORES_VERSIONES
+                        WHERE 
+                            CALIDAD_INDICADORES_VERSIONES.id = 33

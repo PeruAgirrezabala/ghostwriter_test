@@ -1,0 +1,10 @@
+INSERT INTO PEDIDOS_PROV_DOC 
+                (nombre,
+                descripcion,
+                doc_path,
+                pedido_id
+                )
+            VALUES ('ALBARAN 4518948687',
+            '',
+            'ERP/MATERIAL/PEDIDOS/2022/P220657_MATERIAL_EVAMPING_COGERSA//20230321102028759.pdf',
+            6759)

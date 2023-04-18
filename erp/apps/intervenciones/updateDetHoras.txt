@@ -1,0 +1,16 @@
+INSERT INTO INTERVENCIONES_DETALLES_TECNICOS 
+                    (H820,
+                    H208,
+                    Hviaje,
+                    coste_H820,
+                    coste_H208,
+                    erpuser_id,
+                    intdetalle_id
+                    )
+                VALUES (5,
+                0, 
+                2,
+                0,
+                0,
+                69,
+                12)

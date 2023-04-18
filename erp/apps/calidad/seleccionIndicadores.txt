@@ -1,0 +1,19 @@
+SELECT 
+                CALIDAD_INDICADORES.id,
+                CALIDAD_INDICADORES.nombre,  
+                CALIDAD_INDICADORES.meta,
+                CALIDAD_INDICADORES.proceso_id,
+                CALIDAD_INDICADORES.objetivo,
+                CALIDAD_INDICADORES.calculo,
+                CALIDAD_INDICADORES.resultado,
+                CALIDAD_INDICADORES.valor,
+                CALIDAD_INDICADORES.tienehijos,
+                CALIDAD_PROCESOS.nombre
+            FROM 
+                CALIDAD_INDICADORES, CALIDAD_PROCESOS
+            WHERE
+                CALIDAD_INDICADORES.proceso_id = CALIDAD_PROCESOS.id
+            AND
+                CALIDAD_INDICADORES.tienehijos = 1
+            ORDER BY 
+                CALIDAD_INDICADORES.nombre ASC

@@ -1,0 +1,9 @@
+UPDATE ACTIVIDAD_DETALLES 
+                    SET nombre = 'Reunión en las oficinas de Genelek con técnico de CEIT', 
+                        descripcion = '<p>HORA:</p>
+<p>15:30 en adelante</p>',
+                        fecha = '2022-10-25',  
+                        fecha_mod = now(), 
+                        completado = '0',
+                        erpuser_id = 86
+                    WHERE id = 391

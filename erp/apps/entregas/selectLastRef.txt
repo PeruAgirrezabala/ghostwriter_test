@@ -1,0 +1,3 @@
+SELECT SUBSTRING( ENVIOS_CLI.ref, 6, 4 ) AS anyo
+                    FROM ENVIOS_CLI
+                    WHERE SUBSTRING( ENVIOS_CLI.ref, 4, 2 ) =21 ORDER BY anyo DESC LIMIT 1

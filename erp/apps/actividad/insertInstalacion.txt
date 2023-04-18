@@ -1,0 +1,10 @@
+INSERT INTO CLIENTES_INSTALACIONES (
+                        cliente_id,
+                        nombre,
+                        direccion
+                        )
+                    VALUES (
+                        172,
+                        'arteixo prueba 1',
+                        'arteixo prueba 1'
+                        )

@@ -1,0 +1,18 @@
+INSERT INTO PROYECTOS_HITOS 
+                    (proyecto_id,
+                    nombre,
+                    descripcion,
+                    erpuser_id,
+                    fecha_entrega,
+                    fecha_realizacion,
+                    observaciones,
+                    estado_id
+                    )
+                VALUES (1206,
+                'kk',
+                'kk',
+                null,
+                '2019-09-29',
+                '',
+                '',
+                1)

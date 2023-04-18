@@ -1,0 +1,62 @@
+SELECT 
+                                        PEDIDOS_PROV_DETALLES.id,
+                                        MATERIALES.ref,  
+                                        MATERIALES.nombre,
+                                        MATERIALES.fabricante,
+                                        PEDIDOS_PROV_DETALLES.unidades,
+                                        MATERIALES_PRECIOS.pvp, 
+                                        PEDIDOS_PROV_DETALLES.recibido,
+                                        PEDIDOS_PROV_DETALLES.fecha_recepcion,
+                                        PROYECTOS.nombre,
+                                        PEDIDOS_PROV_DETALLES.pvp,
+                                        MATERIALES_PRECIOS.dto_material, 
+                                        PEDIDOS_PROV_DETALLES.dto_prov_activo, 
+                                        PEDIDOS_PROV_DETALLES.dto_mat_activo, 
+                                        PEDIDOS_PROV_DETALLES.dto_ad_activo, 
+                                        PROVEEDORES_DTO.dto_prov, 
+                                        PEDIDOS_PROV_DETALLES.dto, 
+                                        PEDIDOS_PROV_DETALLES.fecha_entrega,
+                                        erp_users.nombre, 
+                                        MATERIALES.id,
+                                        PEDIDOS_PROV_DETALLES.dto_ad_prior,
+                                        PEDIDOS_PROV_DETALLES.iva_id,
+                                        IVAS.nombre,
+                                        PEDIDOS_PROV_DETALLES.detalle_libre,
+                                        PEDIDOS_PROV_DETALLES.ref,
+                                        PEDIDOS_PROV.id,
+                                        PEDIDOS_PROV.pedido_genelek,
+                                        PEDIDOS_PROV.fecha,
+                                        PROVEEDORES.nombre,
+                                        PEDIDOS_PROV_DETALLES.material_tarifa_id,
+                                        PEDIDOS_PROV_DETALLES.dto_prov_id,
+                                        PEDIDOS_PROV.estado_id,
+                                        PEDIDOS_PROV.plazo,
+                                        PEDIDOS_PROV_DETALLES.material_id,
+                                        MATERIALES_STOCK.stock,
+                                        MATERIALES_STOCK.id
+                                    FROM 
+                                        PEDIDOS_PROV_DETALLES
+                                    LEFT JOIN MATERIALES
+                                        ON PEDIDOS_PROV_DETALLES.material_id = MATERIALES.id 
+                                    INNER JOIN IVAS
+                                        ON IVAS.id = PEDIDOS_PROV_DETALLES.iva_id 
+                                    LEFT JOIN MATERIALES_PRECIOS 
+                                        ON MATERIALES_PRECIOS.id = PEDIDOS_PROV_DETALLES.material_tarifa_id 
+                                    LEFT JOIN PROYECTOS 
+                                        ON PROYECTOS.id = PEDIDOS_PROV_DETALLES.proyecto_id 
+                                    LEFT JOIN PROVEEDORES_DTO 
+                                        ON PROVEEDORES_DTO.id = PEDIDOS_PROV_DETALLES.dto_prov_id
+                                    LEFT JOIN erp_users 
+                                        ON PEDIDOS_PROV_DETALLES.erp_userid = erp_users.id 
+                                    INNER JOIN PEDIDOS_PROV
+                                        ON PEDIDOS_PROV_DETALLES.pedido_id = PEDIDOS_PROV.id 
+                                    INNER JOIN PROVEEDORES 
+                                        ON PEDIDOS_PROV.proveedor_id = PROVEEDORES.id
+                                    INNER JOIN MATERIALES_STOCK 
+                                        ON PEDIDOS_PROV_DETALLES.id = MATERIALES_STOCK.pedido_detalle_id
+                                    WHERE
+                                        PEDIDOS_PROV_DETALLES.id = 21329 
+                                    AND
+					MATERIALES_STOCK.ID = 4006
+                                    ORDER BY 
+                                        PEDIDOS_PROV.pedido_genelek ASC, PEDIDOS_PROV_DETALLES.id ASC

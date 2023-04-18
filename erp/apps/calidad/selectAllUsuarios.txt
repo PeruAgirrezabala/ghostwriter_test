@@ -1,0 +1,5 @@
+SELECT
+                erp_users.id,
+                erp_users.nombre
+                FROM
+                erp_users

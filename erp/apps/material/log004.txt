@@ -1,0 +1,18 @@
+INSERT INTO ENVIOS_CLI_DETALLES
+                (envio_id, 
+                material_id, 
+                unidades, 
+                entregado, 
+                fecha_recepcion, 
+                proyecto_id,
+                material_proyecto_id, 
+                pedido_detalle_id
+                ) VALUES 
+                (29,
+                5416,
+                1,
+                0,
+                '0000-00-00 00:00:00',
+                1350,
+                0,
+                21000)

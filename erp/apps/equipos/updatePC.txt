@@ -1,0 +1,8 @@
+UPDATE EQUIPOS_TALLER SET 
+                        hostname = 'WCAILAYPARESINT01', 
+                        descripcion = '', 
+                        fecha_inicio = '2022-04-11',
+                        estado_id = 1
+                        , proyecto_id = 1047
+                        , erpuser_id = 86
+                    WHERE id =26

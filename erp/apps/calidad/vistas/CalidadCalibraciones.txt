@@ -1,0 +1,20 @@
+SELECT 
+                CALIDAD_CALIBRACIONES.id,
+                CALIDAD_CALIBRACIONES.equipo,
+                CALIDAD_CALIBRACIONES.num_serie,
+                CALIDAD_CALIBRACIONES.tecnico_id,
+                CALIDAD_CALIBRACIONES.labor,
+                CALIDAD_CALIBRACIONES.periodo,
+                CALIDAD_CALIBRACIONES.proced,
+                CALIDAD_CALIBRACIONES.ult_cali,
+                CALIDAD_CALIBRACIONES.next_cali,
+                CALIDAD_CALIBRACIONES.activo,
+                CALIDAD_CALIBRACIONES.doc_path,
+                erp_users.nombre,
+		erp_users.apellidos
+            FROM 
+                CALIDAD_CALIBRACIONES, erp_users
+            WHERE
+                CALIDAD_CALIBRACIONES.tecnico_id=erp_users.id
+            AND
+                CALIDAD_CALIBRACIONES.activo=1

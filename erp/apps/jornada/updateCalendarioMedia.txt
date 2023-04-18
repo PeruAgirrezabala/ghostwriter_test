@@ -1,0 +1,5 @@
+UPDATE CALENDARIO 
+                SET festivo = 0, 
+                    tipo_jornada = 2,
+                    horas = 5.00
+                WHERE fecha = '2023-12-22'

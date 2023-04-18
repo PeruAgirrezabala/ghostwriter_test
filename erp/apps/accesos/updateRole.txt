@@ -1,0 +1,3 @@
+UPDATE erp_roles SET 
+                        nombre = 'Comercial'  
+                    WHERE id =12

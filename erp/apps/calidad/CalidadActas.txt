@@ -1,0 +1,8 @@
+SELECT 
+                CALIDAD_ACTAS.id,
+                CALIDAD_ACTAS.nombre,
+                CALIDAD_ACTAS.descripcion,
+                CALIDAD_ACTAS.path_doc,
+                CALIDAD_ACTAS.fecha
+            FROM 
+                CALIDAD_ACTAS

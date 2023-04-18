@@ -1,0 +1,37 @@
+SELECT 
+                    CLIENTES.nombre,
+                    CLIENTES.direccion,
+                    CLIENTES.poblacion,
+                    CLIENTES.provincia,
+                    CLIENTES.cp,
+                    CLIENTES.pais,
+                    CLIENTES.telefono,
+                    CLIENTES.email,
+                    ENVIOS_CLI.id,
+                    ENVIOS_CLI.ref, 
+                    ENVIOS_CLI.ref_pedido_cliente,
+                    ENVIOS_CLI.nombre,
+                    ENVIOS_CLI.descripcion,
+                    ENVIOS_CLI.cliente_id,
+                    ENVIOS_CLI.fecha,
+                    ENVIOS_CLI.fecha_entrega,
+                    ENVIOS_CLI.tecnico_id,
+                    ENVIOS_CLI.proyecto_id,
+                    ENVIOS_CLI.estado_id, 
+                    ENVIOS_CLI.path,
+                    ENVIOS_CLI.ref_oferta_proveedor,
+                    CLIENTES.contacto,
+                    ENVIOS_CLI.plazo,
+                    OFERTAS.ref,
+                    ENVIOS_CLI.direccion_envio,
+                    TRANSPORTISTAS.nombre
+                FROM 
+                    ENVIOS_CLI, CLIENTES, OFERTAS, TRANSPORTISTAS 
+                WHERE 
+                    ENVIOS_CLI.cliente_id = CLIENTES.id
+                AND
+                    OFERTAS.id = ENVIOS_CLI.oferta_id
+                AND
+                    TRANSPORTISTAS.id = ENVIOS_CLI.transportista_id
+                AND
+                    ENVIOS_CLI.id = 4

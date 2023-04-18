@@ -1,0 +1,12 @@
+UPDATE PROYECTOS_HITOS 
+                SET proyecto_id = 8, 
+                    nombre = '[Server] Instalar paquete Historian server', 
+                    descripcion = '', 
+                    erpuser_id = 69, 
+                    fecha_entrega = '2019-12-31', 
+                    fecha_realizacion = '', 
+                    observaciones = 'Instalo la version 2017 Update 3 pero al instalar falla la activacion delicencias "Unable to communicate with Activation Server".
+
+Desde wonderware me indican que instale la version 3.5.1 de Enterprise License Manager. Con esa version funciona.', 
+                    estado_id = 3 
+                WHERE id = 31

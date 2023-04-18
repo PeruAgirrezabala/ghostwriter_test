@@ -1,0 +1,1 @@
+SELECT nombre FROM CLIENTES WHERE id = 254

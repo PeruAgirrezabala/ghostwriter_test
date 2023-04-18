@@ -1,0 +1,3 @@
+INSERT INTO ENSAYOS_ADJUNTOS 
+                                    (nombre,ensayo_id,path) VALUES
+                                      ('ENSAYO_22021-02-22',12,'/PROYECTOS//2018/G18608_TECNALIA_KUBIK//ENTREGAS/E210001/ENSAYO_2_22_02_2021.txt')

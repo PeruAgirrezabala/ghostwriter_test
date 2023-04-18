@@ -1,0 +1,63 @@
+'---------------------------------------------------------------------------------------------------------------------------
+'Leer los datos del plan a ejecutar y copiar la información al AppDomain.
+'---------------------------------------------------------------------------------------------------------------------------
+
+ConexionString = "server=DC0GPROSC4T02;uid=sa;pwd=Nasertic1.;database=GISizeSequencerDB";
+
+try
+	'Abrir la connexión
+	logMessage("Inicio de conexion");
+	connection=new System.Data.SqlClient.SqlConnection(Conexionstring);
+	connection.Open();
+	logMessage("Conexion establecida");
+
+	try
+		'Query a ejecutar
+		scom = "SELECT DirectionPLC,ValuePLC FROM vPlanSteps Where IDPLAN = " + Me.PAR_IDPlan;
+
+		'Crear un DataAdapter
+		adapter = new System.Data.SqlClient.SqlDataAdapter(sCom,connection);
+
+		'Rellenar el dataset
+		ds = new System.Data.DataSet();
+		adapter.Fill(ds, "Tabla");
+
+		'Obtener el numero de registros devueltos por la consulta
+		Me.PAR_NumPasos = ds.Tables("Tabla").Rows.Count;
+
+		LogMessage("Numero de pasos del plan: " + Me.PAR_NumPasos);
+
+		'Se envia el dataset al AppDomain
+		System.AppDomain.CurrentDomain.SetData("Plan",ds);
+
+		adapter.Dispose();
+		connection.close();
+		logMessage("Fin de la conexion");
+
+	catch
+		LogError(error);
+		try
+			adapter.Dispose();
+		catch
+			LogError(error);
+		endtry;
+		try
+			connection.Close();
+		catch
+			LogError(error);
+		endtry;
+	endtry;
+
+catch
+	LogError(error);
+	try
+		connection.close();
+	catch
+		LogError(error);
+	endtry;	
+
+endtry;
+
+Me.IO_CommandWord = 4;
+
+Me.PAR_Step_LC = 2;

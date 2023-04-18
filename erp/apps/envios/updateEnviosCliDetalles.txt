@@ -1,0 +1,12 @@
+UPDATE ENVIOS_CLI_DETALLES 
+                        SET material_id = 3668, 
+                                envio_id = 49,
+                                unidades = 1,
+                                descripcion = '',  
+                                fecha_recepcion = 'null', 
+                                entregado = 0 
+                                
+                                , proyecto_id = 1
+                                
+                                , garantia=0
+                            WHERE id = 77

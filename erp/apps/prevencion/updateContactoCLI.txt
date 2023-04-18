@@ -1,0 +1,9 @@
+UPDATE CLIENTES_CONTACTOS SET 
+                        nombre = '', 
+                        mail = '', 
+                        telefono = '', 
+                        descripcion = '', 
+                        activo = '', 
+                        cliente_id = ,
+                        instalacion_cliente_id =     
+                    WHERE id =78

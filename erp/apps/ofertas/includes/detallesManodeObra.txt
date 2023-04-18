@@ -1,0 +1,27 @@
+SELECT 
+                TAREAS.id as tarea,
+                TAREAS.nombre,
+                OFERTAS_DETALLES_HORAS.cantidad,
+                PERFILES_HORAS.precio,
+                OFERTAS_DETALLES_HORAS.titulo,
+                OFERTAS_DETALLES_HORAS.descripcion,
+                OFERTAS_DETALLES_HORAS.dto,
+                OFERTAS_DETALLES_HORAS.pvp,
+                OFERTAS_DETALLES_HORAS.pvp_total, 
+                OFERTAS_DETALLES_HORAS.id as detalle
+            FROM 
+                TAREAS, PERFILES, PERFILES_HORAS, OFERTAS_DETALLES_HORAS, OFERTAS  
+            WHERE 
+                OFERTAS_DETALLES_HORAS.tarea_id = TAREAS.id
+            AND
+                TAREAS.perfil_id = PERFILES.id
+            AND
+                PERFILES_HORAS.perfil_id = PERFILES.id
+			AND
+                PERFILES_HORAS.id = OFERTAS_DETALLES_HORAS.tipo_hora_id
+            AND
+                OFERTAS_DETALLES_HORAS.oferta_id = OFERTAS.id 
+            AND 
+                OFERTAS.id = 545
+            ORDER BY 
+                OFERTAS_DETALLES_HORAS.id ASC

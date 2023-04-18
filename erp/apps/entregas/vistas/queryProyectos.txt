@@ -1,0 +1,22 @@
+SELECT 
+                    ENTREGAS.id,
+                    ENTREGAS.ref,
+                    ENTREGAS.nombre,
+                    ENTREGAS.fecha_entrega,
+                    PROYECTOS.nombre, 
+                    ESTADOS_ENTREGAS.nombre, 
+                    CLIENTES.nombre, 
+                    CLIENTES.img,
+                    ESTADOS_ENTREGAS.color 
+                FROM 
+                    PROYECTOS, ESTADOS_ENTREGAS, ENTREGAS, CLIENTES 
+                WHERE 
+                    PROYECTOS.cliente_id = CLIENTES.id
+                AND
+                    PROYECTOS.id = ENTREGAS.proyecto_id
+                AND 
+                    ENTREGAS.estado_id = ESTADOS_ENTREGAS.id 
+                     AND SUBSTR(ENTREGAS.ref,2,2) = 23
+                ORDER BY 
+                    ENTREGAS.fecha_entrega DESC 
+                LIMIT 0, 20

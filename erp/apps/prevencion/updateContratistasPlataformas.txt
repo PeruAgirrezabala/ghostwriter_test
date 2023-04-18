@@ -1,0 +1,7 @@
+UPDATE CONTRATISTAS_PLATAFORMAS SET 
+                        url = 'https://sso-sela.achilles.com/SSO/Home/Login', 
+                        instalacion = 'Palafolls', 
+                        user = 'ione@genelek.com', 
+                        pass = 'Sistemas#2111', 
+                        cliente_id = 238
+                    WHERE id =25

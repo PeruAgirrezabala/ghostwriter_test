@@ -1,0 +1,1 @@
+INSERT INTO PREVISIONES_TECNICOS (prevision_id, erpuser_id) VALUES ('', 86)

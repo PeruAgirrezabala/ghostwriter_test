@@ -1,0 +1,5 @@
+UPDATE CALIDAD_SISTEMA SET 
+                        nombre = 'Matriz DAFO', 
+                        organismo_id = '6',
+                        habilitado = 'on'    
+                    WHERE id = 29

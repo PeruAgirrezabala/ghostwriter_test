@@ -1,0 +1,22 @@
+INSERT INTO ENTREGAS (
+                        ref,
+                        nombre,
+                        descripcion,
+                        fecha_entrega,
+                        fecha_pruebas,
+                        fecha_realentrega,
+                        estado_id,
+                        proyecto_id,
+                        path 
+                        )
+                    VALUES (
+                        'E210013',
+                        'prueba998',
+                        '',
+                        '2021-06-24',
+                        '2021-06-24',
+                        '2021-06-24',
+                        1,
+                        1322,
+                        '/2021/G210681_FIBRATEL_BMS_EQUINIX/ENTREGAS/E210013_prueba998/'
+                        )

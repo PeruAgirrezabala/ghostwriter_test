@@ -1,0 +1,9 @@
+INSERT INTO CALIDAD_SISTEMA 
+                            (nombre,
+                            organismo_id,
+                            habilitado)
+                       VALUES (
+                            'MATRIZ DAFO', 
+                            '6',
+                            'on'    
+                        )

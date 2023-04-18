@@ -1,0 +1,12 @@
+BEGIN 
+
+DECLARE numEntregas INT DEFAULT 0;
+ 
+SET numEntregas = SELECT COUNT(*) FROM ENTREGAS WHERE YEAR(fecha_entrega) = YEAR(now());
+
+
+UPDATE ENTREGAS
+SET ref = CONCAT("E", DATE_FORMAT(NEW.fecha_entrega, '%y'), LPAD(numEntregas, 4, '0')) 
+WHERE id = NEW.id;
+
+END

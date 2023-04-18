@@ -1,0 +1,12 @@
+SELECT 
+                                    ENSAYOS_INFO.id as ensayoinfoid,
+                                    ENSAYOS_INFO.ensayo_id as ensayoid,
+                                    ENSAYOS_INFO.titulo,
+                                    ENSAYOS_INFO.descripcion,
+                                    ENSAYOS_INFO.estado,
+                                    ENSAYOS_INFO.fecha
+                                FROM 
+                                    ENSAYOS_INFO 
+                                WHERE
+                                    ENSAYOS_INFO.id = 2
+                                LIMIT 1

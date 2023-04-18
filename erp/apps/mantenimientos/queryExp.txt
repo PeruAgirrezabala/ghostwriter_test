@@ -1,0 +1,12 @@
+SELECT 
+                    A.ref, A.id, A.nombre 
+                FROM 
+                    MANTENIMIENTOS_EXP, PROYECTOS A, PROYECTOS B   
+                WHERE 
+                    MANTENIMIENTOS_EXP.expediente_id = A.id 
+                AND
+                    MANTENIMIENTOS_EXP.proyecto_id = B.id 
+                AND
+                    MANTENIMIENTOS_EXP.proyecto_id = 1311
+                ORDER BY 
+                    B.ref ASC

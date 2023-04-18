@@ -1,0 +1,32 @@
+INSERT INTO PROYECTOS (
+                        ref, 
+                        nombre,
+                        descripcion,
+                        fecha_ini,
+                        fecha_entrega,
+                        fecha_fin,
+                        fecha_mod,
+                        cliente_id,
+                        estado_id,
+                        ubicacion,
+                        fecha_registro, 
+                        path, 
+                        tipo_proyecto_id,
+                        proyecto_id
+                        )
+                    VALUES (
+                        'M200031',
+                        'COGENERACION_CER_LA_RODA',
+                        '',
+                        '2020/04/19',
+                        '0000-00-00',
+                        '0000-00-00',
+                        now(),
+                        11,
+                        1,
+                        'SEVILLA',
+                        '2020/04/19',
+                        '/2020/M200031_COGENERACION_CER_LA_RODA/',
+                        2, 
+                        844
+                        )

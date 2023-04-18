@@ -1,0 +1,24 @@
+SELECT 
+                        ENVIOS_CLI_DETALLES.id,
+                        MATERIALES.ref,  
+                        MATERIALES.nombre,
+                        MATERIALES.fabricante,
+                        MATERIALES.modelo,
+                        ENVIOS_CLI_DETALLES.unidades,
+                        ENVIOS_CLI_DETALLES.entregado,
+                        ENVIOS_CLI_DETALLES.fecha_recepcion,
+                        PROYECTOS.nombre,
+                        ENTREGAS.nombre,
+                        MATERIALES.id 
+                    FROM 
+                        ENVIOS_CLI_DETALLES
+                    INNER JOIN MATERIALES
+                        ON ENVIOS_CLI_DETALLES.material_id = MATERIALES.id 
+                    LEFT JOIN PROYECTOS 
+                        ON PROYECTOS.id = ENVIOS_CLI_DETALLES.proyecto_id 
+                    LEFT JOIN ENTREGAS
+                        ON ENVIOS_CLI_DETALLES.entrega_id = ENTREGAS.id
+                    WHERE
+                        ENVIOS_CLI_DETALLES.envio_id = 29 
+                    ORDER BY 
+                        ENVIOS_CLI_DETALLES.id ASC

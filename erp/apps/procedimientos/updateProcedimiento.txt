@@ -1,0 +1,6 @@
+UPDATE PROCEDIMIENTOS SET 
+                        nombre = 'REVISION EXTINTORES', 
+                        descripcion = '', 
+                        ref = 'PROC_EXTIN_INCEN',
+                        tipodoc_id = 6
+                    WHERE id =17

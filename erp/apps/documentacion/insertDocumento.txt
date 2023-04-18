@@ -1,0 +1,11 @@
+INSERT INTO DOCUMENTACION 
+                            (nombre,
+                            descripcion,
+                            ref,
+                            tipodoc_id) 
+                       VALUES (
+                            'aaaa', 
+                            '', 
+                            'aaaa',
+                            6
+                        )

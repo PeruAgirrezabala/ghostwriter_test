@@ -1,0 +1,9 @@
+INSERT INTO ENVIOS_CLI_DETALLES
+                                    (envio_id, 
+                                    material_id, 
+                                    unidades, 
+                                    entregado,
+                                    proyecto_id,
+                                    pedido_detalle_id)
+                                VALUES
+                                    (49,3863,1,0,1,18508)

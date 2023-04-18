@@ -1,0 +1,23 @@
+SELECT
+                                    PREVISIONES.id,
+                                    PREVISIONES.nombre,
+                                    PREVISIONES.descripcion,
+                                    PREVISIONES.fecha_ini,
+                                    PREVISIONES.fecha_fin,
+                                    PREVISIONES.cliente_id,
+                                    PREVISIONES.instalacion, 
+                                    PREVISIONES.cliente_id, 
+                                    PREVISIONES.item_id,
+                                    PREVISIONES.tipo_prev,
+                                    PREVISIONES.estado_id,
+                                    (SELECT ref FROM INTERVENCIONES WHERE id = item) as ref_int,
+                                    (SELECT ref FROM PROYECTOS WHERE id = item) as ref_proy,
+                                    (SELECT ref FROM OFERTAS WHERE id = item) as ref_ofer
+                                FROM 
+                                    PREVISIONES
+                                INNER JOIN PREVISIONES_ESTADOS
+                                    ON PREVISIONES.estado_id = PREVISIONES_ESTADOS.id 
+                                LEFT JOIN CLIENTES
+                                    ON PREVISIONES.cliente_id = CLIENTES.id
+                                WHERE 
+                                    PREVISIONES.id = 93

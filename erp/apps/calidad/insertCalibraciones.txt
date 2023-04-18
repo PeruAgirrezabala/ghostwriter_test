@@ -1,0 +1,22 @@
+INSERT INTO CALIDAD_CALIBRACIONES 
+                            (equipo,
+                            num_serie,
+                            tecnico_id,
+                            labor,
+                            periodo,
+                            proced,
+                            ult_cali,
+                            next_cali,
+                            activo
+                            ) 
+                       VALUES (
+                            'kkk', 
+                            'kkk',
+                            86,
+                            'kkk', 
+                            'kkk', 
+                            'kkk', 
+                            '2021-04-22', 
+                            '2021-04-27', 
+                            'off'                                                    
+                        )

@@ -1,0 +1,4 @@
+UPDATE CALIDAD_ACTAS 
+                                    SET 
+                                      path_doc = '/_DOCUMENTACION/Calidad/ERP/ACTA/ACTA_COMITE_DE_CALIDAD_-_MEDIADOS_2023_10_07_2023.doc' 
+                                    WHERE id = 23

@@ -1,0 +1,5 @@
+SELECT ACTIVIDAD_USUARIO.actividad_id, erp_users.id, erp_users.nombre, erp_users.apellidos, erp_users.user_email
+                    FROM ACTIVIDAD_USUARIO
+                    INNER JOIN erp_users
+                    ON ACTIVIDAD_USUARIO.user_id = erp_users.id
+                WHERE actividad_id=422

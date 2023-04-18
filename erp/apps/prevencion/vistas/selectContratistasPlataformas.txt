@@ -1,0 +1,10 @@
+SELECT 
+                    CONTRATISTAS_PLATAFORMAS.id,
+                    CONTRATISTAS_PLATAFORMAS.url,
+                    CONTRATISTAS_PLATAFORMAS.user,
+                    CONTRATISTAS_PLATAFORMAS.pass,
+                    CONTRATISTAS_PLATAFORMAS.instalacion
+                FROM 
+                    CONTRATISTAS_PLATAFORMAS
+                WHERE
+                    CONTRATISTAS_PLATAFORMAS.cliente_id = 139

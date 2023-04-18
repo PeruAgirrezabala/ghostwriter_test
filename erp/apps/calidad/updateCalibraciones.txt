@@ -1,0 +1,11 @@
+UPDATE CALIDAD_CALIBRACIONES SET 
+                        equipo = 'FLUKE 287', 
+                        num_serie = '33860134', 
+                        tecnico_id = 76, 
+                        labor = 'GENELEK', 
+                        periodo = '60 MESES', 
+                        proced = 'CALIBRACION', 
+                        ult_cali = '2023-01-19', 
+                        next_cali = '2028-01-19', 
+                        activo = 1
+                    WHERE id =14

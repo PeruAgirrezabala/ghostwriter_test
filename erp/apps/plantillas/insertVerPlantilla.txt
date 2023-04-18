@@ -1,0 +1,8 @@
+INSERT INTO PLANTILLAS_VERSIONES 
+                        (plantilla_id,
+                        doc_path,
+                        fecha_exp
+                        )
+                    VALUES (45,
+                    '/_DOCUMENTACION/PLANTILLAS/DOC/2021/MODELO PLANTILLA OFERTAS _ 2.docx',
+                    '2021-01-10')

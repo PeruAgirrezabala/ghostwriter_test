@@ -1,0 +1,12 @@
+INSERT INTO USERS_DOC 
+                                (nombre,
+                                descripcion,
+                                erpuser_id,
+                                org_id,
+                                periodicidad_id) 
+                           VALUES (
+                                'TA2', 
+                                '', 
+                                94, 
+                                2, 
+                                6)

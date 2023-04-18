@@ -1,0 +1,18 @@
+INSERT INTO PROYECTOS_HORAS_IMPUTADAS 
+                    (tarea_id,
+                    tipo_hora_id,
+                    proyecto_id,
+                    titulo,
+                    descripcion,
+                    cantidad,
+                    tecnico_id,
+                    fecha
+                    )
+                VALUES (21,
+                3,
+                10,
+                'Pruebas',
+                'Pruebas',
+                2,
+                86,
+                '2022-07-07')

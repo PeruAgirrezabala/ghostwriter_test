@@ -1,0 +1,5 @@
+UPDATE CALIDAD_FORMACION_DETALLES
+                        SET descripcion = '', 
+                            fecha = '2022-03-30'
+                        WHERE CALIDAD_FORMACION_DETALLES.formacion_id=9 
+                        AND CALIDAD_FORMACION_DETALLES.tecnico_id=93

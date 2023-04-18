@@ -1,0 +1,21 @@
+SELECT 
+                    CLIENTES_DOC.id as file, 
+                    CLIENTES_DOC.nombre, 
+                    ORGANISMOS.nombre, 
+                    (SELECT doc_path FROM CLIENTES_DOC_VERSIONES WHERE doc_id = file ORDER BY fecha_exp DESC, id DESC LIMIT 1) as path,
+                    (SELECT fecha_exp FROM CLIENTES_DOC_VERSIONES WHERE doc_id = file ORDER BY fecha_exp DESC, id DESC LIMIT 1) as fecha_exp,
+                    (SELECT fecha_cad FROM CLIENTES_DOC_VERSIONES WHERE doc_id = file ORDER BY fecha_exp DESC, id DESC LIMIT 1) as fecha_cad,
+                    (SELECT id FROM CLIENTES_DOC_VERSIONES WHERE doc_id = file ORDER BY fecha_exp DESC, id DESC LIMIT 1) as ver_id, 
+                    PERIODICIDADES.intervalo,
+                    PERIODICIDADES.nombre
+                FROM 
+                    CLIENTES_DOC  
+                INNER JOIN ORGANISMOS
+                    ON ORGANISMOS.id = CLIENTES_DOC.org_id 
+                INNER JOIN PERIODICIDADES
+                    ON PERIODICIDADES.id = CLIENTES_DOC.periodicidad_id 
+                WHERE
+                    CLIENTES_DOC.cliente_id = 139
+                ORDER BY 
+                    ORGANISMOS.nombre ASC, 
+                    CLIENTES_DOC.nombre ASC

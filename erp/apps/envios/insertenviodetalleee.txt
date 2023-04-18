@@ -1,0 +1,16 @@
+INSERT INTO ENVIOS_CLI_DETALLES 
+                            (material_id,
+                            envio_id,
+                            unidades,
+                            fecha_recepcion,
+                            entregado 
+                            
+                            
+                            )
+                        VALUES (1352,
+                        25,
+                        1,
+                        '',
+                        0
+                         
+                        )

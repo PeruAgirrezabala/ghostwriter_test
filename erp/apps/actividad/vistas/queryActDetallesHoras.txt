@@ -1,0 +1,15 @@
+SELECT 
+                ACTIVIDAD_DETALLES_HORAS.id,
+                erp_users.nombre,
+                erp_users.apellidos,
+                PERFILES_HORAS.nombre,
+                ACTIVIDAD_DETALLES_HORAS.cantidad
+            FROM
+                ACTIVIDAD_DETALLES_HORAS, erp_users, PERFILES_HORAS
+            WHERE
+                ACTIVIDAD_DETALLES_HORAS.tipo_hora_id = PERFILES_HORAS.id
+            AND
+                ACTIVIDAD_DETALLES_HORAS.tecnico_id = erp_users.id
+            AND
+                ACTIVIDAD_DETALLES_HORAS.actividad_detalle_id = 392
+            

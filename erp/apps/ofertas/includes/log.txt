@@ -1,0 +1,4 @@
+refOferta: OF002-18
+ || nombrefichero: OF002-18.pdf
+ || outputFile: ERP/OFERTAS/TEMP/OF002-18.pdf
+ || tempfile: temp/OF002-18.pdf

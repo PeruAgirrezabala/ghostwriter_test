@@ -1,0 +1,1 @@
+SELECT id FROM erp_roles_apps WHERE role_id = 14 AND app_id = 24

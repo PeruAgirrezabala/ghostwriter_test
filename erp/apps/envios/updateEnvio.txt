@@ -1,0 +1,27 @@
+UPDATE ENVIOS_CLI 
+                    SET 
+                        transportista_id = 1,
+                        nombre = 'Devolución por medida incorrecta',
+                        descripcion = '',
+                        tecnico_id = 86,
+                        fecha = '2022-05-18',
+                        fecha_entrega = '2022-05-18',
+                        ref_transportista = '',
+                        cliente_id = 215,
+                        proveedor_id = 224,
+                        destinatario = '',
+                        att = '',
+                        proyecto_id = 10,
+                        contacto = '',
+                        estado_id = 5,
+                        entrega_id = null, 
+                        ref_pedido_cliente = '',
+                        plazo = '',
+                        oferta_id = null,
+                        ref_oferta_proveedor = '',
+                        gastos_envio = , 
+                        direccion_envio = 'OFICINA CORREOS vs AMAZON',
+                        forma_envio = 'NORMAL',
+                        portes = '1',
+                        tipo_envio_id = 2
+                    WHERE id = 28

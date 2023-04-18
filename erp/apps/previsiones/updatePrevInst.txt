@@ -1,0 +1,3 @@
+UPDATE PREVISIONES_INSTALACIONES
+                    SET instalacion_id = 7
+                WHERE prevision_id = 60

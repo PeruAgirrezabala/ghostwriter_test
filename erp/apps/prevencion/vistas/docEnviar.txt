@@ -1,0 +1,15 @@
+SELECT 
+                            CLIENTES_DOC.id, 'CLIENTES_DOC' as tipo, CLIENTES_DOC.nombre, ORGANISMOS.nombre 
+                        FROM 
+                            CLIENTES_DOC_ENVIAR A, CLIENTES_DOC, ORGANISMOS, PERIODICIDADES
+                        WHERE 
+                            CLIENTES_DOC.id = A.doc_id
+                        AND
+                            A.cliente_id = 212
+                        AND
+                            A.tipo_doc = 'cli'
+                        AND
+                            ORGANISMOS.id = CLIENTES_DOC.org_id 
+                        AND
+                            PERIODICIDADES.id = CLIENTES_DOC.periodicidad_id
+                       

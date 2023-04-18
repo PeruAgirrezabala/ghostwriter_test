@@ -1,0 +1,18 @@
+SELECT
+                                            MATERIALES.id,
+                                            MATERIALES.ref,
+                                            MATERIALES.nombre,
+                                            MATERIALES.fabricante,
+                                            MATERIALES.modelo,
+                                            SUM(MATERIALES_STOCK.stock) as stock
+                                        FROM 
+                                            MATERIALES, MATERIALES_STOCK
+                                        WHERE
+                                            MATERIALES.id=MATERIALES_STOCK.material_id
+                                        AND
+                                            MATERIALES_STOCK.ubicacion_id=1
+                                        AND  
+                                            MATERIALES_STOCK.proyecto_id=11
+                                        GROUP BY 
+                                            MATERIALES.id,
+                                            MATERIALES.ref

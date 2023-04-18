@@ -1,0 +1,16 @@
+SELECT 
+                    CALIDAD_INDICADORES_VERSIONES.id,
+                    CALIDAD_INDICADORES_VERSIONES.nombre,  
+                    CALIDAD_INDICADORES_VERSIONES.descripcion,
+                    CALIDAD_INDICADORES_VERSIONES.proceso_id,
+                    CALIDAD_INDICADORES_VERSIONES.objetivo,
+                    CALIDAD_INDICADORES_VERSIONES.calculo,
+                    CALIDAD_INDICADORES_VERSIONES.resultado,
+                    CALIDAD_INDICADORES_VERSIONES.valor,
+                    CALIDAD_INDICADORES_VERSIONES.anyo
+                FROM 
+                    CALIDAD_INDICADORES_VERSIONES
+                WHERE
+                    CALIDAD_INDICADORES_VERSIONES.indicador_id = 6 
+                ORDER BY 
+                    CALIDAD_INDICADORES_VERSIONES.anyo ASC

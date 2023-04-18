@@ -1,0 +1,28 @@
+SELECT 
+                    OFERTAS.id,
+                    OFERTAS.ref,
+                    OFERTAS.titulo,
+                    OFERTAS.fecha,
+                    OFERTAS.fecha_validez,
+                    OFERTAS_ESTADOS.nombre, 
+                    CLI1.nombre, 
+                    CLI1.img,
+                    OFERTAS_ESTADOS.color, 
+                    CLI2.nombre, 
+                    CLI2.img,
+                    PROYECTOS.nombre,
+                    OFERTAS.estado_id
+                FROM 
+                    OFERTAS
+                INNER JOIN OFERTAS_ESTADOS
+                    ON OFERTAS.estado_id = OFERTAS_ESTADOS.id 
+                LEFT JOIN PROYECTOS
+                    ON OFERTAS.proyecto_id = PROYECTOS.id
+                LEFT JOIN CLIENTES as CLI1
+                    ON PROYECTOS.cliente_id = CLI1.id
+                LEFT JOIN CLIENTES as CLI2
+                    ON OFERTAS.cliente_id = CLI2.id   
+                 WHERE YEAR(fecha) = YEAR(CURDATE()) 
+                ORDER BY 
+                    OFERTAS.ref DESC
+                LIMIT 0, 20............... WHERE YEAR(fecha) = YEAR(CURDATE()) 

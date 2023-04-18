@@ -1,0 +1,17 @@
+SELECT 
+                    CLIENTES_CONTACTOS.id,
+                    CLIENTES_CONTACTOS.nombre,
+                    CLIENTES_CONTACTOS.telefono,
+                    CLIENTES_CONTACTOS.mail,
+                    CLIENTES_CONTACTOS.descripcion,
+                    CLIENTES_CONTACTOS.activo,
+                    CLIENTES_CONTACTOS.cliente_id,
+                    CLIENTES_CONTACTOS.instalacion_cliente_id,
+                    CLIENTES_INSTALACIONES.id,
+                    CLIENTES_INSTALACIONES.nombre
+                FROM 
+                    CLIENTES_CONTACTOS
+                INNER JOIN
+                    CLIENTES_INSTALACIONES ON CLIENTES_CONTACTOS.instalacion_cliente_id=CLIENTES_INSTALACIONES.id
+                WHERE
+                    CLIENTES_CONTACTOS.cliente_id = 139

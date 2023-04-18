@@ -1,0 +1,30 @@
+SELECT * 
+                        FROM (SELECT 
+                            A.id as file, 
+			                CLIENTES_DOC.id as docid,
+                            'CLIENTES_DOC' as tipo, 
+                            CLIENTES_DOC.nombre nombredoc, 
+                            ORGANISMOS.nombre orgnombre, 
+                            A.enviado,
+                            (SELECT doc_path FROM CLIENTES_DOC_VERSIONES WHERE doc_id = docid ORDER BY fecha_exp DESC LIMIT 1) as path,
+                            (SELECT fecha_exp FROM CLIENTES_DOC_VERSIONES WHERE doc_id = docid ORDER BY fecha_exp DESC, id DESC LIMIT 1) as fecha_expe,
+                            (SELECT fecha_cad FROM CLIENTES_DOC_VERSIONES WHERE doc_id = docid ORDER BY fecha_exp DESC, id DESC LIMIT 1) as fecha_cad,
+                            (SELECT id FROM CLIENTES_DOC_VERSIONES WHERE doc_id = docid ORDER BY fecha_exp DESC, id DESC LIMIT 1) as ver_id,
+                            PERIODICIDADES.intervalo as inter, 
+                            PERIODICIDADES.nombre perio,
+                            CLIENTES.nombre cliente
+                        FROM 
+                            CLIENTES_DOC_ENVIAR A, CLIENTES_DOC, ORGANISMOS, PERIODICIDADES, CLIENTES
+                        WHERE 
+                            CLIENTES_DOC.id = A.doc_id
+                        AND
+                            ORGANISMOS.id = CLIENTES_DOC.org_id 
+                        AND
+                            A.cliente_id = CLIENTES.id 
+                        AND
+                            PERIODICIDADES.id = CLIENTES_DOC.periodicidad_id
+                        AND
+                            A.tipo_doc = 'cli') Q
+                        WHERE DATE_ADD(Q.fecha_expe, INTERVAL +Q.inter DAY) <= CURDATE() 
+                        AND Q.inter > 0 
+                       

@@ -1,0 +1,7 @@
+SELECT 
+                        id,
+                        nombre,
+                        datos,
+                        observaciones
+                    FROM FORMAS_PAGO A
+                         ORDER By A.nombre ASC  LIMIT 0,10

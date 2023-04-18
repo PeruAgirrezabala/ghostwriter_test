@@ -1,0 +1,1 @@
+INSERT INTO erp_activity (user_id, fecha, descripcion ) VALUES(69, now(), 'Ensayo  actualizado')

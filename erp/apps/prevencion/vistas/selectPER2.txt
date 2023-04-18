@@ -1,0 +1,4 @@
+SELECT
+                        USERS_DOC_VERSIONES.id,
+                        USERS_DOC_VERSIONES.doc_path
+                        FROM USERS_DOC_VERSIONES WHERE USERS_DOC_VERSIONES.doc_id =664

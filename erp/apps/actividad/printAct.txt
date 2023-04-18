@@ -1,0 +1,52 @@
+SELECT 
+                    ACTIVIDAD.id actid,
+                    ACTIVIDAD.ref,
+                    ACTIVIDAD.nombre,
+                    ACTIVIDAD.descripcion,
+                    ACTIVIDAD.fecha,
+                    ACTIVIDAD.fecha_mod,
+                    ACTIVIDAD.instalacion,
+                    ACTIVIDAD.solucion,
+                    ACTIVIDAD.fecha_solucion,
+                    ACTIVIDAD.observaciones,
+                    ACTIVIDAD.item_id,
+                    ACTIVIDAD.fecha_factu,
+                    ACTIVIDAD_ESTADOS.nombre,
+                    ACTIVIDAD_ESTADOS.color,
+                    erp_users.nombre,
+                    erp_users.apellidos,
+                    erp_users.firma_path,
+                    CLIENTES.id,
+                    CLIENTES.nombre,
+                    CLIENTES.direccion,
+                    CLIENTES.poblacion,
+                    CLIENTES.provincia,
+                    CLIENTES.cp,
+                    CLIENTES.pais,
+                    CLIENTES.telefono,
+                    CLIENTES.nif,
+                    CLIENTES.email,
+                    OFERTAS.ref,
+                    PROYECTOS.ref,
+                    PROYECTOS.nombre,
+                    PROYECTOS.descripcion,
+                    PROYECTOS.fecha_entrega,
+                    erp_users.id,
+                    (SELECT SUM(ACTIVIDAD_DETALLES_HORAS.cantidad) FROM ACTIVIDAD_DETALLES, ACTIVIDAD_DETALLES_HORAS, PERFILES_HORAS WHERE ACTIVIDAD_DETALLES.id = ACTIVIDAD_DETALLES_HORAS.actividad_detalle_id AND ACTIVIDAD_DETALLES_HORAS.tipo_hora_id = PERFILES_HORAS.id AND PERFILES_HORAS.tipo_id = 1 AND ACTIVIDAD_DETALLES.actividad_id = actid),
+                    (SELECT SUM(ACTIVIDAD_DETALLES_HORAS.cantidad) FROM ACTIVIDAD_DETALLES, ACTIVIDAD_DETALLES_HORAS, PERFILES_HORAS WHERE ACTIVIDAD_DETALLES.id = ACTIVIDAD_DETALLES_HORAS.actividad_detalle_id AND ACTIVIDAD_DETALLES_HORAS.tipo_hora_id = PERFILES_HORAS.id AND PERFILES_HORAS.tipo_id = 2 AND ACTIVIDAD_DETALLES.actividad_id = actid),
+                    (SELECT SUM(ACTIVIDAD_DETALLES_HORAS.cantidad) FROM ACTIVIDAD_DETALLES, ACTIVIDAD_DETALLES_HORAS, PERFILES_HORAS WHERE ACTIVIDAD_DETALLES.id = ACTIVIDAD_DETALLES_HORAS.actividad_detalle_id AND ACTIVIDAD_DETALLES_HORAS.tipo_hora_id = PERFILES_HORAS.id AND PERFILES_HORAS.tipo_id = 3 AND ACTIVIDAD_DETALLES.actividad_id = actid),
+                    OFERTAS.titulo
+                FROM 
+                    ACTIVIDAD
+                LEFT JOIN CLIENTES 
+                    ON ACTIVIDAD.cliente_id = CLIENTES.id
+                LEFT JOIN OFERTAS 
+                    ON ACTIVIDAD.item_id = OFERTAS.id
+                INNER JOIN erp_users  
+                    ON ACTIVIDAD.tecnico_id = erp_users.id  
+                INNER JOIN ACTIVIDAD_ESTADOS 
+                    ON ACTIVIDAD.estado_id = ACTIVIDAD_ESTADOS.id 
+                LEFT JOIN PROYECTOS 
+                    ON ACTIVIDAD.item_id = PROYECTOS.id 
+                WHERE
+                    ACTIVIDAD.id = 24

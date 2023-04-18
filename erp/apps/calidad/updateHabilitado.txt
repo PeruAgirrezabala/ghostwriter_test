@@ -1,0 +1,3 @@
+UPDATE CALIDAD_SISTEMA 
+                SET habilitado = 'off' 
+                WHERE id = 28

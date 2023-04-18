@@ -1,0 +1,7 @@
+UPDATE USERS_DOC SET 
+                        nombre = 'CERTIFICADOS', 
+                        descripcion = '',
+                        erpuser_id = 97, 
+                        org_id = 7, 
+                        periodicidad_id = 5
+                    WHERE id =639

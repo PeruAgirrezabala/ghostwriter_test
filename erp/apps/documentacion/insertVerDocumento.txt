@@ -1,0 +1,8 @@
+INSERT INTO DOCUMENTACION_VERSIONES 
+                        (documento_id,
+                        doc_path,
+                        fecha_exp
+                        )
+                    VALUES (15,
+                    '/_DOCUMENTACION/DOCUMENTACION/DOC/2021/CAL_CERT_DECL_CE_02.doc',
+                    '2021-09-08')

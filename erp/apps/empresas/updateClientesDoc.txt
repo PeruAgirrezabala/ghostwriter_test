@@ -1,0 +1,12 @@
+INSERT INTO CLIENTES_DOC_INFO 
+                (nombre,
+                descripcion,
+                doc_path,
+                fecha_subida,
+                cliente_id
+                )
+            VALUES ('prueba01',
+            'prueba01',
+            'ERP/CLIENTES/PULL_AND_BEAR_ESPAÑA_SA/consoleslogs.txt',
+            now(),
+            254)

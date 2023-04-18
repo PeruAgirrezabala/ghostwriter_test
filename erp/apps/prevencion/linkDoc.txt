@@ -1,0 +1,8 @@
+INSERT INTO CLIENTES_DOC_ENVIAR 
+                            (doc_id,
+                            cliente_id,
+                            tipo_doc) 
+                       VALUES (
+                            '29', 
+                            '6', 
+                            'cli')

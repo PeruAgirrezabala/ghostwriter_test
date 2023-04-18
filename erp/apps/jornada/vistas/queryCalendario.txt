@@ -1,0 +1,27 @@
+SELECT 
+                    CALENDARIO.id,
+                    CALENDARIO.fecha, 
+                    CALENDARIO.horas,
+                    erp_users.nombre,
+                    JORNADAS.id,
+                    erp_users.firma_path,
+                    CALENDARIO.festivo,
+                    CALENDARIO.tipo_jornada,
+                    JORNADAS.proyecto_id,
+                    PROYECTOS.nombre 
+                FROM 
+                    CALENDARIO, JORNADAS, erp_users, PROYECTOS
+                WHERE 
+                    CALENDARIO.id = JORNADAS.calendario_id 
+                AND
+                    JORNADAS.user_id = erp_users.id 
+                AND 
+                    MONTH(CALENDARIO.fecha) = 4 
+                AND 
+                    YEAR(CALENDARIO.fecha) = 2023
+                AND
+                    erp_users.id = 86
+                AND
+                    JORNADAS.proyecto_id=PROYECTOS.id
+                ORDER BY 
+                    CALENDARIO.fecha ASC

@@ -1,0 +1,16 @@
+UPDATE erp_users SET 
+                        nombre = 'Alaine',
+                        apellidos = 'Iribar Aranguren',
+                        user_name = 'alaine@genelek.com',
+                        user_email = 'alaine@genelek.com',
+                        telefono = '',
+                        empresa_id = 1, 
+                        NIF = '',
+                        role_id = 1, 
+                        firma_path = '',
+                        txartela = '34',
+                        activo = 'on',
+                        color = '#a57aff',
+                        avatar = ''
+                        
+                    WHERE id =96

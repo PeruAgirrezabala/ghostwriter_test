@@ -1,0 +1,4 @@
+SELECT CALIDAD_NOCONFORMIDADES.proyecto_id, COUNT(CALIDAD_NOCONFORMIDADES.id) as cant
+                                FROM CALIDAD_NOCONFORMIDADES 
+                                WHERE CALIDAD_NOCONFORMIDADES.proyecto_id=1327
+                                GROUP BY CALIDAD_NOCONFORMIDADES.proyecto_id

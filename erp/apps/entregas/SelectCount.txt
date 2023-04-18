@@ -1,0 +1,5 @@
+SELECT SUBSTR( ref, 4 ) AS nume
+                FROM ENTREGAS
+                WHERE YEAR( fecha_entrega ) = YEAR( NOW( ) )
+                ORDER BY nume DESC
+                LIMIT 1

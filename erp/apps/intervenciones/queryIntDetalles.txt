@@ -1,0 +1,19 @@
+SELECT 
+                            INTERVENCIONES_DETALLES.id,
+                            INTERVENCIONES_DETALLES.titulo,  
+                            INTERVENCIONES_DETALLES.descripcion,
+                            INTERVENCIONES_DETALLES.fecha,
+                            INTERVENCIONES_DETALLES.fecha_mod,
+                            INTERVENCIONES_DETALLES.H820,
+                            INTERVENCIONES_DETALLES.H208,
+                            INTERVENCIONES_DETALLES.Hviaje,
+                            erp_users.nombre,
+                            erp_users.apellidos
+                        FROM 
+                            INTERVENCIONES_DETALLES, erp_users
+                        WHERE
+                            INTERVENCIONES_DETALLES.erpuser_id = erp_users.id
+                        AND
+                            INTERVENCIONES_DETALLES.int_id = 9 
+                        ORDER BY 
+                            INTERVENCIONES_DETALLES.id ASC

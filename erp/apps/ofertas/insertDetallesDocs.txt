@@ -1,0 +1,11 @@
+INSERT INTO OFERTAS_DOC
+            ( titulo, 
+            descripcion,
+            oferta_id,
+            doc_path
+            )
+            SELECT titulo, 
+            descripcion,
+            851,
+            doc_path
+            FROM OFERTAS_DOC WHERE oferta_id =850

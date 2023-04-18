@@ -1,0 +1,12 @@
+INSERT INTO PROYECTOS_DOC 
+                (titulo,
+                descripcion,
+                doc_path,
+                grupo_id,
+                proyecto_id
+                )
+            VALUES ('',
+            '',
+            '/PROYECTOS/2020/M200029_CRUNIA_-_PALAFOLLS/recordatorio_CRUNIA_-_PALAFOLLS.txt',
+            ,
+            )

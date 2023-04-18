@@ -1,0 +1,11 @@
+SELECT 
+            PEDIDOS_PROV_DOC.id as docid,
+            PEDIDOS_PROV_DOC.nombre,
+            PEDIDOS_PROV_DOC.descripcion,
+            PEDIDOS_PROV_DOC.doc_path as path
+        FROM 
+            PEDIDOS_PROV_DOC
+        WHERE 
+            PEDIDOS_PROV_DOC.pedido_id = 6893 
+        ORDER BY 
+            PEDIDOS_PROV_DOC.id DESC

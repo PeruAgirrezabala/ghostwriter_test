@@ -1,0 +1,42 @@
+INSERT INTO PROYECTOS (
+                        ref, 
+                        nombre,
+                        descripcion,
+                        fecha_ini,
+                        fecha_entrega,
+                        fecha_fin,
+                        fecha_mod,
+                        cliente_id,
+                        ingenieria_id,
+                        dir_obra_id,
+                        promotor_id,
+                        estado_id,
+                        ubicacion,
+                        dir_instalacion,
+                        coordgps_instalacion,
+                        fecha_registro, 
+                        path, 
+                        tipo_proyecto_id
+                        
+                        )
+                    VALUES (
+                        'G220690',
+                        'test1',
+                        '',
+                        '2022-01-04',
+                        '',
+                        '',
+                        now(),
+                        215,
+                        215,
+                        null,
+                        null,
+                        5,
+                        '',
+                        '',
+                        '',
+                        now(),
+                        '/2022/G220690_test1/',
+                        1 
+                        
+                        )

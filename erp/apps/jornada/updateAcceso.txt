@@ -1,0 +1,5 @@
+UPDATE JORNADAS_ACCESOS 
+                    SET hora_entrada = '2023-03-20 14:00', 
+                        hora_Salida = '2023-03-20 17:00', 
+                        tipo_horas = 1  
+                    WHERE id = 17018

@@ -1,0 +1,10 @@
+SELECT 
+                        erp_users.id,
+                        erp_users.nombre,
+                        erp_users.apellidos
+                    FROM 
+                        erp_users
+                    WHERE
+                        erp_users.empresa_id=1
+                    ORDER BY
+                        erp_users.id ASC

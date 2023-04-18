@@ -1,0 +1,4 @@
+UPDATE CALIDAD_INDICADORES_VERSIONES SET 
+                        valor = '2'
+                    WHERE indicador_id = 5
+                    AND anyo=2021

@@ -1,0 +1,42 @@
+SELECT 
+                    ACTIVIDAD.id,
+                    ACTIVIDAD.ref,
+                    ACTIVIDAD.nombre,
+                    ACTIVIDAD.fecha,
+                    PROYECTOS.nombre,
+                    OFERTAS.titulo,
+                    ACTIVIDAD_ESTADOS.nombre, 
+                    ACTIVIDAD_ESTADOS.color,
+                    ACTIVIDAD_PRIORIDADES.nombre, 
+                    ACTIVIDAD_PRIORIDADES.color,
+                    ACTIVIDAD.categoria_id,
+                    PROYECTOS.ref,
+                    OFERTAS.ref,
+                    PROYECTOS.id,
+                    OFERTAS.id
+                FROM 
+                    ACTIVIDAD
+                LEFT JOIN CLIENTES A
+                    ON A.id = ACTIVIDAD.cliente_id
+                INNER JOIN ACTIVIDAD_ESTADOS
+                    ON ACTIVIDAD.estado_id = ACTIVIDAD_ESTADOS.id 
+                INNER JOIN ACTIVIDAD_PRIORIDADES 
+                    ON ACTIVIDAD_PRIORIDADES.id = ACTIVIDAD.prioridad_id
+                INNER JOIN erp_users AS CREADA
+                    ON ACTIVIDAD.responsable = CREADA.id 
+                LEFT JOIN erp_users AS ASIGNADO
+                    ON ACTIVIDAD.tecnico_id = ASIGNADO.id 
+                LEFT JOIN PROYECTOS
+                    ON ACTIVIDAD.item_id = PROYECTOS.id
+                LEFT JOIN OFERTAS 
+                    ON ACTIVIDAD.item_id = OFERTAS.id 
+                WHERE 
+                    ACTIVIDAD.estado_id < 3
+                AND
+                    ACTIVIDAD.estado_id < 4
+                AND
+                    ACTIVIDAD.prioridad_id > 2
+				AND
+					(ACTIVIDAD.fecha_fin<date('2023-04-04') AND ACTIVIDAD.estado_id!=3)
+                ORDER BY 
+                    ACTIVIDAD.fecha DESC

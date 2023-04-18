@@ -1,0 +1,18 @@
+UPDATE CALIDAD_PROCESOS SET 
+                        nombre = 'OFERTAS', 
+                        responsable = 'COMERCIAL', 
+                        dptos = 'COMERCIAL, TECNICO', 
+                        objeto = 'El objetivo de este proceso es la recopilación de las necesidades de los clientes, y determinar la viabilidad del proyecto de acuerdo a las condiciones del cliente y realizar una valoración económica del mismo. Para ello en ocasiones se podrán realizar asociaciones comerciales temporales que permitan garantizar el cumplimiento de todos los requisitos', 
+                        recursos = '', 
+                        entradas = '- Necesidades de los clientes
+- Invitación pública o privada a la presentación de la apertura de licitación del cliente
+- Disponibilidad de recursos económicos, técnicos, físicos y humanos', 
+                        salidas = '- Realizar la oferta
+- Entrega de información establecida dentro de los pliegos y peticiones
+- Recopilar información sobre recursos requeridos en el desarrollo y elaboración del servicio o producto solicitado por el cliente.', 
+                        registros = '- Ofertas
+- Factibilidad del proyecto', 
+                        procedimientos = '- Ficha proveedor
+- Lista reparaciones', 
+                        actividades = '' 
+                    WHERE id =1

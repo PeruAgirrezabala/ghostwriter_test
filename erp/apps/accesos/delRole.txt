@@ -1,0 +1,1 @@
+DELETE FROM erp_roles WHERE id = 13

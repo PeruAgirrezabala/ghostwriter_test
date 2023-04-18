@@ -1,0 +1,12 @@
+INSERT INTO CONTRATISTAS_PLATAFORMAS 
+                            (url,
+                            instalacion,
+                            user,
+                            pass,
+                            cliente_id) 
+                       VALUES (
+                            'https://sso-sela.achilles.com/SSO/Home/Login', 
+                            '', 
+                            'ione@genelek.com', 
+                            'Sistemas#2111', 
+                            238)

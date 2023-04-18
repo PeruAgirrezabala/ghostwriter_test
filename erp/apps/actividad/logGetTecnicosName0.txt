@@ -1,0 +1,3 @@
+SELECT id, nombre, apellidos, user_email
+                    FROM erp_users
+                WHERE id=86

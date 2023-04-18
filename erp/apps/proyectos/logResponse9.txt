@@ -1,0 +1,6 @@
+SELECT PROYECTOS_DOC.id, PROYECTOS_DOC.titulo, PROYECTOS_DOC.grupo_id
+                        FROM GRUPOS_DOC, PROYECTOS_DOC 
+                        WHERE GRUPOS_DOC.id = PROYECTOS_DOC.grupo_id
+                            AND GRUPOS_DOC.proyecto_id = 1350
+                            AND PROYECTOS_DOC.titulo='OF163-22  AYUNTAMIENTO ARTZENTALES PRESUPUESTO REPARACIÓN EDAR ARTZENTALES 10-06-22.pdf'
+                        AND GRUPOS_DOC.nombre = 'OFERTAS'

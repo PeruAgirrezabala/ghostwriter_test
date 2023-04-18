@@ -1,0 +1,10 @@
+SELECT 
+                                            OFERTAS.ref,
+                                            OFERTAS.id,
+                                            OFERTAS.titulo,
+                                            OFERTAS.n_ver,
+                                            OFERTAS.0_ver
+                                        FROM 
+                                            OFERTAS
+                                        WHERE
+                                            OFERTAS.id=855

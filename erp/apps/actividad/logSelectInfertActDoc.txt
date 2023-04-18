@@ -1,0 +1,3 @@
+INSERT INTO ACTIVIDAD_DOC (nombre, descripcion, actividad_id, doc_path)
+                SELECT nombre, descripcion, 418 as actividad_id, doc_path
+                FROM ACTIVIDAD_DOC WHERE actividad_id=417

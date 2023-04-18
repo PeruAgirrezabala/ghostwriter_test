@@ -1,0 +1,23 @@
+UPDATE ACTIVIDAD 
+                    SET
+                        responsable = 86, 
+                        fecha = '2021-03-02', 
+                        cliente_id = 215,
+                        instalacion = '', 
+                        nombre = 'Prueba sin asignar a asignado', 
+                        descripcion = 'vamoave666-7',
+                        estado_id = 1, 
+                        categoria_id = 10, 
+                        tarea_id = 10, 
+                        item_id = null, 
+                        prioridad_id = 1, 
+                        tecnico_id = 86, 
+                        facturable = 0, 
+                        imputable = 0, 
+                        fecha_factu = '',
+                        solucion = '',
+                        fecha_solucion = '',
+                        observaciones = '',
+                        fecha_mod = now(),
+                        fecha_fin = '2021-03-02'
+                WHERE id = 88

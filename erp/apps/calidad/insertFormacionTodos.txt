@@ -1,0 +1,11 @@
+INSERT INTO CALIDAD_FORMACION_DETALLES 
+                                (formacion_id,
+                                tecnico_id,
+                                descripcion,
+                                fecha) 
+                           VALUES (
+                                '5', 
+                                '87',
+                                'eseai',
+                                '2020-10-01'
+                            )

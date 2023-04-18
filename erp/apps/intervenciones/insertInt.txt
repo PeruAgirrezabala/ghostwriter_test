@@ -1,0 +1,30 @@
+INSERT INTO INTERVENCIONES (
+                    nombre,
+                    descripcion,
+                    ref, 
+                    fecha,
+                    fecha_mod,
+                    fecha_factu,
+                    proyecto_id,
+                    oferta_id,
+                    cliente_id,
+                    tecnico_id,
+                    instalacion,
+                    estado_id,
+                    facturable
+                    )
+                VALUES (
+                    '',
+                    '',
+                    'INT700002',
+                    '',
+                    now(),
+                    '',
+                    null,
+                    null,
+                    null,
+                    ,
+                    '',
+                    null,
+                    0
+                    )

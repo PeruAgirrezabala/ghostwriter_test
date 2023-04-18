@@ -1,0 +1,1 @@
+SELECT id, material_id, unidades, proyecto_id FROM PROYECTOS_MATERIALES WHERE id IN ('154','0')

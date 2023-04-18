@@ -1,0 +1,11 @@
+SELECT MATERIALES_STOCK.id,
+                                            MATERIALES_STOCK.material_id,
+                                            MATERIALES_STOCK.stock,
+                                            MATERIALES_STOCK.ubicacion_id,
+                                            MATERIALES_STOCK.proyecto_id,
+                                            MATERIALES_STOCK.pedido_detalle_id
+                                        FROM MATERIALES_STOCK
+                                            INNER JOIN PEDIDOS_PROV_DETALLES
+                                        ON MATERIALES_STOCK.pedido_detalle_id = PEDIDOS_PROV_DETALLES.id
+                                        WHERE MATERIALES_STOCK.proyecto_id=14
+                                        AND PEDIDOS_PROV_DETALLES.proyecto_id=11

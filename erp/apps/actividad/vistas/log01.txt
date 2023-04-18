@@ -1,0 +1,67 @@
+<table class="table table-striped table-condensed table-hover" id="tabla-detalles-act">
+    <thead>
+        <tr class="bg-dark">
+        <th>EST.</th>
+        <th>TITULO</th>
+        <th class="text-center">FECHA</th>
+        <th class="text-center">TÉCNICO</th>
+        <th class="text-center">HORAS TOTALES</th>
+        <th class="text-center">E</th>
+      </tr>
+    </thead>
+    <tbody>
+            <tr data-id='110'>
+                <td><span class="dot-red" title="No completado"></span></td>
+                <td>Mejorar  la visibilidad de la tabla de Actividades</td>
+                <td class='text-center'>2021-03-08</td>
+                <td class='text-center'>Alexander Altzibar Burgoa</td>
+                <td class='text-center'></td>
+                <td class='text-center'><button class='btn btn-danger btn-circle remove-detalle' data-id='110' title='Eliminar detalle'><img src='/erp/img/cross.png'></button></td>
+            </tr>
+        
+            <tr data-id='111'>
+                <td><span class="dot-yellow" title="A medias"></span></td>
+                <td>Integrar planner en el ERP</td>
+                <td class='text-center'>0000-00-00</td>
+                <td class='text-center'>Alexander Altzibar Burgoa</td>
+                <td class='text-center'></td>
+                <td class='text-center'><button class='btn btn-danger btn-circle remove-detalle' data-id='111' title='Eliminar detalle'><img src='/erp/img/cross.png'></button></td>
+            </tr>
+        
+            <tr data-id='112'>
+                <td><span class="dot-green" title="Completado"></span></td>
+                <td>[MATERIAL] Pedidos, Material sin tarifa: Aparece sin nombre</td>
+                <td class='text-center'>2021-03-08</td>
+                <td class='text-center'>Alexander Altzibar Burgoa</td>
+                <td class='text-center'></td>
+                <td class='text-center'><button class='btn btn-danger btn-circle remove-detalle' data-id='112' title='Eliminar detalle'><img src='/erp/img/cross.png'></button></td>
+            </tr>
+        
+            <tr data-id='113'>
+                <td><span class="dot-yellow" title="A medias"></span></td>
+                <td>[OFERTAS] Controlar que sea una ampliación de la instalación</td>
+                <td class='text-center'>2021-03-08</td>
+                <td class='text-center'>Alexander Altzibar Burgoa</td>
+                <td class='text-center'></td>
+                <td class='text-center'><button class='btn btn-danger btn-circle remove-detalle' data-id='113' title='Eliminar detalle'><img src='/erp/img/cross.png'></button></td>
+            </tr>
+        
+            <tr data-id='114'>
+                <td><span class="dot-red" title="No completado"></span></td>
+                <td>Control de Sesiones y acceso a diferentes pestañas.</td>
+                <td class='text-center'>2021-03-08</td>
+                <td class='text-center'>Alexander Altzibar Burgoa</td>
+                <td class='text-center'></td>
+                <td class='text-center'><button class='btn btn-danger btn-circle remove-detalle' data-id='114' title='Eliminar detalle'><img src='/erp/img/cross.png'></button></td>
+            </tr>
+        
+            <tr data-id='241'>
+                <td><span class="dot-red" title="No completado"></span></td>
+                <td>asdasdasda</td>
+                <td class='text-center'>2021-03-24</td>
+                <td class='text-center'>Alexander Altzibar Burgoa</td>
+                <td class='text-center'></td>
+                <td class='text-center'><button class='btn btn-danger btn-circle remove-detalle' data-id='241' title='Eliminar detalle'><img src='/erp/img/cross.png'></button></td>
+            </tr>
+        </tbody>
+</table>

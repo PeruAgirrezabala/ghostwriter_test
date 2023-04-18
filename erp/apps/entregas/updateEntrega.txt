@@ -1,0 +1,8 @@
+UPDATE ENTREGAS 
+                SET descripcion = '',  
+                    fecha_pruebas = '2021-04-29', 
+                    fecha_entrega = '2021-05-07', 
+                    fecha_realentrega = '',  
+                    estado_id = 5,
+                    instalacion_id = 107
+                WHERE id = 741

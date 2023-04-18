@@ -1,0 +1,6 @@
+DELETE FROM 
+                        CALIDAD_FORMACION_DETALLES
+                   WHERE 
+                       CALIDAD_FORMACION_DETALLES.tecnico_id =91
+                   AND 
+                       CALIDAD_FORMACION_DETALLES.formacion_id=1

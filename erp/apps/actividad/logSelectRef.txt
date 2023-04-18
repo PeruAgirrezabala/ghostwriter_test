@@ -1,0 +1,1 @@
+SELECT SUBSTR(ref,6,5) FROM ACTIVIDAD WHERE YEAR(fecha) = YEAR('2022-11-21') order by SUBSTR(ref,6,5) desc LIMIT 1

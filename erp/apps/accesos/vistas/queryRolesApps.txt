@@ -1,0 +1,15 @@
+SELECT 
+                    erp_roles_apps.id,
+                    erp_roles.nombre,
+                    erp_apps.nombre,
+                    erp_apps.ubicacion 
+                FROM 
+                    erp_roles_apps, erp_roles, erp_apps  
+                WHERE 
+                    erp_roles.id = erp_roles_apps.role_id 
+                AND
+                    erp_apps.id = erp_roles_apps.app_id 
+                AND
+                    erp_roles.id = 15
+                ORDER BY 
+                    erp_apps.ubicacion ASC, erp_apps.id ASC

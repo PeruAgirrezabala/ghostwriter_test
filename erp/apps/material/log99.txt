@@ -1,0 +1,1 @@
+INSERT INTO erp_activity (user_id, fecha, descripcion ) VALUES(, now(), 'Pedido 6541 actualizado')

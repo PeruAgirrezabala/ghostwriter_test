@@ -1,0 +1,8 @@
+INSERT INTO PLANTILLAS_VERSIONES 
+                        (plantilla_id,
+                        doc_path,
+                        fecha_exp
+                        )
+                    VALUES (23,
+                    '/_DOCUMENTACION/PRL/PLANTILLAS/2019/PRL_COORD_12_NO_FORMACION_20h.doc',
+                    '2019-10-07')

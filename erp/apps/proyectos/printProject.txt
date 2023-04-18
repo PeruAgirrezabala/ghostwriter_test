@@ -1,0 +1,38 @@
+SELECT 
+                PROYECTOS.ref,
+                PROYECTOS.nombre,
+                PROYECTOS.descripcion,
+                PROYECTOS.fecha_ini,
+                PROYECTOS.fecha_entrega,
+                PROYECTOS.fecha_fin,
+                PROYECTOS.fecha_mod,
+                PROYECTOS_ESTADOS.nombre, 
+                CLIENTES.nombre, 
+                CLIENTES.img,
+                PROYECTOS_ESTADOS.color, 
+                PROYECTOS_ESTADOS.id,
+                CLIENTES.id,
+                PROYECTOS.path, 
+                TIPOS_PROYECTO.nombre,
+                TIPOS_PROYECTO.id, 
+                TIPOS_PROYECTO.color,
+                PROYECTOS.proyecto_id,
+                PROYECTOS.ubicacion,
+                PROYECTOS.dir_instalacion,
+                PROYECTOS.coordgps_instalacion,
+                CLIENTES.direccion,
+                CLIENTES.poblacion,
+                CLIENTES.provincia,
+                CLIENTES.telefono,
+                CLIENTES.email,
+                CLIENTES.cp
+            FROM 
+                PROYECTOS, CLIENTES, PROYECTOS_ESTADOS, TIPOS_PROYECTO  
+            WHERE 
+                PROYECTOS.cliente_id = CLIENTES.id
+            AND 
+                PROYECTOS.estado_id = PROYECTOS_ESTADOS.id
+            AND 
+                PROYECTOS.tipo_proyecto_id = TIPOS_PROYECTO.id
+            AND
+                PROYECTOS.id = 1357

@@ -1,0 +1,9 @@
+INSERT INTO TAREAS 
+                            (nombre,
+                            descripcion,
+                            perfil_id) 
+                       VALUES (
+                            'Mantenimiento',
+                            'Mantenimiento',
+                            2
+                        )

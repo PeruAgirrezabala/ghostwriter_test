@@ -1,0 +1,33 @@
+SELECT 
+                    PROYECTOS.id,
+                    PROYECTOS.ref,
+                    PROYECTOS.nombre,
+                    PROYECTOS.mant_year_visits,
+                    PROYECTOS.mant_days_visit,
+                    PROYECTOS.mant_tecs_visit,
+                    PROYECTOS_ESTADOS.nombre, 
+                    CLIENTES.nombre, 
+                    CLIENTES.img,
+                    PROYECTOS_ESTADOS.color, 
+                    TIPOS_PROYECTO.nombre, 
+                    TIPOS_PROYECTO.color,
+                    PROYECTOS.facturado,
+                    PROYECTOS.recordatorio
+                FROM 
+                    PROYECTOS, CLIENTES, PROYECTOS_ESTADOS, TIPOS_PROYECTO 
+                WHERE 
+                    PROYECTOS.cliente_id = CLIENTES.id
+                AND 
+                    PROYECTOS.estado_id = PROYECTOS_ESTADOS.id 
+                AND 
+                    PROYECTOS.tipo_proyecto_id = TIPOS_PROYECTO.id 
+                AND
+                    PROYECTOS.tipo_proyecto_id = 2  
+                AND
+                        (PROYECTOS.estado_id = 3 
+                     OR 
+                        PROYECTOS.estado_id = 6)
+                ORDER BY 
+                    PROYECTOS.fecha_mod DESC,
+                    PROYECTOS.fecha_ini DESC 
+                LIMIT 0, 10

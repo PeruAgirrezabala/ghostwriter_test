@@ -1,0 +1,15 @@
+
+[Usuarios]
+
+- domain:	genelek.local
+- user:		julendiez@genelek.local	
+- pwd:		Genelek
+
+==========
+
+[CORREO]
+
+- link:		http://webmail.genelek.com
+
+- user:		julendiez@genelek.com
+- pwd:		Genelek@19

@@ -1,0 +1,7 @@
+INSERT INTO INTERVENCIONES_MATERIALES (
+                    material_id,
+                    int_id
+                    )
+                VALUES (
+                    1,
+                    1)

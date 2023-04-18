@@ -1,0 +1,18 @@
+SELECT 
+                    erp_users.id,
+                    erp_users.txartela,
+                    erp_users.nombre,
+                    erp_users.apellidos,
+                    erp_users.user_name,
+                    erp_users.user_email,
+                    erp_roles.nombre,
+                    erp_users.activo
+                FROM 
+                    erp_users, erp_roles
+                WHERE 
+                    erp_users.role_id = erp_roles.id 
+                  
+                AND
+                    erp_users.empresa_id = 1
+                ORDER BY 
+                    erp_users.nombre ASC, erp_users.apellidos ASC

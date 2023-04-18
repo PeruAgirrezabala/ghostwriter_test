@@ -1,0 +1,3 @@
+UPDATE MATERIALES 
+                        SET MATERIALES.stock = 2
+                        WHERE MATERIALES.id = 5561

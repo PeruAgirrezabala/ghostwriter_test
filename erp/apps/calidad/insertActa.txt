@@ -1,0 +1,9 @@
+INSERT INTO CALIDAD_ACTAS 
+                            (nombre,
+                            descripcion,
+                            fecha) 
+                       VALUES (
+                            'ACTA COMITE DE CALIDAD - MEDIADOS 2023', 
+                            'Acta de la auditoria interna a mediados de año para ver la evolución de la empresa',
+                            '2023-07-10'
+                        )

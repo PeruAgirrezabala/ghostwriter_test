@@ -1,0 +1,19 @@
+INSERT INTO ENVIOS_CLI
+                    (
+                    transportista_id, 
+                    nombre, 
+                    descripcion, 
+                    tecnico_id, 
+                    fecha, 
+                    ref,
+                    cliente_id,
+                    estado_id, 
+                    proyecto_id, 
+                    path,
+                    gastos_envio,
+                    portes,
+                    tipo_envio_id) 
+                    VALUES 
+                    (
+                    1,"Prueba entrega bunge01","",86,"2021-03-29","ALB210001",5,2,1,"/2021/ALB210001",0,1,1
+                    )

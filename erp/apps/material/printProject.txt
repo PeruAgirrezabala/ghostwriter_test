@@ -1,0 +1,16 @@
+SELECT 
+                PROVEEDORES.id,
+                PROVEEDORES.nombre,
+                PROVEEDORES.direccion,
+                PROVEEDORES.poblacion,
+                PROVEEDORES.provincia,
+                PROVEEDORES.telefono,
+                PROVEEDORES.email,
+                PROVEEDORES.cp,
+                PROVEEDORES.pais,
+                PROVEEDORES.contacto,
+                PROVEEDORES.email_pedidos
+            FROM 
+                PROVEEDORES
+            WHERE 
+                id = 21

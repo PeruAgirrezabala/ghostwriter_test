@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>PEDIDO</title>
+    <style>
+        @font-face {
+            font-family: SourceSansPro;
+            src: url(/erp/includes/pdf/SourceSansPro-Regular.ttf);
+          }
+
+          .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+
+          a {
+            color: #0087C3;
+            text-decoration: none;
+          }
+
+          body {
+            position: relative;
+            width: 21cm;  
+            height: 29.7cm; 
+            margin: 0 auto; 
+            color: #555555;
+            background: #FFFFFF; 
+            font-family: Arial, sans-serif; 
+            font-size: 11px; 
+            font-family: SourceSansPro;
+          }
+
+          #header {
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #AAAAAA;
+            max-width: 500px;
+            height: 150px;
+          }
+
+          #logo {
+            position: relative;
+            float: left;
+            display: inline-block;
+            margin-top: 8px;
+          }
+
+          #logo img {
+            height: 140px;
+          }
+
+          #company {
+            position: relative;
+            display: inline-block;
+            float: right;
+            margin-left: 380px;
+            /*text-align: right;*/
+          }
+          #company img {
+            /*height: 30px;*/
+            width: 100%;
+          }
+
+          #details {
+            margin-bottom: 50px;
+          }
+
+          #client {
+            padding-left: 6px;
+            border-left: 6px solid #0087C3;
+          }
+
+          .to {
+            font-size: 14px;
+            magin-top: 20px;
+            margin-bottom: 5px;
+          }
+          .address {
+            margin-bottom: 5px;
+          }
+          .email {
+            margin-bottom: 15px;
+          }
+
+          h2.name {
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+          }
+          
+          
+          #invoice {
+            /*text-align: right;*/
+            /*margin-left: 500px;*/
+          }
+
+          td.ri h1, td.iz h1 {
+            color: #0087C3;
+            font-size: 18px;
+            line-height: 14px;
+            font-weight: normal;
+            margin: 0  0 10px 0;
+            margin-bottom: 10px;
+          }
+          
+          td.iz h2 {
+              margin-bottom: 5px;
+          }
+
+          td.ri h2 {
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+            margin-top: 10px;
+          }
+         
+          
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-bottom: 20px;
+            /*table-layout:fixed;*/
+            /*max-width: 500px;*/
+          }
+
+          table th,
+          table td {
+            padding: 5px;
+            background: #EEEEEE;
+            text-align: center;
+            border-bottom: 1px solid #FFFFFF;
+            word-wrap: break-word;         
+            overflow-wrap: break-word; 
+            font-size: 11px;
+          }
+
+/*
+          table th {
+            white-space: nowrap;        
+            font-weight: normal;
+          }
+*/
+          table td {
+            text-align: right;
+            white-space: pre-line;        
+          }
+
+          table td h3{
+            color: #0087C3;
+            font-size: 11px;
+            font-weight: normal;
+            margin: 0 0 2px 0;
+          }
+
+          table .no {
+            color: #FFFFFF;
+            font-size: 11px;
+            background: #0087C3;
+            width: 20%;
+            max-width: 20%;
+            text-align: left;
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -webkit-pre-wrap; /*Chrome & Safari */ 
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            white-space: pre-wrap;       /* css-3 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            word-break: break-all;
+            white-space: normal;
+            
+          }
+
+          table .desc {
+            text-align: left;
+            width: auto;
+            font-size: 11px;
+            width: 36%;
+            max-width: 46%;
+          }
+          
+          table .fab {
+            text-align: left;
+            width: auto;
+            font-size: 11px;
+            width: 10%;
+            max-width: 10%;
+          }
+
+          table .unit {
+            background: #DDDDDD;
+            font-size: 11px;
+            text-align: center;
+          }
+
+          table .qty, table .pvp, table .dto {
+              font-size: 11px;
+              width: 10%;
+              max-width: 10%;
+          }
+
+          table .total {
+            background: #0087C3;
+            color: #FFFFFF;
+            font-size: 11px;
+            width: 8%;
+            max-width: 8%;
+          }
+
+          table td.unit,
+          table td.qty {
+            text-align: center;
+          }
+
+          table tbody tr:last-child td {
+            border: none;
+          }
+
+          table tfoot td {
+            /*padding: 10px 20px; */
+            background: #FFFFFF;
+            border-bottom: none;
+            font-size: 12px;
+            /*white-space: nowrap; */
+            border-top: 1px solid #AAAAAA; 
+          }
+
+          table tfoot tr:first-child td {
+            border-top: none; 
+          }
+
+          table tfoot tr:last-child td {
+            border-top: 1px solid #AAAAAA; 
+
+          }
+          .footerfondo {
+              background: #0087C3;
+              color: #FFFFFF;
+          }
+          .total-final {
+                border-top: 1px solid #AAAAAA; 
+                font-weight: bolder;
+          }
+
+          table tfoot tr td:first-child {
+            border: none;
+            padding-top: 20px;            
+          }
+
+          #thanks{
+            font-size: 12px;
+            margin-bottom: 50px;
+          }
+
+          #notices{
+            padding-left: 6px;
+            border-left: 6px solid #0087C3;  
+          }
+
+          #notices .notice {
+            font-size: 12px;
+          }
+
+          .footer {
+            color: #777777;
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            bottom: 0;
+            border-top: 1px solid #AAAAAA;
+            padding: 8px 0;
+            text-align: center;
+          }
+        
+          table.titulo {
+            width: 700px !important;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-bottom: 20px;
+            table-layout:fixed;
+          }
+          table.titulo td.iz {
+            width:50%;
+            text-align: left;
+          }
+          table.titulo td.ri {
+            width:50%;
+            text-align: right;
+          }
+          
+          
+
+    </style>
+  </head>
+  <body>
+        <div id="header" class="clearfix">
+      <div id="logo">
+        <img src="http://192.168.3.109/erp/img/logo_pdf.png">
+        <div id="company">
+            <h2 class="name">GENELEK SISTEMAS S.L.</h2>
+            <div>Pol. Ind. A.D.U. 21<br>Plaza Urola, s/n 20750<br>Zumaia, Gipuzkoa </div>
+            <!--<div>48940 - Leioa</div>-->
+            <div>943 14 33 11</div>
+            <div><a href="mailto:genelek@genelek.com">genelek@genelek.com</a></div>
+        </div>
+      </div>
+      
+    </div>
+    <div>
+      
+                    <div id='details' class='clearfix'>
+                        <table class='titulo'>
+                              <tr>
+                                  <td class='iz'>
+                                        <h1>REF. SU OFERTA: </h1>
+                                        <div class='to'>A/TO:</div>
+                                        <h2 class='name'>SIEMENS</h2>
+                                        <div class='address'>c/ Orense, 2</div>
+                                        <div class='email'><a href='mailto:'></a></div>
+                                        <div class='to'>At./Att.:</div>
+                                        <h2 class='name'>JESSICA FERNANDEZ</h2>
+                                  </td>
+                                  <td class='ri'>
+                                        <h1>PEDIDO Nº: P190091</h1>
+                                        <h2>Fecha: 2019-06-21</h2>
+                                        <h2>Lugar de Entrega:</h2>
+                                        <h2 class='name'>GENELEK SISTEMAS S.L.</h2>
+                                        <p class='address'>Pol. Ind. A.D.U. 21<br>Plaza Urola, s/n 20750<br>Zumaia, Gipuzkoa</p>
+                                  </td>
+                              </tr>
+                        </table>
+                          
+                    </div>
+                    
+                    <table border='0' cellspacing='0' cellpadding='0'>
+                        <thead>
+                            <tr>
+                            <th class='no'>REF</th>
+                            <th class='desc'>MATERIAL</th>
+                            <th class='qty'>CANTIDAD</th>
+                            <th class='pvp'>PVP</th>
+                            <th class='dto'>DTO</th>
+                            <th class='total'>TOTAL</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                     
+                    <tr>
+                        <td class='no'>6GK5101-1BC00-2AA3</td>
+                        <td class='desc'><h3>SCALANCE X101-1LD, CONVERTIDOR DE MEDIO INDUSTRIAL (ETHERNET NO GESTIONABLE  CON 1 PUERTO RJ45 de 10/100Mbit/s, 1 PUERTO  DE 100Mbit/s PARA FIBRA OPTIBA MONOMODO BFOC, HASTA 26Km, LEDs DE DIAGNOSTICO,</h3></td>
+                        <td class='qty'>1</td>
+                        <td class='unit'>471.24€</td>
+                        <td class='unit'>0%, 0.00%, 0.00% </td>
+                        <td class='total'>471.24€</td>
+                    </tr>
+                 
+                    <tr>
+                        <td class='no'>6GK7243-8RX30-0XE0</td>
+                        <td class='desc'><h3>SIMATIC NET, CP 1243-8 IRC, PROCESADOR DE COMUNICACIONES PARA CONECTAR UN SIMATIC S7-1200 A UN SISTEMA DE TELECONTROL PROFESIONAL PARA SINAUT ST7</h3></td>
+                        <td class='qty'>1</td>
+                        <td class='unit'>415.74€</td>
+                        <td class='unit'>0%, 0.00%, 0.00% </td>
+                        <td class='total'>415.74€</td>
+                    </tr>
+                 
+                    <tr>
+                        <td class='no'>6ES7231-4HF32-0XB0</td>
+                        <td class='desc'><h3>SIMATIC S7-1200, ENTRADA ANALOGICA, SM 1231, 8 AI, +/-10V, +/-5V, +/-2.5V, ó 0-20 mA 12 Bit + SEÑAL ó (13 Bit ADC)</h3></td>
+                        <td class='qty'>1</td>
+                        <td class='unit'>250.17€</td>
+                        <td class='unit'>0%, 0.00%, 0.00% </td>
+                        <td class='total'>250.17€</td>
+                    </tr>
+                 
+                    <tr>
+                        <td class='no'>6ES7221-1BH32-0XB0</td>
+                        <td class='desc'><h3>'SIMATIC S7-1200, MODULO DE ENTRADAS DIGITALES SM 1221, 16 ED  24V DC,</h3></td>
+                        <td class='qty'>1</td>
+                        <td class='unit'>118.89€</td>
+                        <td class='unit'>0%, 0.00%, 0.00% </td>
+                        <td class='total'>118.89€</td>
+                    </tr>
+                 
+                    <tr>
+                        <td class='no'>6ES7214-1AG40-0XB0</td>
+                        <td class='desc'><h3>SIMATIC S7-1200, CPU 1214C, CPU COMPACTA, DC/DC/DC, PERIFERIA INTEGRADA E/S:14ED 24V DC- 10SD 24VDC- 2EA  0 - 10VDC, ALIMENTACION : DC 20,4 -28,8 V DC, MEMORIA DE PROGRAMA/DATOS 75 KB.</h3></td>
+                        <td class='qty'>1</td>
+                        <td class='unit'>279.10€</td>
+                        <td class='unit'>0%, 0.00%, 0.00% </td>
+                        <td class='total'>279.10€</td>
+                    </tr>
+                 
+                    <tr>
+                        <td class='no'>6AV2123-2GB03-0AX0</td>
+                        <td class='desc'><h3>SIMATIC HMI KTP700 BASIC PANEL MANDO POR TECLADO/TACTIL, PANTALL TFT 7, 65536 COLORES INTERFAZ PROFINET CONFIG. WinCC BASIC V13/ STEP7 Basic V13,</h3></td>
+                        <td class='qty'>1</td>
+                        <td class='unit'>505.00€</td>
+                        <td class='unit'>0%, 0.00%, 0.00% </td>
+                        <td class='total'>505.00€</td>
+                    </tr>
+                 
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td colspan='3' style='padding-top: 20px;'></td>
+                        <td colspan='2' style='padding-top: 20px;' class='footerfondo'>SUBTOTAL</td>
+                        <td style='padding-top: 20px;' class='footerfondo'>2,040.14€</td>
+                      </tr>
+                      <!--
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='footerfondo'>IVA 21%</td>
+                        <td class='footerfondo'>428.43€</td>
+                      </tr>
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='total-final footerfondo'>TOTAL</td>
+                        <td class='total-final footerfondo'>2,468.57€</td>
+                      </tr>
+                      -->
+                    </tfoot>
+                </table> 
+            <div id="thanks"></div>
+      <div id="notices">
+        <div>Plazo de entrega: URGENTE. MÁQUINA PARADA</div>
+        <div style="color: #f4df42 !important;">Forma de pago: 60 DiAS F.F. FIN DE MES</div>
+      </div>
+    </div>
+    <div class="footer">
+        GENELEK SISTEMAS S.L. - INGENIERÍA DE SISTEMAS / COGENERACIÓN
+    </div>
+  </body>
+</html>

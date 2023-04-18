@@ -1,0 +1,46 @@
+SELECT 
+                    ACTIVIDAD.id actid,
+                    ACTIVIDAD.ref,
+                    ACTIVIDAD.categoria_id,
+                    ACTIVIDAD_CATEGORIAS.nombre,
+                    ACTIVIDAD.item_id as item,
+                    ACTIVIDAD.nombre AS titulo,
+                    ACTIVIDAD.fecha,
+                    ACTIVIDAD.fecha_mod,
+                    CREADA.nombre,
+                    ACTIVIDAD_ESTADOS.nombre, 
+                    ACTIVIDAD_ESTADOS.color,
+                    ACTIVIDAD_PRIORIDADES.nombre, 
+                    ACTIVIDAD_PRIORIDADES.color,
+                    CLIENTES.nombre,
+                    ASIGNADO.nombre,
+                    ASIGNADO.id,
+                    (SELECT PROYECTOS.ref FROM PROYECTOS WHERE id = item),
+                    (SELECT OFERTAS.ref FROM OFERTAS WHERE id = item),
+                    (SELECT PROYECTOS.nombre FROM PROYECTOS WHERE id = item),
+                    (SELECT OFERTAS.titulo FROM OFERTAS WHERE id = item),
+                    TAREAS.nombre,
+                    TAREAS.id,
+                    CREADA.apellidos,
+                    ASIGNADO.apellidos,
+                    (SELECT sum(cantidad) FROM ACTIVIDAD_DETALLES_HORAS, ACTIVIDAD_DETALLES WHERE ACTIVIDAD_DETALLES_HORAS.actividad_detalle_id = ACTIVIDAD_DETALLES.id AND ACTIVIDAD_DETALLES.actividad_id = actid)
+                FROM 
+                    ACTIVIDAD
+                LEFT JOIN CLIENTES
+                    ON CLIENTES.id = ACTIVIDAD.cliente_id
+                INNER JOIN ACTIVIDAD_CATEGORIAS
+                    ON ACTIVIDAD.categoria_id = ACTIVIDAD_CATEGORIAS.id 
+                INNER JOIN TAREAS
+                    ON ACTIVIDAD.tarea_id = TAREAS.id 
+                INNER JOIN ACTIVIDAD_ESTADOS
+                    ON ACTIVIDAD.estado_id = ACTIVIDAD_ESTADOS.id 
+                INNER JOIN ACTIVIDAD_PRIORIDADES 
+                    ON ACTIVIDAD_PRIORIDADES.id = ACTIVIDAD.prioridad_id
+                INNER JOIN erp_users AS CREADA
+                    ON ACTIVIDAD.responsable = CREADA.id 
+                LEFT JOIN erp_users AS ASIGNADO
+                    ON ACTIVIDAD.tecnico_id = ASIGNADO.id 
+                WHERE 
+                    ASIGNADO.id = 86 
+                ORDER BY 
+                    ACTIVIDAD.fecha DESC

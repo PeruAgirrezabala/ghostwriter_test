@@ -1,0 +1,25 @@
+SELECT 
+                        id,
+                        nombre,
+                        direccion,
+                        poblacion,
+                        provincia,
+                        cp,
+                        pais,
+                        telefono,
+                        id as proveedor,
+                        (SELECT dto_prov FROM PROVEEDORES_DTO WHERE PROVEEDORES_DTO.fecha_val < now() AND proveedor_id = proveedor ORDER BY PROVEEDORES_DTO.fecha_val DESC, PROVEEDORES_DTO.id DESC LIMIT 1 ) as dto,
+                        descripcion,
+                        email,
+                        fax,
+                        contacto,
+                        email_pedidos,
+                        web,
+                        formaPago,
+                        CIF,
+                        homologado,
+                        plataforma,
+                        usuario,
+                        password
+                    FROM PROVEEDORES A
+                         ORDER By A.nombre ASC  LIMIT 0,10

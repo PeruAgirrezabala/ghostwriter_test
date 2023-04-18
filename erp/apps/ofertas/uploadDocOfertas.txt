@@ -1,0 +1,6 @@
+SELECT 
+                path 
+            FROM 
+                OFERTAS
+            WHERE 
+                id = 872

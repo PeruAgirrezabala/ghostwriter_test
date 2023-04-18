@@ -1,0 +1,13 @@
+INSERT INTO EMPRESAS_REGISTROS 
+                            (plataforma,
+                            usuario,
+                            password,
+                            descripcion,
+                            empresa_id) 
+                       VALUES (
+                            'https://es-new.ingrammicro.com/_layouts/CommerceServer/IM/MyAccount.aspx', 
+                            'BBBAAD', 
+                            'Sistemas@2111',
+                            '',
+                            1
+                        )

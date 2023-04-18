@@ -1,0 +1,17 @@
+UPDATE CLIENTES SET 
+                        nombre = 'TIRME', 
+                        direccion = 'Parque de Tecnologías Ambientales de Mallorca Ctra. de Sóller, km 8,2', 
+                        poblacion = 'PALMA DE MALLORCA', 
+                        provincia = 'MALLORCA', 
+                        cp = '07120', 
+                        pais = 'ESPAÑA', 
+                        telefono = '971435050', 
+                        NIF = '', 
+                        email = 'info@tirme.com', 
+                        contacto = '', 
+                        web = 'https://www.tirme.com/es/empresa_01pt1.html',
+                        URL_PRL = 'https://app.e-coordina.com/tirme', 
+                        URL_PRL_U = 'B75057778', 
+                        URL_PRL_P = 'U6cYt2tr9GnB'
+                        , img = '/erp/img/TIRME_logo.gif'
+                    WHERE id =170

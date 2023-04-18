@@ -1,0 +1,9 @@
+UPDATE PREVISIONES 
+                SET nombre = 'Gestión interna alex 01', 
+                    descripcion = 'aasdas',
+                    item_id = null, 
+                    tipo_prev = , 
+                    fecha_ini = '2021-02-25',  
+                    fecha_fin = '2021-02-26',  
+                    estado_id = 2
+                WHERE id = 93

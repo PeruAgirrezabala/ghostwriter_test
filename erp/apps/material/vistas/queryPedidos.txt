@@ -1,0 +1,35 @@
+SELECT 
+                    PEDIDOS_PROV.id,
+                    PEDIDOS_PROV.pedido_genelek,
+                    PEDIDOS_PROV.titulo,
+                    PROVEEDORES.nombre,
+                    PEDIDOS_PROV.fecha,
+                    PEDIDOS_PROV.fecha_entrega,
+                    erp_users.nombre,
+                    PROYECTOS.nombre,
+                    PEDIDOS_PROV_ESTADOS.nombre, 
+                    CLIENTES.nombre, 
+                    CLIENTES.img,
+                    PEDIDOS_PROV_ESTADOS.color,
+                    PEDIDOS_PROV.total,
+                    PEDIDOS_PROV.ref_oferta_prov,
+                    PEDIDOS_PROV.estado_id
+                FROM 
+                    PEDIDOS_PROV
+                INNER JOIN PEDIDOS_PROV_ESTADOS
+                    ON PEDIDOS_PROV.estado_id = PEDIDOS_PROV_ESTADOS.id 
+                INNER JOIN PROVEEDORES 
+                    ON PEDIDOS_PROV.proveedor_id = PROVEEDORES.id 
+                INNER JOIN erp_users 
+                    ON PEDIDOS_PROV.tecnico_id = erp_users.id 
+		LEFT JOIN PEDIDOS_PROV_DETALLES
+		    ON PEDIDOS_PROV_DETALLES.pedido_id = PEDIDOS_PROV.id 
+                LEFT JOIN PROYECTOS
+                    ON PEDIDOS_PROV.proyecto_id = PROYECTOS.id  
+                LEFT JOIN CLIENTES
+                    ON PEDIDOS_PROV_DETALLES.cliente_id = CLIENTES.id
+                 WHERE PEDIDOS_PROV_DETALLES.material_id = 9
+                GROUP BY 
+                    PEDIDOS_PROV.id 
+                ORDER BY 
+                    PEDIDOS_PROV.fecha DESC, PEDIDOS_PROV.pedido_genelek DESC

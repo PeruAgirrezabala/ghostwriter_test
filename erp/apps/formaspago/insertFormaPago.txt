@@ -1,0 +1,8 @@
+INSERT INTO FORMAS_PAGO 
+                            (nombre,
+                            datos,
+                            observaciones) 
+                       VALUES (
+                            'xx', 
+                            'xx', 
+                            'xx')

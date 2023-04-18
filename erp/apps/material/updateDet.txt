@@ -1,0 +1,22 @@
+UPDATE PEDIDOS_PROV_DETALLES 
+                            SET detalle_libre = '', 
+                                pvp = 208.32, 
+                                pedido_id = 6897,
+                                ref = 'P14211.',
+                                unidades = 0,  
+                                dto = 0.00, 
+                                fecha_recepcion = 'null', 
+                                fecha_entrega = '2022-10-25', 
+                                recibido = 1,
+                                dto_prov_activo = 1,
+                                dto_mat_activo = 0,
+                                dto_ad_activo = 0,
+                                dto_ad_prior = 0,
+                                iva_id = 4,
+                                cliente_id = 287, 
+                                descripcion = 'Posición anulada. Material obsoleto, no hay resposición. ' 
+                                , erp_userid = 84
+                                , proyecto_id = 1350
+                                
+                                , dto_prov_id = 5
+                            WHERE id = 21011

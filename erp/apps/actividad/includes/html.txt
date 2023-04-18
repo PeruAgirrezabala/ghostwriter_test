@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <title>IMPRIMIR INTERVENCIÓN </title>
+    <style>
+        @font-face {
+            font-family: SourceSansPro;
+            src: url(/erp/includes/pdf/SourceSansPro-Regular.ttf);
+          }
+
+            .clearfix:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+
+            a {
+              color: #0087C3;
+              text-decoration: none;
+            }
+
+            body {
+              position: relative;
+              width: 21cm;  
+              height: 29.7cm; 
+              margin: 0 auto; 
+              color: #555555;
+              background: #FFFFFF; 
+              font-family: Arial, sans-serif; 
+              font-size: 11px; 
+              font-family: SourceSansPro;
+            }
+
+            #header {
+              padding: 0px;
+              margin-bottom: 10px;
+              border-bottom: 1px solid #AAAAAA;
+              /*max-width: 500px;*/
+              /* height: 150px; */
+              /* background-color: #219ae0; */
+            }
+
+            #ref {
+                position: relative;
+                float: left;
+                display: inline-block;
+                margin-top: 8px;
+                /* margin-right: 1%; */
+                width: 37%;
+                min-height: 94px;
+                /* line-height: 94px; */
+                font-size: 40px;
+                padding: 10px;
+                /* background-color: #219ae0; */
+                text-align: left;
+            }
+
+            #ref img {
+                width: 180px;
+            }
+
+            #company {
+              position: relative;
+              display: inline-block;
+              float: right;
+              /* margin-left: 380px; */
+              margin-top: 8px;
+              width: 57%;
+              height: 140px;
+              text-align: right;
+              padding: 10px;
+              /*background-color: #219ae0;*/
+              /*color: #ffffff;*/
+            }
+            #company img {
+              /*height: 30px;*/
+              /*width: 100%;*/
+            }
+            #company a {
+              /*color: #ffffff;*/
+            }
+            #info {
+                width: 49%;
+                display: inline-block;
+                position: relative;
+                vertical-align: top;
+                font-size: 14px;
+            }
+            #logo {
+                width: 49%;
+                display: inline-block;
+                position: relative;
+                vertical-align: top;
+                text-align: left;
+                height: 100px;
+            }
+            #logo img {
+                max-height: 100px;
+                max-width: 50%;
+                border: solid #ffffff;
+                border-width: 12px;
+                background-color: #ffffff;
+            }
+
+            #details {
+              margin-bottom: 50px;
+              max-width: 21cm;
+              width: 21cm;
+            }
+            .two-column {
+                width: 100%;
+                display: inline-block;
+                height: 200px;
+                vertical-align: top;
+                border: solid #cccccc 1px;
+                padding-left: 5px;
+            }
+            .two-column h3 {
+                margin-top: 8px;
+                margin-bottom: 8px;
+            }
+            .datos {
+                color:#999999;
+                padding-left: 2px;
+                font-weight: 100;
+            }
+          
+            #details h1 {
+                color: #555555;
+                text-align: left;
+                font-size: 25px;
+                margin-top: 0px;
+                margin-bottom: 10px;
+                word-break: break-word;
+            }
+
+            #client {
+              padding-left: 6px;
+              border-left: 6px solid #0087C3;
+            }
+
+            .to {
+              font-size: 14px;
+              magin-top: 20px;
+              margin-bottom: 5px;
+            }
+            .address {
+              margin-bottom: 5px;
+            }
+            .email {
+              margin-bottom: 15px;
+            }
+
+            h2.name {
+              /*font-size: 14px;*/
+              font-weight: normal;
+              margin: 0;
+            }
+            h2.titdetalles {
+                font-size: 12px;
+                /*font-size: 1.17em;*/
+                font-weight: normal;
+                margin: 0;
+                /*border-bottom: solid #AAAAAA 1px;*/
+                line-height: 25px;
+            }
+            h2.tithoras {
+                font-size: 11px;
+                font-weight: normal;
+                margin: 0;
+                line-height: 15px;
+                font-weight: bold;
+            }
+
+
+            #invoice {
+              /*text-align: right;*/
+              /*margin-left: 500px;*/
+            }
+
+            td.ri h1, td.iz h1 {
+                color: #0087C3;
+                font-size: 18px;
+                line-height: 14px;
+                font-weight: normal;
+                margin: 0  0 10px 0;
+                margin-bottom: 10px;
+            }
+
+            td.iz h2 {
+                margin-bottom: 0px;
+            }
+            td.iz p {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                line-height: 14px;
+                padding: 5px;
+                padding-bottom: 10px;
+                padding-top: 5px;
+                /* padding: 5px; */
+                background: #EEEEEE;
+                font-size: 14px;
+            }
+
+            td.ri h2 {
+              font-size: 14px;
+              font-weight: normal;
+              margin: 0;
+              margin-top: 10px;
+            }
+
+            table {
+              width: 100%;
+              border-collapse: collapse;
+              border-spacing: 0;
+              margin-bottom: 20px;
+              /*table-layout:fixed;*/
+              /*max-width: 500px;*/
+            }
+
+            table th,
+            table td{
+              padding: 0px;
+              /*background: #EEEEEE;*/
+              text-align: center;
+              word-wrap: break-word;         
+              overflow-wrap: break-word; 
+              font-size:11px;
+/*              font-size: 1.17em;*/
+            }
+
+  /*
+            table th {
+              white-space: nowrap;        
+              font-weight: normal;
+            }
+  */
+            table td {
+              text-align: right;
+              vertical-align: top;
+            }
+            .text-center {
+                text-align: center;
+            }
+            .text-left {
+                text-align: left;
+            }
+
+            table td h3{
+              color: #555555;
+              font-size: 11px;
+              font-weight: normal;
+/*            margin: 0 0 2px 0;*/
+              margin-top: 8px;
+              margin-bottom: 8px;
+            }
+
+            table .no {
+              color: #FFFFFF;
+              font-size: 11px;
+              background: #0087C3;
+              width: 30%;
+              max-width: 30%;
+              text-align: left;
+              white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+              white-space: -webkit-pre-wrap; /*Chrome & Safari */ 
+              white-space: -pre-wrap;      /* Opera 4-6 */
+              white-space: -o-pre-wrap;    /* Opera 7 */
+              white-space: pre-wrap;       /* css-3 */
+              word-wrap: break-word;       /* Internet Explorer 5.5+ */
+              word-break: break-all;
+              white-space: normal;
+
+            }
+
+            table .desc {
+              text-align: left;
+              width: auto;
+              font-size: 11px;
+              width: 60%;
+              max-width: 60%;
+            }
+
+            table .fab {
+              text-align: left;
+              width: auto;
+              font-size: 11px;
+              width: 10%;
+              max-width: 10%;
+            }
+
+            table .unit {
+              background: #DDDDDD;
+              font-size: 11px;
+              text-align: center;
+            }
+
+            table .qty, table .pvp, table .dto {
+                font-size: 11px;
+                width: 10%;
+                max-width: 10%;
+            }
+
+            table .total {
+              background: #0087C3;
+              color: #FFFFFF;
+              font-size: 11px;
+              width: 8%;
+              max-width: 8%;
+            }
+
+            table td.unit,
+            table td.qty {
+              text-align: center;
+            }
+
+            table tfoot td {
+              /*padding: 10px 20px; */
+              background: #FFFFFF;
+              border-bottom: none;
+              font-size: 12px;
+              /*white-space: nowrap; */
+              border-top: 1px solid #AAAAAA; 
+            }
+
+            table tfoot tr:first-child td {
+              border-top: none; 
+            }
+
+            table tfoot tr:last-child td {
+              border-top: 1px solid #AAAAAA; 
+
+            }
+            .footerfondo {
+                background: #0087C3;
+                color: #FFFFFF;
+            }
+            .total-final {
+                  border-top: 1px solid #AAAAAA; 
+                  font-weight: bolder;
+            }
+
+            table tfoot tr td:first-child {
+              border: none;
+              padding-top: 20px;            
+            }
+
+            #thanks{
+              font-size: 12px;
+              margin-bottom: 50px;
+            }
+
+            #notices{
+              padding-left: 6px;
+              border-left: 6px solid #0087C3;  
+            }
+
+            #notices .notice {
+              font-size: 12px;
+            }
+
+            .footer {
+                color: #777777;
+                width: 100%;
+                height: 30px;
+                position: absolute;
+                bottom: 0;
+                border-top: 1px solid #AAAAAA;
+                padding: 8px 0;
+                text-align: center;
+            }
+
+            table.titulo {
+                /*width: 700px !important;*/
+                /*border-collapse: collapse;*/
+                border-spacing: 5px;
+                margin-bottom: 20px;
+                margin-top: 20px;
+                table-layout:fixed;
+/*                border: solid 1px #AAAAAA;*/
+            }
+            table.titulo td {
+                padding: 5px;
+                padding-top: 15px;
+                border-right: solid 1px #AAAAAA;
+                border-top: solid 1px #AAAAAA;
+                border-bottom: solid 1px #AAAAAA;
+                border-left: solid 1px #AAAAAA;
+            }
+            table.titulo th {
+/*                width: 50%;*/
+                background: #EEEEEE;
+                border-right: solid 1px #AAAAAA;
+                border-top: solid 1px #AAAAAA;
+                border-bottom: solid 1px #AAAAAA;
+                border-left: solid 1px #AAAAAA;
+            }
+            table.titulo th.porcentaje10 {
+                width: 50px;
+            }
+            table.titulo th.porcentaje90 {
+                width: 350px;
+            }
+            table.tabla-horas {
+/*                width: 100% !important;*/
+                border-collapse: collapse;
+                border-spacing: 5px;
+                margin-bottom: 5px;
+                margin-top: 5px;
+                table-layout:fixed;
+/*                border: solid 1px #AAAAAA;*/
+            }
+            table.tabla-horas td {
+              padding: 2px;
+              background: #EEEEEE;
+              border-right: solid 1px #AAAAAA;
+              border-top: solid 1px #AAAAAA;
+              border-bottom: solid 1px #AAAAAA;
+              border-left: solid 1px #AAAAAA;
+              word-wrap: break-word;         
+              overflow-wrap: break-word; 
+              font-size: 11px;
+            }
+            table.tabla-horas th {
+                height: 20px;
+                font-size: 2px !important;
+                border-right: solid 1px #AAAAAA;
+                border-top: solid 1px #AAAAAA;
+                border-bottom: solid 1px #AAAAAA;
+                border-left: solid 1px #AAAAAA;
+            }
+            #cabecera-ISO9001 {
+/*                border: solid 1px #AAAAAA;*/
+                background: #EEEEEE;
+            }
+            #cabecera-ISO9001 td {
+                padding-right: 5px;
+                padding-left: 5px;
+                padding-bottom: 5px;
+                vertical-align: middle;
+            }
+            #cabecera-ISO9001 td p {
+                margin-top: 4px;
+                margin-bottom: 4px;
+            }
+            .text-center {
+                text-align: center;
+            }
+            #bloque2{
+                text-align: left;
+            }
+            #bloque2 td.iz{
+                padding: 5px;
+                border-left: solid 1px #AAAAAA;
+                border-top: solid 1px #AAAAAA;
+                border-bottom: solid 1px #AAAAAA;
+                border-right: solid 1px #AAAAAA;
+            }
+            #bloque2 td.der{
+                padding: 5px;
+                border-left: none;
+                border-right: solid 1px #AAAAAA;
+                border-top: solid 1px #AAAAAA;
+                border-bottom: solid 1px #AAAAAA;
+            }
+            #bloque2 td#espacio{
+                border-right: solid 1px #AAAAAA;
+                border-top: none;
+                border-bottom: none;
+            }
+/*            td > h3{
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }*/
+            #foot1{
+                color: #777777;
+                width: 100%;
+                height: 30px;
+                position: absolute;
+                bottom: 0;
+                border-top: 1px solid #AAAAAA;
+                padding: 8px 0;
+                text-align: center;
+            }
+            h1,h2,p,ul,li{
+                color: #555555;
+            }
+    </style>
+    <script>
+        $(document).ready(function() {
+           //window.print(); 
+        });
+    </script>
+  </head>
+  <body>
+      <table id="header" class='clearfix'>
+            <tbody>
+                <tr>
+                    <td width="250" height="60" class="text-left">
+                       <img src="http://192.168.3.108/erp/img/logo_pdf.png" height="124" width="180">
+                    </td>
+                    <td width="500" height="60">
+                        <h2 class="name">GENELEK SISTEMAS S.L.</h2>
+                        <p>Pol. Ind. A.D.U. 21<br>Plaza Urola, s/n 20750<br>Zumaia, Gipuzkoa</p>
+                        <p>943 14 33 11</p>
+                        <p><a href="mailto:genelek@genelek.com">genelek@genelek.com</a></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+      
+        <table id="cabecera-ISO9001" border="1">
+            <tbody>
+                <tr>
+                    <td width="560" rowspan="2" style="text-align: left;">
+                        <h1>PARTE DE INTERVENCIÓN</h1>
+                    </td>
+                    <td width="150" style="text-align: left;">
+                        <p>COD: PART-INT-01</p>
+                        <p>REV: 01</p>
+                        <p>FECHA: 2021-05-04</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <table id="bloque2" border="1">
+            <tbody>
+                <tr>
+                    <td width="346" class="two-column iz" rowspan="2" style="text-align: left;">
+                        <h3>Nº INTERVENCIÓN: <span class="datos">ACT210268</span></h3>
+                        <h3>DE GENELEK: <span class="datos">Ekhi Mitxelena Martiarena</span></h3>
+                        <h3>FECHA: <span class="datos">2021-05-04</span></h3>
+                        <h3>TOTAL HORAS DE VIAJE: <span class="datos"></span></h3>
+                        <h3>TOTAL HORAS 08:00-20:00: <span class="datos"></span></h3>
+                        <h3>TOTAL HORAS 20:00-08:00: <span class="datos"></span></h3>
+                    </td>
+                    <td id="espacio" width="15"></td>
+                    <td width="346" class="two-column der" style="text-align: left;">
+                        <h3>CLIENTE: <span class="datos">GENELEK SISTEMAS S.L.</span></h3>
+                        <h3>NIF: <span class="datos"></span></h3>
+                        <h3>DIRECCIÓN: <span class="datos">Pol. Ind. A.D.U. 21  Plaza Urola, s/n</span></h3>
+                        <h3>LOCALIDAD: <span class="datos">Zumaia(Gipuzkoa)</span></h3>
+                        <h3>PAÍS: <span class="datos">España</span></h3>
+                        <h3>TLFNO: <span class="datos">943143311</span></h3>
+                        <h3>INSTALACIÓN: <span class="datos">SIN ASIGNAR</span></h3>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="titulo" border="1">
+            <thead>
+                <tr>
+                    <th class="porcentaje10">
+                        <h2 class="titdetalles">FECHA</h2>
+                    </th>
+                    <th class="porcentaje90">
+                        <h2 class="titdetalles">DESCRIPCIÓN DEL TRABAJO REALIZADO</h2>
+                    </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>       <table class='titulo' border="1" style="border: double;border-color: #AAAAAA;">
+            <tbody>
+                <tr>
+                    <td width="350" height="60" class="text-left">
+                        Firma, el Resp. de Genelek:
+                        Ekhi Mitxelena Martiarena                        <br>
+                        <img src='http://192.168.3.108/erp/apps/jornada/signatures/julendiez.png' height="70" width="180">
+                    </td>
+                    <td width="350" height="60" class="text-left" style="border: double;border-color: #AAAAAA;">
+                        Firma, el Resp. del Cliente:
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p id="foot1" style="text-align:center;">GENELEK SISTEMAS S.L. - INGENIERÍA DE SISTEMAS / COGENERACIÓN</p>
+    </body>
+</html>

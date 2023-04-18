@@ -1,0 +1,17 @@
+INSERT INTO CALIDAD_INDICADORES 
+                            (nombre,
+                            descripcion,
+                            proceso_id,
+                            objetivo,
+                            calculo,
+                            resultado,
+                            valor)
+                       VALUES (
+                            'aa', 
+                            'aa', 
+                            1, 
+                            'aa', 
+                            'aa', 
+                            '1',
+                            'aa'
+                        )

@@ -1,0 +1,11 @@
+SELECT 
+                                    MATERIALES.id as material, 
+                                    MATERIALES.nombre, 
+                                    MATERIALES.fabricante,
+                                    MATERIALES.modelo, 
+                                    MATERIALES.descripcion,
+                                    MATERIALES_STOCK.stock
+                                    FROM MATERIALES  
+                                    INNER JOIN MATERIALES_STOCK ON MATERIALES.id = MATERIALES_STOCK.material_id 
+                                    INNER JOIN PEDIDOS_PROV_DETALLES ON MATERIALES_STOCK.pedido_detalle_id = PEDIDOS_PROV_DETALLES.id
+                                    WHERE PEDIDOS_PROV_DETALLES.id = 20122

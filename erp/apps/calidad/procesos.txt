@@ -1,0 +1,11 @@
+SELECT 
+                CALIDAD_PROCESOS.id,
+                CALIDAD_PROCESOS.nombre,  
+                CALIDAD_PROCESOS.responsable,
+                CALIDAD_PROCESOS.year,
+                CALIDAD_PROCESOS.dptos,
+                CALIDAD_PROCESOS.doc_path
+            FROM 
+                CALIDAD_PROCESOS
+            ORDER BY 
+                CALIDAD_PROCESOS.ID ASC

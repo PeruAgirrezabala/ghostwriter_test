@@ -1,0 +1,28 @@
+SELECT 
+                    INTERVENCIONES.id,
+                    INTERVENCIONES.ref,
+                    INTERVENCIONES.nombre,
+                    INTERVENCIONES.fecha,
+                    INTERVENCIONES.fecha_mod,
+                    erp_users.nombre,
+                    PROYECTOS.nombre,
+                    INTERVENCIONES_ESTADOS.nombre, 
+                    INTERVENCIONES_ESTADOS.color,
+                    INTERVENCIONES.instalacion,
+                    CLIENTES.nombre,
+                    OFERTAS.titulo
+                FROM 
+                    INTERVENCIONES
+                LEFT JOIN CLIENTES
+                    ON CLIENTES.id = INTERVENCIONES.cliente_id
+                INNER JOIN INTERVENCIONES_ESTADOS
+                    ON INTERVENCIONES.estado_id = INTERVENCIONES_ESTADOS.id 
+                INNER JOIN erp_users 
+                    ON INTERVENCIONES.tecnico_id = erp_users.id 
+                LEFT JOIN OFERTAS
+                    ON OFERTAS.id = INTERVENCIONES.oferta_id 
+                LEFT JOIN PROYECTOS
+                    ON INTERVENCIONES.proyecto_id = PROYECTOS.id  
+                 WHERE YEAR(INTERVENCIONES.fecha) = 2022
+                ORDER BY 
+                    INTERVENCIONES.fecha DESC

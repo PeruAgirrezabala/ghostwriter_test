@@ -1,0 +1,1 @@
+delete from ACTIVIDAD_DETALLES WHERE id=390

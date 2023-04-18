@@ -1,0 +1,31 @@
+INSERT INTO PROVEEDORES 
+                            (nombre,
+                            CIF,
+                            direccion,
+                            poblacion,
+                            provincia,
+                            cp,
+                            pais,
+                            telefono,
+                            descripcion,
+                            email,
+                            contacto,
+                            email_pedidos,
+                            web,
+                            formaPago) 
+                       VALUES (
+                            'asdf', 
+                            'asdf', 
+                            '', 
+                            '', 
+                            '',  
+                            '', 
+                            '', 
+                            '',  
+                            '', 
+                            '', 
+                            '',
+                            '',
+                            '', 
+                            '' 
+                        )

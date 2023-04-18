@@ -1,0 +1,31 @@
+SELECT 
+                    PROYECTOS.id,
+                    PROYECTOS.ref,
+                    PROYECTOS.nombre,
+                    PROYECTOS.fecha_ini,
+                    PROYECTOS.fecha_entrega,
+                    PROYECTOS_ESTADOS.nombre, 
+                    CLIENTES.nombre, 
+                    CLIENTES.img,
+                    PROYECTOS_ESTADOS.color, 
+                    TIPOS_PROYECTO.nombre, 
+                    TIPOS_PROYECTO.color,
+                    PROYECTOS.fecha_mod
+                FROM 
+                    PROYECTOS, CLIENTES, PROYECTOS_ESTADOS, TIPOS_PROYECTO 
+                WHERE 
+                    PROYECTOS.cliente_id = CLIENTES.id
+                AND 
+                    PROYECTOS.estado_id = PROYECTOS_ESTADOS.id 
+                AND 
+                    PROYECTOS.tipo_proyecto_id = TIPOS_PROYECTO.id  
+                AND
+                    PROYECTOS.tipo_proyecto_id = 1
+                 AND
+                        PROYECTOS.estado_id <> 3 
+                      AND 
+                        PROYECTOS.estado_id <> 6
+                ORDER BY 
+                    PROYECTOS.ref DESC,
+                    PROYECTOS.fecha_ini DESC 
+                LIMIT 0, 20

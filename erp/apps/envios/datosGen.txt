@@ -1,0 +1,8 @@
+SELECT 
+                    ENVIOS_CLI.id,
+                    ENVIOS_CLI.nombre,
+                    ENVIOS_CLI.tipo_envio_id                    
+                FROM 
+                    ENVIOS_CLI
+                WHERE
+                    ENVIOS_CLI.id = 29

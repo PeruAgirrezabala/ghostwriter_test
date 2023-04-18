@@ -1,0 +1,3 @@
+INSERT INTO ACTIVIDAD (ref, categoria_id, item_id, tarea_id, nombre, descripcion, imputable, cliente_id, instalacion, responsable, fecha, fecha_mod, estado_id, prioridad_id, facturable, fecha_factu, tecnico_id, solucion, fecha_solucion, observaciones, path, fecha_fin)
+                SELECT 'ACT220011' as ref, categoria_id, item_id, tarea_id, nombre, descripcion, imputable, cliente_id, instalacion, responsable, fecha, fecha_mod, estado_id, prioridad_id, facturable, fecha_factu, tecnico_id, solucion, fecha_solucion, observaciones, path, fecha_fin
+                FROM ACTIVIDAD WHERE id=417

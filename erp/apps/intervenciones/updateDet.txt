@@ -1,0 +1,7 @@
+UPDATE INTERVENCIONES_DETALLES 
+                    SET titulo = 'Cambio en las agrupaciones de las PDUs según indicaciones del cliente', 
+                        descripcion = '<p>Siguiendo el documento excel enviado por el cliente se realizan los cambios solicitados en las agrupaciones de las PDUs modificando el orden y a&ntilde;adiendo algun equipo nuevo.</p>',
+                        fecha = '2020-02-17',  
+                        fecha_mod = now() 
+                        
+                    WHERE id = 10

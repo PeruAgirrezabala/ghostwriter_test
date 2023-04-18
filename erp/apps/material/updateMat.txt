@@ -1,0 +1,11 @@
+UPDATE MATERIALES SET 
+                        ref = '2695350030',
+                        nombre = 'PAC-S1500-SD25-V4-2M', 
+                        fabricante = '', 
+                        modelo = '', 
+                        DTO2 = '0', 
+                        stock = '0', 
+                        descripcion = 'aaapopo', 
+                        categoria_id = 15,
+                        sustituto = ''
+                    WHERE id =4968

@@ -1,0 +1,8 @@
+INSERT INTO PROCEDIMIENTOS_VERSIONES 
+                        (procedimiento_id,
+                        doc_path,
+                        fecha_exp
+                        )
+                    VALUES (17,
+                    '/_DOCUMENTACION/PROCEDIMIENTOS/DOC/2018/Procedimiento revisión extintores Genelek.doc',
+                    '2018-04-03')

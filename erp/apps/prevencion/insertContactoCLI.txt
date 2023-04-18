@@ -1,0 +1,16 @@
+INSERT INTO CLIENTES_CONTACTOS 
+                            (nombre,
+                            telefono,
+                            mail,
+                            descripcion,
+                            activo,
+                            cliente_id,
+                            instalacion_cliente_id) 
+                       VALUES (
+                            'Daniel Salas Gallego', 
+                            '696902103', 
+                            'daniel.salas@elecnor.com>', 
+                            '', 
+                            'on',
+                            232,
+                            109)

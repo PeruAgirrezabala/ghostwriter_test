@@ -1,0 +1,33 @@
+ INSERT INTO ENVIOS_CLI
+                       ( transportista_id, 
+                       nombre, 
+                       tecnico_id, 
+                       fecha, 
+                       fecha_entrega, 
+                       ref, 
+                       cliente_id,
+                       proveedor_id, 
+                       proyecto_id,
+                       estado_id, 
+                       path, 
+                       direccion_envio, 
+                       forma_envio, 
+                       portes, 
+                       tipo_envio_id 
+                       ) VALUES
+                       (,
+                        'DEVOLUCION PORTATIL',
+                        86,
+                        '2023-01-17',
+                        '',
+                        'ALB230001',
+                        ,
+                        224,
+                        10,
+                        99,
+                        '/2023/ALB230001_DEVOLUCION_PORTATIL/',
+                        'MADRID',
+                        'NORMAL',
+                        1,
+                        2
+                       )

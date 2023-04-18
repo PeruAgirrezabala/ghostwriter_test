@@ -1,0 +1,12 @@
+INSERT INTO JORNADAS_ACCESOS (
+                        jornada_id,
+                        hora_entrada,
+                        hora_salida,
+                        tipo_horas
+                        )
+                    VALUES (
+                        '63883',
+                        '2023-03-01 09:00',
+                        '2023-03-01 19:00',
+                        1  
+                    )

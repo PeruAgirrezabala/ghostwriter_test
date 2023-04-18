@@ -1,0 +1,20 @@
+SELECT 
+                        id as auditor,
+                        nombre,
+                        direccion,
+                        poblacion,
+                        provincia,
+                        cp,
+                        pais,
+                        telefono,
+                        descripcion,
+                        email,
+                        fax,
+                        contacto,
+                        web,
+                        CIF,
+                        plataforma,
+                        usuario,
+                        password
+                    FROM AUDITORES A
+                     ORDER By A.nombre ASC  LIMIT 0,10

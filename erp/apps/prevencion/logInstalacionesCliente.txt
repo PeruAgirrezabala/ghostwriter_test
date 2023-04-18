@@ -1,0 +1,9 @@
+SELECT
+                            CLIENTES_INSTALACIONES.id,
+                            CLIENTES_INSTALACIONES.cliente_id,
+                            CLIENTES_INSTALACIONES.nombre,
+                            CLIENTES_INSTALACIONES.direccion
+                        FROM
+                            CLIENTES_INSTALACIONES
+                        WHERE
+                            CLIENTES_INSTALACIONES.cliente_id = 232

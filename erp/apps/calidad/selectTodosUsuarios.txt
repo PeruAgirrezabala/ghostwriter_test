@@ -1,0 +1,5 @@
+DELETE
+                       FROM 
+                        CALIDAD_FORMACION_DETALLES
+                       WHERE 
+                        CALIDAD_FORMACION_DETALLES.formacion_id =2

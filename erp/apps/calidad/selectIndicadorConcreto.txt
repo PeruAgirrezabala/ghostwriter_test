@@ -1,0 +1,14 @@
+SELECT 
+                CALIDAD_INDICADORES.id,
+                CALIDAD_INDICADORES.nombre,  
+                CALIDAD_INDICADORES.meta,
+                CALIDAD_INDICADORES.proceso_id,
+                CALIDAD_INDICADORES.objetivo,
+                CALIDAD_INDICADORES.calculo,
+                CALIDAD_INDICADORES.resultado,
+                CALIDAD_INDICADORES.valor,
+                CALIDAD_INDICADORES.tienehijos
+            FROM 
+                CALIDAD_INDICADORES
+            WHERE
+                CALIDAD_INDICADORES.id = 6

@@ -1,0 +1,1 @@
+SELECT user_password FROM erp_users WHERE id = 98;

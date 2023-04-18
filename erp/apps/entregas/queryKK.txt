@@ -1,0 +1,5 @@
+SELECT CLIENTES_INSTALACIONES.id, CLIENTES.nombre as nombrecliente, CLIENTES_INSTALACIONES.nombre as nombreinstalacion 
+                                    FROM CLIENTES_INSTALACIONES
+                                    INNER JOIN CLIENTES
+                                    ON CLIENTES_INSTALACIONES.cliente_id=CLIENTES.id
+                                    WHERE cliente_id=212  OR cliente_id=19

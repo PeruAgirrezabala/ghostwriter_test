@@ -1,0 +1,7 @@
+SELECT PREVISIONES.nombre, PREVISIONES.id, PREVISIONES.tipo_prev, PREVISIONES.fecha_ini, PREVISIONES.fecha_fin 
+                FROM PREVISIONES 
+                WHERE ((PREVISIONES.fecha_ini >= '2022-07-25' AND PREVISIONES.fecha_fin <= '2022-07-31')
+                OR (PREVISIONES.fecha_ini >= '2022-07-25' AND PREVISIONES.fecha_ini <= '2022-07-31')
+                OR (PREVISIONES.fecha_fin >= '2022-07-25' AND PREVISIONES.fecha_fin <= '2022-07-31'))
+                
+                ORDER BY PREVISIONES.id ASC

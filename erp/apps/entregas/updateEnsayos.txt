@@ -1,0 +1,9 @@
+UPDATE ENSAYOS 
+                            SET nombre = 'PROTOCOLO PRUEBA EN CUADRO CONTROL HAS 6', 
+                                descripcion = '',  
+                                fecha = '', 
+                                fecha_finalizacion = '2021-05-31',
+                                estado_id = 2,
+                                plantilla_id = 5,
+                                erp_userid = 71
+                            WHERE id = 18

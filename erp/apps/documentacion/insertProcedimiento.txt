@@ -1,0 +1,9 @@
+INSERT INTO PROCEDIMIENTOS 
+                            (nombre,
+                            descripcion,
+                            ref) 
+                       VALUES (
+                            'CONTROL DE LA DOCUMENTACION', 
+                            '', 
+                            'PROC_CONTR-DOC_01'
+                        )

@@ -1,0 +1,10 @@
+SELECT 
+                PROYECTOS.id,
+                PROYECTOS.ref,
+                PROYECTOS.nombre,
+                PROYECTOS.path,
+                PROYECTOS.recordatorio
+            FROM 
+                PROYECTOS
+            WHERE
+                PROYECTOS.id = 1311

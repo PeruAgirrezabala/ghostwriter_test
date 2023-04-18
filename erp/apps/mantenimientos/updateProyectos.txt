@@ -1,0 +1,18 @@
+UPDATE PROYECTOS 
+                SET ref = 'M200041', 
+                    nombre = 'TECNALIA_KUBIK_MANT', 
+                    descripcion = '',
+                    fecha_ini = '2020-01-08', 
+                    fecha_entrega = '', 
+                    mant_year_visits = 1,
+                    mant_days_visit = 1,
+                    mant_tecs_visit = 1,
+                    fecha_fin = '', 
+                    fecha_mod = now(), 
+                    cliente_id = 223, 
+                    estado_id = 1,     
+                    descripcion = '',
+                    tipo_proyecto_id = 2,
+                    facturado = 0
+                    , proyecto_id = 1197
+                WHERE id = 1314

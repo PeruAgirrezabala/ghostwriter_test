@@ -1,0 +1,11 @@
+INSERT INTO SERIAL_NUMBERS 
+                            (material_id,
+                            proveedor_id,
+                            cliente_id,
+                            sn)
+                       VALUES (
+                            4520,  
+                            223,  
+                            215, 
+                            'xxxxxxssssss' 
+                        )

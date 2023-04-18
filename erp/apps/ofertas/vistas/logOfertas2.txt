@@ -1,0 +1,4 @@
+SELECT OFERTAS_ESTADOS.nombre, OFERTAS_ESTADOS.color, OFERTAS.n_ver FROM OFERTAS
+                 INNER JOIN OFERTAS_ESTADOS
+                 ON OFERTAS.estado_id = OFERTAS_ESTADOS.id 
+                 WHERE OFERTAS.id= and OFERTAS.estado_id=4

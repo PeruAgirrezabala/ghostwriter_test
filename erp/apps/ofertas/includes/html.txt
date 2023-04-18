@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>OFERTA</title>
+    <style>
+        @font-face {
+            font-family: SourceSansPro;
+            src: url(/erp/includes/pdf/SourceSansPro-Regular.ttf);
+          }
+
+          .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+
+          a {
+            color: #0087C3;
+            text-decoration: none;
+          }
+
+          body {
+            position: relative;
+            width: 21cm;  
+            height: 29.7cm; 
+            margin: 0 auto; 
+            color: #555555;
+            background: #FFFFFF; 
+            font-family: Arial, sans-serif; 
+            font-size: 11px; 
+            font-family: SourceSansPro;
+          }
+
+          #header {
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #AAAAAA;
+            max-width: 500px;
+            height: 150px;
+          }
+
+          #logo {
+            position: relative;
+            float: left;
+            display: inline-block;
+            margin-top: 8px;
+          }
+
+          #logo img {
+            height: 140px;
+          }
+
+          #company {
+            position: relative;
+            display: inline-block;
+            float: right;
+            margin-left: 380px;
+            /*text-align: right;*/
+          }
+          #company img {
+            /*height: 30px;*/
+            width: 100%;
+          }
+
+          #details {
+            /*margin-bottom: 50px;*/
+          }
+
+          #client {
+            padding-left: 6px;
+            border-left: 6px solid #0087C3;
+          }
+
+          .to {
+            font-size: 14px;
+            magin-top: 20px;
+            margin-bottom: 5px;
+          }
+          .address {
+            margin-bottom: 5px;
+          }
+          .email {
+            margin-bottom: 15px;
+          }
+
+          h2.name {
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+          }
+          
+          
+          #invoice {
+            /*text-align: right;*/
+            /*margin-left: 500px;*/
+          }
+
+          td.ri h1, td.iz h1 {
+            color: #0087C3;
+            font-size: 18px;
+            line-height: 14px;
+            font-weight: normal;
+            margin: 0  0 10px 0;
+            margin-bottom: 10px;
+          }
+          
+          td.iz h2 {
+              margin-bottom: 5px;
+          }
+
+          td.ri h2 {
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+            margin-top: 10px;
+          }
+         
+          
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-bottom: 20px;
+            /*table-layout:fixed;*/
+            /*max-width: 500px;*/
+          }
+
+          table th,
+          table td {
+            padding: 5px;
+            background: #EEEEEE;
+            text-align: center;
+            border-bottom: 1px solid #FFFFFF;
+            word-wrap: break-word;         
+            overflow-wrap: break-word; 
+            font-size: 11px;
+          }
+
+/*
+          table th {
+            white-space: nowrap;        
+            font-weight: normal;
+          }
+*/
+          table td {
+            text-align: right;
+            white-space: pre-line;        
+          }
+
+          table td h3{
+            color: #0087C3;
+            font-size: 11px;
+            font-weight: normal;
+            margin: 0 0 2px 0;
+          }
+
+          table .no {
+            color: #FFFFFF;
+            font-size: 11px;
+            background: #0087C3;
+            width: 20%;
+            max-width: 20%;
+            text-align: left;
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -webkit-pre-wrap; /*Chrome & Safari */ 
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            white-space: pre-wrap;       /* css-3 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            word-break: break-all;
+            white-space: normal;
+            
+          }
+
+          table .desc {
+            text-align: left;
+            width: auto;
+            font-size: 11px;
+            width: 50%;
+            max-width: 50%;
+          }
+          
+          table .descSolo {
+            text-align: left;
+            width: auto;
+            font-size: 11px;
+            width: 70%;
+            max-width: 70%;
+          }
+          
+          table .fab {
+            text-align: left;
+            width: auto;
+            font-size: 11px;
+            width: 10%;
+            max-width: 10%;
+          }
+
+          table .unit {
+            background: #DDDDDD;
+            font-size: 11px;
+            text-align: center;
+            width: 10%;
+          }
+
+          table .qty, table .pvp, table .dto {
+              font-size: 11px;
+              width: 10%;
+              max-width: 10%;
+          }
+
+          table .total {
+            background: #0087C3;
+            color: #FFFFFF;
+            font-size: 11px;
+            width: 10%;
+            max-width: 10%;
+          }
+
+          table td.unit,
+          table td.qty {
+            text-align: center;
+          }
+
+          table tbody tr:last-child td {
+            border: none;
+          }
+
+          table tfoot td {
+            /*padding: 10px 20px; */
+            background: #FFFFFF;
+            border-bottom: none;
+            font-size: 12px;
+            /*white-space: nowrap; */
+            border-top: 1px solid #AAAAAA; 
+          }
+
+          table tfoot tr:first-child td {
+            border-top: none; 
+          }
+
+          table tfoot tr:last-child td {
+            border-top: 1px solid #AAAAAA; 
+
+          }
+          .footerfondo {
+              background: #0087C3;
+              color: #FFFFFF;
+          }
+          .footerfondoTotal {
+              background: #0087C3;
+              color: #FFFFFF;
+              font-size: 14px;
+              font-weight: bolder;
+          }
+          .total-final {
+                border-top: 1px solid #AAAAAA; 
+                font-weight: bolder;
+          }
+
+          table tfoot tr td:first-child {
+            border: none;
+            padding-top: 20px;            
+          }
+
+          #thanks{
+            font-size: 12px;
+            margin-bottom: 50px;
+          }
+
+          #notices{
+            padding-left: 6px;
+            border-left: 6px solid #0087C3;  
+          }
+
+          #notices .notice {
+            font-size: 12px;
+          }
+
+          .footer {
+            color: #777777;
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            bottom: 0;
+            border-top: 1px solid #AAAAAA;
+            padding: 8px 0;
+            text-align: left;
+            font-size: 7px;
+          }
+          
+          h1.presentacion {
+            width: 700px;
+            color: #0087C3;
+            font-size: 18px;
+            line-height: 25px;
+            font-weight: normal;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-align: left;
+          }
+          
+          h2.titSeccion {
+            width: 600px;
+            color: #000000;
+            font-size: 14px;
+            line-height: 15px;
+            font-weight: normal;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-align: left;
+          }
+          
+          table.titulo {
+            width: 700px !important;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-bottom: 20px;
+            table-layout:fixed;
+          }
+          table.titulo td.iz {
+            width:50%;
+            text-align: left;
+          }
+          table.titulo td.ri {
+            width:50%;
+            text-align: right;
+          }
+          
+          
+
+    </style>
+  </head>
+  <body>
+        <div id="header" class="clearfix">
+      <div id="logo">
+        <img src="http://192.168.3.109/erp/img/logo_pdf.png">
+        <div id="company">
+            <h2 class="name">GENELEK SISTEMAS S.L.</h2>
+            <div>Pol. Ind. A.D.U. 21<br>Plaza Urola, s/n 20750<br>Zumaia, Gipuzkoa </div>
+            <!--<div>48940 - Leioa</div>-->
+            <div>943 14 33 11</div>
+            <div><a href="mailto:genelek@genelek.com">genelek@genelek.com</a></div>
+        </div>
+      </div>
+      
+    </div>
+    <div>
+      
+                    <div id='details' class='clearfix'>
+                        <h1 class='presentacion'>VALORACIÓN ECONÓMICA DE LA OFERTA</h1>
+                        <table class='titulo'>
+                              <tr>
+                                  <td class='iz'>
+                                        <h1>CLIENTE: </h1>
+                                        <div class='to'>EQUINIX S.A.U.</div>
+                                        <div class='address'>Calle Valgrande, 6 807</div>
+                                        <div class='address'>28108 - Alcobendas</div>
+                                        <div class='address'>Madrid (España)</div>
+                                        <div class='email'><a href='mailto:Javier.Carral@eu.equinix.com'>Javier.Carral@eu.equinix.com</a></div>
+                                  </td>
+                                  <td class='ri'>
+                                        <h1>OFERTA: OF159-22</h1>
+                                        <h2>Fecha: 2022-06-08</h2>
+                                        <h2>Validez: 1 MES</h2>
+                                        <h2 class='name'>DESCRIPCIÓN:</h2>
+                                        <p class='address'>Subcontratación de trabajador por contingencias en Equinix. Trabajos en remoto, con posibilidad de desplazamiento a alguna de las plantas. Tarifa 2023.</p>
+                                  </td>
+                              </tr>
+                        </table>
+                          
+                    
+                     
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td colspan='2' style='padding-top: 20px;'></td>
+                        <td colspan='2' style='padding-top: 20px;' class='footerfondo'>TOTAL</td>
+                        <td style='padding-top: 20px;' class='footerfondo'>0.00€</td>
+                      </tr>
+                      <!--
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='footerfondo'>IVA 21%</td>
+                        <td class='footerfondo'>0.00€</td>
+                      </tr>
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='total-final footerfondo'>TOTAL</td>
+                        <td class='total-final footerfondo'>0.00€</td>
+                      </tr>
+                      -->
+                    </tfoot>
+                </table> </div>
+             
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td style='padding-top: 20px;'></td>
+                        <td colspan='2' style='padding-top: 20px;' class='footerfondo'>TOTAL</td>
+                        <td style='padding-top: 20px;' class='footerfondo'>0.00€</td>
+                      </tr>
+                      <!--
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='footerfondo'>IVA 21%</td>
+                        <td class='footerfondo'>0.00€</td>
+                      </tr>
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='total-final footerfondo'>TOTAL</td>
+                        <td class='total-final footerfondo'>0.00€</td>
+                      </tr>
+                      -->
+                    </tfoot>
+                </table> </div>
+             
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td style='padding-top: 20px;'></td>
+                        <td colspan='2' style='padding-top: 20px;' class='footerfondo'>TOTAL</td>
+                        <td style='padding-top: 20px;' class='footerfondo'>0.00€</td>
+                      </tr>
+                      <!--
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='footerfondo'>IVA 21%</td>
+                        <td class='footerfondo'>0.00€</td>
+                      </tr>
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='total-final footerfondo'>TOTAL</td>
+                        <td class='total-final footerfondo'>0.00€</td>
+                      </tr>
+                      -->
+                    </tfoot>
+                </table> </div>
+             
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td style='padding-top: 20px;'></td>
+                        <td colspan='2' style='padding-top: 20px;' class='footerfondo'>TOTAL</td>
+                        <td style='padding-top: 20px;' class='footerfondo'>0.00€</td>
+                      </tr>
+                      <!--
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='footerfondo'>IVA 21%</td>
+                        <td class='footerfondo'>0.00€</td>
+                      </tr>
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='total-final footerfondo'>TOTAL</td>
+                        <td class='total-final footerfondo'>0.00€</td>
+                      </tr>
+                      -->
+                    </tfoot>
+                </table> </div>
+             
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td style='padding-top: 20px;'></td>
+                        <td colspan='2' style='padding-top: 20px;' class='footerfondo'>TOTAL</td>
+                        <td style='padding-top: 20px;' class='footerfondo'>0.00€</td>
+                      </tr>
+                      <!--
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='footerfondo'>IVA 21%</td>
+                        <td class='footerfondo'>0.00€</td>
+                      </tr>
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='total-final footerfondo'>TOTAL</td>
+                        <td class='total-final footerfondo'>0.00€</td>
+                      </tr>
+                      -->
+                    </tfoot>
+                </table> </div>
+            
+                    <table border='0' cellspacing='0' cellpadding='0'>
+                        <tbody>
+                            <tr>
+                                <td class='descSolo'><h3></h3></td>
+                                <td class='qty'></td>
+                                <td class='unit'></td>
+                                <td class='total'></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                              <td colspan='2' style='padding-top: 20px;'><strong>TOTAL OFERTA</strong></td>
+                              <td colspan='2' style='padding-top: 20px;' class='footerfondoTotal'><strong>0.00€</strong></td>
+                            </tr>              <tr>
+                                  <td colspan='2' style='padding-top: 20px;'><strong>DTO 0.00% NETO</strong></td>
+                                  <td colspan='2' style='padding-top: 20px;' class='footerfondoTotal'><strong>0.00€</strong></td>
+                                </tr>
+                                  </tfoot>
+                    </table></div> <div id="thanks"></div>
+      <div id="notices">
+        <div>IVA no incluido</div>
+        <div>Validez de la Oferta: 1 MES</div>
+        <div>Plazo de Entrega: INMEDIATO</div>
+        <div>Forma de Pago: CERTIFICACIONES MENSUALES</div>
+      </div>
+    </div>
+    <div class="footer">
+        En cumplimiento de lo establecido en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPD-GDD), le comunicamos que los datos que usted nos facilite quedarán incorporados y serán tratados en los ficheros titularidad de Genelek Sistemas S.L. con el fin de poderle prestar nuestros servicios, así como para mantenerle informado sobre cuestiones relativas a la actividad de la empresa y sus servicios.
+Mediante la firma del presente documento usted da su consentimiento expreso para que Genelek Sistemas S.L. pueda utilizar con este fin concreto los datos facilitados por usted, comprometiéndose a tratar de forma confidencial los datos de carácter personal facilitados y a no comunicar o ceder dicha información a terceros.
+Asimismo, le informamos de la posibilidad que tiene de ejercer los derechos de acceso, rectificación, cancelación y oposición de sus datos de carácter personal mediante escrito dirigido a: Pol. A.D.U. Plaza Urola, s/n - 20750 Zumaia (Gipuzkoa), acompañando copia de DNI.
+    </div>
+  </body>
+</html>

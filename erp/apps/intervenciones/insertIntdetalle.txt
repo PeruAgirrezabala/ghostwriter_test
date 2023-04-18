@@ -1,0 +1,14 @@
+INSERT INTO INTERVENCIONES_DETALLES 
+                    (titulo,
+                    descripcion,
+                    fecha,
+                    fecha_mod,
+                    int_id,
+                    erpuser_id
+                    )
+                VALUES ('Puesta en marcha de los cambios y soluciones pendientes',
+                '<p>Puesta en marcha de los cambios y soluciones pendientes en las instalaciones del cliente final.&nbsp;<br />Adicionalmente y mientras se comprobaba la coherencia de los cambios y datos recogidos por la pasarela eWon se detecta que el orden de las agrupaciones no es el esperado en base a la documentaci&oacute;n por lo que se hace necesario la comprobaci&oacute;n de todas las variables cambiando los par&aacute;metros necesarios para asegurar la coeherencia.</p>', 
+                '2020-02-24',
+                now(),
+                9,
+                69)

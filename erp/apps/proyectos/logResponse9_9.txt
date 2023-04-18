@@ -1,0 +1,9 @@
+INSERT INTO PROYECTOS_DOC
+                                (titulo,
+                                grupo_id,
+                                proyecto_id,
+                                doc_path) VALUES(
+                                'OF064B-23  CAT-MWM EDAR BAIX LLOBREGAT CUADROS HAS y  SSAA  1 X TCG3020 V20 TPEM 08-03-23.pdf',
+                                603,
+                                1356,
+                                'PROYECTOS/2023/G230713_CAT-MWM_EDAR__BAIX_LLOBREGAT_/OFERTAS/OF064B-23  CAT-MWM EDAR BAIX LLOBREGAT CUADROS HAS y  SSAA  1 X TCG3020 V20 TPEM 08-03-23.pdf')

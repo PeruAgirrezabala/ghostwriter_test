@@ -1,0 +1,14 @@
+SELECT 
+                        A.id as material, 
+                        A.ref, 
+                        A.nombre as nombre_material, 
+                        A.fabricante, 
+                        A.modelo, 
+                        (SELECT pvp FROM MATERIALES_PRECIOS WHERE MATERIALES_PRECIOS.fecha_val > now() AND material_id = material  ORDER BY MATERIALES_PRECIOS.fecha_val DESC, MATERIALES_PRECIOS.id DESC LIMIT 1 ) as precio, 
+                        A.cad, 
+                        A.categoria_id, 
+                        A.DTO2, 
+                        A.stock,
+                        A.descripcion,
+                        A.sustituto
+                    FROM MATERIALES A ORDER By A.id DESC 

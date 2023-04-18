@@ -1,0 +1,18 @@
+SELECT DISTINCT
+                PEDIDOS_PROV.id,
+                PEDIDOS_PROV.pedido_genelek,
+                PEDIDOS_PROV.titulo,
+                PEDIDOS_PROV.fecha,
+                PEDIDOS_PROV.plazo,
+                PEDIDOS_PROV.fecha_entrega,
+                PEDIDOS_PROV.proveedor_id,
+                PROVEEDORES.nombre
+            FROM 
+                PEDIDOS_PROV_DETALLES
+            INNER JOIN PEDIDOS_PROV
+                ON PEDIDOS_PROV_DETALLES.pedido_id = PEDIDOS_PROV.id 
+            INNER JOIN PROVEEDORES 
+                ON PEDIDOS_PROV.proveedor_id = PROVEEDORES.id
+             WHERE PEDIDOS_PROV.proveedor_id = 21 AND  PEDIDOS_PROV.estado_id <> 2 AND PEDIDOS_PROV.estado_id <> 4 AND PEDIDOS_PROV.estado_id <> 5 AND PEDIDOS_PROV.estado_id <> 6 AND PEDIDOS_PROV.estado_id <> 7 
+            ORDER BY 
+                PEDIDOS_PROV.fecha DESC, PEDIDOS_PROV_DETALLES.id ASC

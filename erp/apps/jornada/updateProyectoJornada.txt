@@ -1,0 +1,4 @@
+UPDATE JORNADAS 
+                SET proyecto_id = 1191
+                WHERE calendario_id =5981
+                AND user_id=96

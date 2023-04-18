@@ -1,0 +1,26 @@
+SELECT 
+                    CLIENTES.nombre,
+                    CLIENTES.direccion,
+                    CLIENTES.poblacion,
+                    CLIENTES.provincia,
+                    CLIENTES.cp,
+                    CLIENTES.pais,
+                    CLIENTES.telefono,
+                    CLIENTES.email,
+                    OFERTAS.id,
+                    OFERTAS.ref,
+                    OFERTAS.titulo,
+                    OFERTAS.descripcion,
+                    OFERTAS.cliente_id,
+                    OFERTAS.fecha,
+                    OFERTAS.fecha_validez,
+                    OFERTAS.path,
+                    OFERTAS.dto_final,
+                    OFERTAS.forma_pago,
+                    OFERTAS.plazo_entrega
+                FROM 
+                    OFERTAS, CLIENTES 
+                WHERE 
+                    OFERTAS.cliente_id = CLIENTES.id
+                AND
+                    OFERTAS.id = 545

@@ -1,0 +1,29 @@
+SELECT 
+                                    INTERVENCIONES_HORAS_IMPUTADAS.id as detalle, 
+                                    TAREAS.id as tarea,
+                                    TAREAS.nombre,
+                                    INTERVENCIONES_HORAS_IMPUTADAS.cantidad,
+                                    INTERVENCIONES_HORAS_IMPUTADAS.titulo,
+                                    INTERVENCIONES_HORAS_IMPUTADAS.descripcion,
+                                    erp_users.id as tecnico,
+                                    INTERVENCIONES_HORAS_IMPUTADAS.id as detalle,
+                                    INTERVENCIONES_HORAS_IMPUTADAS.fecha,
+                                    PERFILES_HORAS.id as tipohora,
+                                    PERFILES.id as perfil, 
+                                    INTERVENCIONES.id as intervencion 
+                                FROM 
+                                    TAREAS, PERFILES, PERFILES_HORAS, INTERVENCIONES_HORAS_IMPUTADAS, INTERVENCIONES, erp_users  
+                                WHERE 
+                                    INTERVENCIONES_HORAS_IMPUTADAS.tarea_id = TAREAS.id
+                                AND
+                                    TAREAS.perfil_id = PERFILES.id
+                                AND
+                                    PERFILES_HORAS.perfil_id = PERFILES.id
+                                AND
+                                    PERFILES_HORAS.id = INTERVENCIONES_HORAS_IMPUTADAS.tipo_hora_id
+                                AND
+                                    INTERVENCIONES_HORAS_IMPUTADAS.int_id = INTERVENCIONES.id 
+                                AND 
+                                    INTERVENCIONES_HORAS_IMPUTADAS.tecnico_id = erp_users.id 
+                                AND 
+                                    INTERVENCIONES_HORAS_IMPUTADAS.id = 1

@@ -1,0 +1,5 @@
+SELECT 
+                                    ENTREGAS.nombre,
+                                    ENTREGAS.ref
+                                    FROM ENTREGAS  
+                                    WHERE ENTREGAS.id = 735

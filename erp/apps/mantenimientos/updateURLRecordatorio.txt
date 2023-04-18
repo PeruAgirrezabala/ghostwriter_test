@@ -1,0 +1,3 @@
+UPDATE PROYECTOS SET 
+                recordatorio = '/PROYECTOS/2019/M190019_USARGOITI/recordatorio_USARGOITI.sql'
+               WHERE id =1243

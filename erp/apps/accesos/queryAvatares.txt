@@ -1,0 +1,5 @@
+SELECT 
+                            erp_avatares.id,
+                            erp_avatares.url
+                        FROM 
+                            erp_avatares

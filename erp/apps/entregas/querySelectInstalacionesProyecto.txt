@@ -1,0 +1,5 @@
+SELECT PROYECTOS.cliente_id,
+                                    PROYECTOS.ingenieria_id,
+                                    PROYECTOS.dir_obra_id,
+                                    PROYECTOS.promotor_id
+                                    FROM PROYECTOS WHERE id=1315

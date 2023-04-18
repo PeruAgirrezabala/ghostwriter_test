@@ -1,0 +1,12 @@
+SELECT 
+                    CALIDAD_SISTEMA.id,
+                    CALIDAD_SISTEMA.nombre,
+                    CALIDAD_SISTEMA.organismo_id,
+                    ORGANISMOS.nombre,
+                    CALIDAD_SISTEMA.doc_path                    
+                FROM 
+                    CALIDAD_SISTEMA, ORGANISMOS
+                WHERE
+                    CALIDAD_SISTEMA.organismo_id=ORGANISMOS.id
+                AND
+                    CALIDAD_SISTEMA.habilitado='on'

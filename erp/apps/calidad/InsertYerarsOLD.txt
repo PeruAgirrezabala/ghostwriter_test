@@ -1,0 +1,13 @@
+INSERT INTO CALIDAD_INDICADORES_VERSIONES
+                    (nombre,
+                    descripcion,
+                    proceso_id,
+                    objetivo,
+                    calculo,
+                    resultado,
+                    valor,
+                    tienehijos,
+                    indicador_id,
+                    anyo)
+                    VALUES
+                    ('% Ofertas aceptadas','','1','Controlar el volumen de ofertas que se aceptan','Ofertas aceptadas / ofertas presentadas','','30','0',6,2022)

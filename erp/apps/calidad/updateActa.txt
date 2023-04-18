@@ -1,0 +1,5 @@
+UPDATE CALIDAD_ACTAS SET 
+                        nombre = 'ACTA COMITE DE CALIDAD 2023', 
+                        descripcion = 'Se aprueban el plan de formación 2023, la planificación de las fechas de la auditoria', 
+                        fecha = '2023-01-09'
+                    WHERE id =22

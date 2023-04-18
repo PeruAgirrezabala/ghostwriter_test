@@ -1,0 +1,4 @@
+SELECT substr(ref,3,3) FROM OFERTAS
+                    WHERE substr(ref,-2) = 23
+                    ORDER BY ref DESC
+                    LIMIT 1

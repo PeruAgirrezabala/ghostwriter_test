@@ -1,0 +1,1 @@
+SELECT erp_users.nombre, erp_users.apellidos FROM erp_users INNER JOIN ACTIVIDAD_USUARIO ON erp_users.id=ACTIVIDAD_USUARIO.user_id WHERE ACTIVIDAD_USUARIO.actividad_id=34

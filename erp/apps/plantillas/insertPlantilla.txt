@@ -1,0 +1,11 @@
+INSERT INTO PLANTILLAS 
+                            (nombre,
+                            descripcion,
+                            ref,
+                            tipodoc_id) 
+                       VALUES (
+                            'REVISION EXTINTORES', 
+                            '', 
+                            'REV_EXTINT.',
+                            6
+                        )

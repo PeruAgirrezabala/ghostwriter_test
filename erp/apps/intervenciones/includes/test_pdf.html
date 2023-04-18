@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>PEDIDO</title>
+    <style>
+        @font-face {
+            font-family: SourceSansPro;
+            src: url(/erp/includes/pdf/SourceSansPro-Regular.ttf);
+          }
+
+          .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+
+          a {
+            color: #0087C3;
+            text-decoration: none;
+          }
+
+          body {
+            position: relative;
+            width: 21cm;  
+            height: 29.7cm; 
+            margin: 0 auto; 
+            color: #555555;
+            background: #FFFFFF; 
+            font-family: Arial, sans-serif; 
+            font-size: 11px; 
+            font-family: SourceSansPro;
+          }
+
+          #header {
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #AAAAAA;
+            max-width: 500px;
+          }
+
+          #logo {
+              position: relative;
+            float: left;
+            display: inline-block;
+            margin-top: 8px;
+          }
+
+          #logo img {
+            height: 70px;
+          }
+
+          #company {
+            position: relative;
+            display: inline-block;
+            float: right;
+            margin-left: 300px;
+            /*text-align: right;*/
+          }
+          #company img {
+            height: 30px;
+          }
+
+          #details {
+            margin-bottom: 50px;
+          }
+
+          #client {
+            padding-left: 6px;
+            border-left: 6px solid #0087C3;
+          }
+
+          #client .to {
+            color: #777777;
+          }
+
+          h2.name {
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+          }
+          
+          
+          #invoice {
+            /*text-align: right;*/
+            /*margin-left: 500px;*/
+          }
+
+          td.ri h1, td.iz h1 {
+            color: #0087C3;
+            font-size: 18px;
+            line-height: 14px;
+            font-weight: normal;
+            margin: 0  0 10px 0;
+          }
+
+          td.ri h2 {
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+          }
+         
+          
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-bottom: 20px;
+            /*table-layout:fixed;*/
+            /*max-width: 500px;*/
+          }
+
+          table th,
+          table td {
+            padding: 5px;
+            background: #EEEEEE;
+            text-align: center;
+            border-bottom: 1px solid #FFFFFF;
+            word-wrap: break-word;         
+            overflow-wrap: break-word; 
+            font-size: 11px;
+          }
+
+/*
+          table th {
+            white-space: nowrap;        
+            font-weight: normal;
+          }
+*/
+          table td {
+            text-align: right;
+            white-space: pre-line;        
+          }
+
+          table td h3{
+            color: #0087C3;
+            font-size: 11px;
+            font-weight: normal;
+            margin: 0 0 2px 0;
+          }
+
+          table .no {
+            color: #FFFFFF;
+            font-size: 11px;
+            background: #0087C3;
+            width: 10%;
+            max-width: 10%;
+            text-align: center;
+          }
+
+          table .desc {
+            text-align: left;
+            width: auto;
+            font-size: 11px;
+            width: 46%;
+            max-width: 46%;
+          }
+          
+          table .fab {
+            text-align: left;
+            width: auto;
+            font-size: 11px;
+            width: 10%;
+            max-width: 10%;
+          }
+
+          table .unit {
+            background: #DDDDDD;
+            font-size: 11px;
+            text-align: center;
+          }
+
+          table .qty, table .pvp, table .dto {
+              font-size: 11px;
+              width: 10%;
+              max-width: 10%;
+          }
+
+          table .total {
+            background: #0087C3;
+            color: #FFFFFF;
+            font-size: 11px;
+            width: 8%;
+            max-width: 8%;
+          }
+
+          table td.unit,
+          table td.qty {
+            text-align: center;
+          }
+
+          table tbody tr:last-child td {
+            border: none;
+          }
+
+          table tfoot td {
+            /*padding: 10px 20px; */
+            background: #FFFFFF;
+            border-bottom: none;
+            font-size: 12px;
+            /*white-space: nowrap; */
+            border-top: 1px solid #AAAAAA; 
+          }
+
+          table tfoot tr:first-child td {
+            border-top: none; 
+          }
+
+          table tfoot tr:last-child td {
+            color: #0087C3 !important;
+            font-size: 12px;
+            border-top: 1px solid #0087C3; 
+
+          }
+          .footerfondo {
+              background: #0087C3;
+              color: #FFFFFF;
+          }
+          .total-final {
+                color: #0087C3 !important;
+                font-size: 12px;
+                border-top: 1px solid #0087C3; 
+          }
+
+          table tfoot tr td:first-child {
+            border: none;
+            padding-top: 20px;            
+          }
+
+          #thanks{
+            font-size: 12px;
+            margin-bottom: 50px;
+          }
+
+          #notices{
+            padding-left: 6px;
+            border-left: 6px solid #0087C3;  
+          }
+
+          #notices .notice {
+            font-size: 12px;
+          }
+
+          .footer {
+            color: #777777;
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            bottom: 0;
+            border-top: 1px solid #AAAAAA;
+            padding: 8px 0;
+            text-align: center;
+          }
+        
+          table.titulo {
+            width: 700px !important;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-bottom: 20px;
+            table-layout:fixed;
+          }
+          table.titulo td.iz {
+            width:50%;
+            text-align: left;
+          }
+          table.titulo td.ri {
+            width:50%;
+            text-align: right;
+          }
+          
+          
+
+    </style>
+  </head>
+  <body>
+        <div id="header" class="clearfix">
+      <div id="logo">
+        <img src="http://192.168.3.109/erp/img/logo.png">
+        <div id="company">
+            <img src="http://192.168.3.109/erp/img/iso9001.png">
+            <h2 class="name">GENELEK SISTEMAS S.L.</h2>
+            <div>Pol. Ind. A.D.U. 21<br>Plaza Urola, s/n 20750<br>Zumaia, Gipuzkoa </div>
+            <!--<div>48940 - Leioa</div>-->
+            <div>943 14 33 11</div>
+            <div><a href="mailto:genelek@genelek.com">genelek@genelek.com</a></div>
+        </div>
+      </div>
+      
+    </div>
+    <div>
+      
+                    <div id='details' class='clearfix'>
+                        <table class='titulo'>
+                              <tr>
+                                  <td class='iz'>
+                                        <h1>REF: </h1>
+                                        <div class='to'>PEDIDO PARA:</div>
+                                        <h2 class='name'>LOGITEK</h2>
+                                        <div class='address'>Francesc Carbonell, 35-37 Bajos</div>
+                                        <div class='email'><a href='mailto:logiteksa@logiteksa.com'>logiteksa@logiteksa.com</a></div>
+                                  </td>
+                                  <td class='ri'>
+                                        <h1>NºPEDIDO GENELEK: 075/19</h1>
+                                        <h2>Fecha: 2019-05-21</h2>
+                                  </td>
+                              </tr>
+                        </table>
+                          
+                    </div>
+                    
+                    <table border='0' cellspacing='0' cellpadding='0'>
+                        <thead>
+                            <tr>
+                            <th class='no'>REF</th>
+                            <th class='desc'>MATERIAL</th>
+                            <th class='qty'>CANTIDAD</th>
+                            <th class='pvp'>PVP</th>
+                            <th class='dto'>DTO</th>
+                            <th class='total'>TOTAL</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                     
+                    <tr>
+                        <td class='no'></td>
+                        <td class='desc'><h3>Kepwares LinkMaster OPC Bridging
+Software has the capabilities of both a server and a client application</h3></td>
+                        <td class='qty'>1</td>
+                        <td class='unit'>996.00€</td>
+                        <td class='unit'>0.00%, %, 0.00% </td>
+                        <td class='total'>996.00€</td>
+                    </tr>
+                 
+                    <tr>
+                        <td class='no'></td>
+                        <td class='desc'><h3>Mantenimiento y soporte</h3></td>
+                        <td class='qty'>1</td>
+                        <td class='unit'>199.20€</td>
+                        <td class='unit'>0.00%, %, 0.00% </td>
+                        <td class='total'>199.20€</td>
+                    </tr>
+                 
+                    <tr>
+                        <td class='no'></td>
+                        <td class='desc'><h3>Kepwares ODBC Client Driv er and
+KEPServ erEX OPC Serv er</h3></td>
+                        <td class='qty'>1</td>
+                        <td class='unit'>904.00€</td>
+                        <td class='unit'>0.00%, %, 0.00% </td>
+                        <td class='total'>904.00€</td>
+                    </tr>
+                 
+                    <tr>
+                        <td class='no'></td>
+                        <td class='desc'><h3>Mantenimiento y soporte</h3></td>
+                        <td class='qty'>1</td>
+                        <td class='unit'>180.80€</td>
+                        <td class='unit'>0.00%, %, 0.00% </td>
+                        <td class='total'>180.80€</td>
+                    </tr>
+                 
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td colspan='3' style='padding-top: 20px;'></td>
+                        <td colspan='2' style='padding-top: 20px;' class='footerfondo'>SUBTOTAL</td>
+                        <td style='padding-top: 20px;' class='footerfondo'>2,280.00€</td>
+                      </tr>
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='footerfondo'>IVA 21%</td>
+                        <td class='footerfondo'>478.80€</td>
+                      </tr>
+                      <tr>
+                        <td colspan='3'></td>
+                        <td colspan='2' class='footerfondo'>TOTAL</td>
+                        <td class='total-final footerfondo'>2,758.80€</td>
+                      </tr>
+                    </tfoot>
+                </table> 
+            <div id="thanks">---</div>
+      <div id="notices">
+        <div>NOTA:</div>
+        <div class="notice">---</div>
+      </div>
+    </div>
+    <div class="footer">
+        ---
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+SELECT 
+                                    PREVISIONES.id as prev,
+                                    PREVISIONES.fecha_ini, 
+                                    PREVISIONES.fecha_fin,
+                                    PREVISIONES.nombre,
+                                    PREVISIONES.descripcion,
+                                    PREVISIONES.instalacion,
+                                    CLIENTES.nombre,
+                                    (SELECT GROUP_CONCAT(CONCAT(erp_users.nombre,' ', erp_users.apellidos,'-',erp_users.color)) FROM erp_users, PREVISIONES_TECNICOS WHERE PREVISIONES_TECNICOS.erpuser_id = erp_users.id AND PREVISIONES_TECNICOS.prevision_id = prev) as tecnicos
+                                FROM 
+                                    PREVISIONES
+                                LEFT JOIN CLIENTES   
+                                    ON PREVISIONES.cliente_id = CLIENTES.id
+                                WHERE
+                                    '2021-12-30' >= PREVISIONES.fecha_ini
+                                AND
+                                    '2021-12-30' <= PREVISIONES.fecha_fin

@@ -1,0 +1,6 @@
+SELECT 
+                        CALIDAD_ACTAS.nombre
+                    FROM
+                        CALIDAD_ACTAS 
+                    WHERE 
+                        CALIDAD_ACTAS.id = 23

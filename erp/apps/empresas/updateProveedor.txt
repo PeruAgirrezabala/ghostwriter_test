@@ -1,0 +1,21 @@
+UPDATE PROVEEDORES SET 
+                        nombre = 'BERDIN', 
+                        direccion = 'Harrobi edifizioa - Matero Errota nº 3 Polig. 27 - Apdo. 1380', 
+                        poblacion = 'Donostia', 
+                        provincia = 'Guipuzcoa', 
+                        cp = '20014', 
+                        pais = 'España', 
+                        telefono = '943 47 11 19', 
+                        descripcion = '', 
+                        email = 'donosti@berdin.com; ', 
+                        contacto = 'JUANI MUÑOZ', 
+                        email_pedidos = 'jmunoz@berdin.com', 
+                        web = 'www.berdin.com',
+                        formaPago = '60 DiAS F.F. FIN DE MES',
+                        CIF = '',
+                        homologado = 1,
+                        fecha_aprob = '',
+                        plataforma = '',
+                        usuario = '',
+                        password = ''
+                    WHERE id =73

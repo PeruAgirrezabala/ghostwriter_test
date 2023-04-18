@@ -1,0 +1,39 @@
+SELECT 
+                PEDIDOS_PROV_DETALLES.id,
+                MATERIALES.ref,  
+                MATERIALES.nombre,
+                MATERIALES.fabricante,
+                MATERIALES.modelo,                
+                PEDIDOS_PROV_DETALLES.unidades,
+                MATERIALES_PRECIOS.pvp, 
+                PEDIDOS_PROV_DETALLES.recibido,
+                PEDIDOS_PROV_DETALLES.fecha_recepcion,
+                PROYECTOS.nombre,
+                PEDIDOS_PROV_DETALLES.pvp,
+                MATERIALES_PRECIOS.dto_material, 
+                PEDIDOS_PROV_DETALLES.dto_prov_activo, 
+                PEDIDOS_PROV_DETALLES.dto_mat_activo, 
+                PEDIDOS_PROV_DETALLES.dto_ad_activo, 
+                PROVEEDORES_DTO.dto_prov, 
+                PEDIDOS_PROV_DETALLES.dto, 
+                ENTREGAS.nombre,
+                erp_users.user_email,
+                PEDIDOS_PROV_DETALLES.fecha_entrega 
+            FROM 
+                PEDIDOS_PROV_DETALLES
+            INNER JOIN MATERIALES
+                ON PEDIDOS_PROV_DETALLES.material_id = MATERIALES.id 
+            LEFT JOIN MATERIALES_PRECIOS 
+                ON MATERIALES_PRECIOS.id = PEDIDOS_PROV_DETALLES.material_tarifa_id 
+            LEFT JOIN PROYECTOS 
+                ON PROYECTOS.id = PEDIDOS_PROV_DETALLES.proyecto_id 
+            LEFT JOIN PROVEEDORES_DTO 
+                ON PROVEEDORES_DTO.id = PEDIDOS_PROV_DETALLES.dto_prov_id
+            LEFT JOIN ENTREGAS
+                ON PEDIDOS_PROV_DETALLES.entrega_id = ENTREGAS.id
+            LEFT JOIN erp_users
+                ON PEDIDOS_PROV_DETALLES.erp_userid = erp_users.id 
+            WHERE
+                PEDIDOS_PROV_DETALLES.pedido_id = 5958 
+            ORDER BY 
+                PEDIDOS_PROV_DETALLES.id ASC

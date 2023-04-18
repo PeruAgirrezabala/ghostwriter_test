@@ -1,0 +1,11 @@
+SELECT DISTINCT
+                CALIDAD_FORMACION.id,
+                CALIDAD_FORMACION.nombre,
+                CALIDAD_FORMACION.descripcion,
+                CALIDAD_FORMACION.doc_path,
+                CALIDAD_FORMACION.fecha
+            FROM 
+                CALIDAD_FORMACION 
+            INNER JOIN
+                CALIDAD_FORMACION_DETALLES ON CALIDAD_FORMACION.id=CALIDAD_FORMACION_DETALLES.formacion_id
+               

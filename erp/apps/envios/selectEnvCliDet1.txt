@@ -1,0 +1,8 @@
+SELECT 
+                    ENVIOS_CLI_DETALLES.entregado
+                FROM
+                    ENVIOS_CLI_DETALLES 
+                WHERE
+                    ENVIOS_CLI_DETALLES.envio_id = (SELECT envio_id FROM ENVIOS_CLI_DETALLES WHERE id ='50' LIMIT 1)
+                ORDER BY    
+                    ENVIOS_CLI_DETALLES.entregado asc limit 1

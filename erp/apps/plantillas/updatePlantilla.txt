@@ -1,0 +1,6 @@
+UPDATE PLANTILLAS SET 
+                        nombre = 'PARTE DE PUESTA EN MARCHA', 
+                        descripcion = 'Documento con información sobre los trabajos realizados en la puesta en marcha de un proyecto.', 
+                        ref = 'PART-PUES-MARC-01',
+                        tipodoc_id = 3
+                    WHERE id =41

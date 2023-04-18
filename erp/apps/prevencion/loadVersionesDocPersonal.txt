@@ -1,0 +1,10 @@
+SELECT
+                    USERS_DOC_VERSIONES.id,
+                    USERS_DOC_VERSIONES.doc_path,
+                    USERS_DOC_VERSIONES.fecha_exp,
+                    USERS_DOC.nombre
+                FROM 
+                    USERS_DOC_VERSIONES 
+                INNER JOIN
+                    USERS_DOC ON USERS_DOC_VERSIONES.doc_id=USERS_DOC.id
+                WHERE USERS_DOC_VERSIONES.doc_id =566

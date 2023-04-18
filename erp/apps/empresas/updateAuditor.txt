@@ -1,0 +1,19 @@
+UPDATE AUDITORES SET 
+                        nombre = 'Auditor 1', 
+                        direccion = 'Calle 123', 
+                        poblacion = 'Zumaia', 
+                        provincia = 'Gipuzkoa', 
+                        cp = '20750', 
+                        pais = 'España', 
+                        telefono = '943567812', 
+                        descripcion = '333', 
+                        email = 'aaa@gmail.com', 
+                        fax = '5656', 
+                        contacto = '3333', 
+                        web = '3333',
+                        CIF = '123456789',
+                        fecha_aprob = '',
+                        plataforma = '333',
+                        usuario = '333',
+                        password = '333'
+                    WHERE id =190

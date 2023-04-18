@@ -1,0 +1,6 @@
+UPDATE ENSAYOS_INFO
+                SET titulo='bbb2',
+                descripcion='bbb2', 
+                estado='semibien2', 
+                fecha='2021-07-08'
+                WHERE id=2

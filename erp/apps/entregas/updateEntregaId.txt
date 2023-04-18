@@ -1,0 +1,1 @@
+UPDATE PEDIDOS_PROV_DETALLES SET entrega_id=0 WHERE entrega_id=777

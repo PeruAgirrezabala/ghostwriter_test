@@ -1,0 +1,54 @@
+SELECT 
+                    CLIENTES.nombre,
+                    CLIENTES.direccion,
+                    CLIENTES.poblacion,
+                    CLIENTES.provincia,
+                    CLIENTES.cp,
+                    CLIENTES.pais,
+                    CLIENTES.telefono,
+                    CLIENTES.email,
+                    ENVIOS_CLI.id,
+                    ENVIOS_CLI.ref, 
+                    ENVIOS_CLI.ref_pedido_cliente,
+                    ENVIOS_CLI.nombre,
+                    ENVIOS_CLI.descripcion,
+                    ENVIOS_CLI.cliente_id,
+                    ENVIOS_CLI.fecha,
+                    ENVIOS_CLI.fecha_entrega,
+                    ENVIOS_CLI.tecnico_id,
+                    ENVIOS_CLI.proyecto_id,
+                    ENVIOS_CLI.estado_id, 
+                    ENVIOS_CLI.path,
+                    ENVIOS_CLI.ref_oferta_proveedor,
+                    CLIENTES.contacto,
+                    ENVIOS_CLI.plazo,
+                    OFERTAS.ref,
+                    ENVIOS_CLI.direccion_envio,
+                    TRANSPORTISTAS.nombre,
+                    PROVEEDORES.id,
+                    PROVEEDORES.direccion,
+                    PROVEEDORES.poblacion,
+                    PROVEEDORES.provincia,
+                    PROVEEDORES.cp,
+                    PROVEEDORES.pais,
+                    PROVEEDORES.telefono,
+                    PROVEEDORES.CIF,
+                    PROVEEDORES.email,
+                    PROVEEDORES.nombre,
+                    ENVIOS_CLI.destinatario,
+                    ENVIOS_CLI.att,
+                    ENVIOS_CLI.proveedor_id,
+                    PROVEEDORES.contacto,
+                    CLIENTES.contacto
+                FROM 
+                    ENVIOS_CLI
+                LEFT JOIN CLIENTES
+                    ON ENVIOS_CLI.cliente_id = CLIENTES.id
+                LEFT JOIN PROVEEDORES 
+                    ON ENVIOS_CLI.proveedor_id = PROVEEDORES.id
+                LEFT JOIN OFERTAS
+                    ON OFERTAS.id = ENVIOS_CLI.oferta_id 
+                INNER JOIN TRANSPORTISTAS 
+                    ON TRANSPORTISTAS.id = ENVIOS_CLI.transportista_id 
+                WHERE 
+                    ENVIOS_CLI.id = 29

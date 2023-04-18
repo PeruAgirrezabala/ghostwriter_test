@@ -1,0 +1,8 @@
+INSERT INTO USERS_DOC_VERSIONES 
+                        (doc_id,
+                        doc_path,
+                        fecha_exp
+                        )
+                    VALUES (664,
+                    '/_DOCUMENTACION/PRL/DOC/PER//SEGURIDAD_SOCIAL/2023/TA2_Mikel_Uribarren_01_2023.pdf',
+                    '2023-01-30')

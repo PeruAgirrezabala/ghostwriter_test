@@ -1,0 +1,11 @@
+INSERT INTO MATERIALES_STOCK 
+                        (material_id,
+                        stock,
+                        ubicacion_id,
+                        proyecto_id,
+                        pedido_detalle_id)
+                        VALUES (4427,
+                        4,
+                        2, 
+                        1197,
+                        19701)

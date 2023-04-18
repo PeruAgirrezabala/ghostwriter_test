@@ -1,0 +1,22 @@
+INSERT INTO PROYECTOS_MATERIALES 
+                                     (material_id,
+                                     unidades,
+                                     material_tarifa_id,
+                                     dto_prov_id,
+                                     dto_prov_activo,
+                                     dto_mat_activo,
+                                     dto_ad_activo,
+                                     proyecto_id,
+                                     pedido_detalle_id
+                                     )
+                                     VALUES (
+                                     3863,
+                                     1,
+                                     4514,
+                                     8,
+                                     1,
+                                     0,
+                                     0,
+                                     1,
+                                     18508
+                                     );

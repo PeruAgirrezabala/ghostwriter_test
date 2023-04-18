@@ -1,0 +1,17 @@
+SELECT 
+                                    id,
+                                    nombre,
+                                    responsable,
+                                    year,
+                                    dptos,
+                                    objeto,
+                                    recursos,
+                                    entradas,
+                                    salidas,
+                                    registros,
+                                    procedimientos,
+                                    actividades
+                                FROM 
+                                    CALIDAD_PROCESOS
+                                WHERE
+                                    id = 8

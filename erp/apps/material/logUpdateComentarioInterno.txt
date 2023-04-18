@@ -1,0 +1,5 @@
+UPDATE PEDIDOS_PROV SET 
+                com_interno = 'Se da parte al seguro por la sobretensión, y nos abonan el importe de 1 SAI y los 2 switch averiados (965,57€).-
+DÍA 23/01/2023 Se realiza la devolución de un articulo 698CA000005 (NS 291722A02228) y se envía a reparar al fabricante ya que estaba en garantía.
+DÍA 01/03/2023 Se recibe un nuevo SAI con el número de serie 291822D00251.'
+            WHERE id =6851

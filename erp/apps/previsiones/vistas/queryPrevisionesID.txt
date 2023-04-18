@@ -1,0 +1,26 @@
+SELECT 
+                PREVISIONES.id prev,
+                PREVISIONES.nombre,
+                PREVISIONES.fecha_ini,
+                PREVISIONES.fecha_fin,
+                PREVISIONES.cliente_id,
+                PREVISIONES.instalacion, 
+                CLIENTES.nombre, 
+                CLIENTES.img,
+                PREVISIONES.item_id item,
+                PREVISIONES.tipo_prev,
+                PREVISIONES_ESTADOS.nombre,
+                PREVISIONES_ESTADOS.color,
+                (SELECT GROUP_CONCAT(CONCAT(erp_users.nombre,' ', erp_users.apellidos)) FROM erp_users, PREVISIONES_TECNICOS WHERE PREVISIONES_TECNICOS.erpuser_id = erp_users.id AND PREVISIONES_TECNICOS.prevision_id = prev  AND PREVISIONES_TECNICOS.erpuser_id = 86) as tecnicos,
+                (SELECT ref FROM INTERVENCIONES WHERE id = item),
+                (SELECT ref FROM PROYECTOS WHERE id = item),
+                (SELECT ref FROM OFERTAS WHERE id = item)
+            FROM 
+                PREVISIONES
+            INNER JOIN PREVISIONES_ESTADOS
+                ON PREVISIONES.estado_id = PREVISIONES_ESTADOS.id 
+            LEFT JOIN CLIENTES
+                ON PREVISIONES.cliente_id = CLIENTES.id
+             WHERE YEAR(fecha_ini) = 2020
+            ORDER BY 
+                PREVISIONES.fecha_ini DESC

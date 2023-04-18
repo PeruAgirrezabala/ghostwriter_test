@@ -1,0 +1,8 @@
+SELECT 
+                        erp_users.id,
+                        erp_users.nombre,
+                        erp_users.apellidos
+                      FROM 
+                        erp_users
+                      WHERE 
+                        erp_users.id=69

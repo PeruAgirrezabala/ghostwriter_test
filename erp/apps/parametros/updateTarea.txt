@@ -1,0 +1,5 @@
+UPDATE TAREAS SET 
+                        nombre = 'Tareas Administrativas',
+                        descripcion = 'Tareas de Administración',
+                        perfil_id = 3
+                    WHERE id =2

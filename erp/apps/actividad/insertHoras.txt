@@ -1,0 +1,10 @@
+INSERT INTO ACTIVIDAD_DETALLES_HORAS 
+                    (actividad_detalle_id,
+                    tipo_hora_id,
+                    cantidad,
+                    tecnico_id
+                    )
+                VALUES (394,
+                4,
+                6,
+                '86')

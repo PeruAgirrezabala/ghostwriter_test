@@ -1,0 +1,7 @@
+SELECT 
+                    PEDIDOS_PROV_DETALLES.material_id,
+                    SUM(PEDIDOS_PROV_DETALLES.unidades)
+                    FROM PEDIDOS_PROV_DETALLES 
+                    WHERE PEDIDOS_PROV_DETALLES.proyecto_id =11 AND PEDIDOS_PROV_DETALLES.recibido=1 
+                    AND PEDIDOS_PROV_DETALLES.material_id != 'NULL'
+                    GROUP BY material_id

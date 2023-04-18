@@ -1,0 +1,175 @@
+<?
+    $pathraiz = $_SERVER['DOCUMENT_ROOT']."/erp";
+    require_once($pathraiz."/connection.php");
+    $db = new dbObj();
+    $connString =  $db->getConnstring();
+    
+    switch ($_GET['tipo']) {
+        case "PROCESOS":
+            $sql = "SELECT 
+                        CALIDAD_PROCESOS.nombre
+                    FROM
+                        CALIDAD_PROCESOS 
+                    WHERE 
+                        CALIDAD_PROCESOS.id = ".$_GET["iddoc"];
+            $uploaddocs = $_FILES['uploaddocsPCS'];
+            break;
+        case "ACTA":
+            $sql = "SELECT 
+                        CALIDAD_ACTAS.nombre
+                    FROM
+                        CALIDAD_ACTAS 
+                    WHERE 
+                        CALIDAD_ACTAS.id = ".$_GET["iddoc"];
+            $uploaddocs = $_FILES['uploaddocsACTA'];
+            break;
+        case "CALIBRACIONES":
+            $sql = "SELECT 
+                        CALIDAD_CALIBRACIONES.num_serie
+                    FROM
+                        CALIDAD_CALIBRACIONES 
+                    WHERE 
+                        CALIDAD_CALIBRACIONES.id = ".$_GET["iddoc"];
+            $uploaddocs = $_FILES['uploaddocsCALIBRACIONES'];
+            break;
+        case "SIS_CALIDAD":
+            $sql = "SELECT 
+                        CALIDAD_SISTEMA.nombre
+                    FROM
+                        CALIDAD_SISTEMA 
+                    WHERE 
+                        CALIDAD_SISTEMA.id = ".$_GET["iddoc"];
+            $uploaddocs = $_FILES['uploaddocsSisCalidad'];
+            break;
+        case "FORMACION":
+            $sql = "SELECT 
+                        CALIDAD_FORMACION.nombre
+                    FROM
+                        CALIDAD_FORMACION 
+                    WHERE 
+                        CALIDAD_FORMACION.id = ".$_GET["iddoc"];
+            $uploaddocs = $_FILES['uploaddocsFORMACION'];
+            break;
+    }
+    file_put_contents("queryNombres.txt", $sql);
+           
+    $res = mysqli_query($connString, $sql) or die("database error:");
+    $row = mysqli_fetch_row($res);
+    //$strreplace = str_replace("-","_",$row[0]); 
+    $nombreDOC = str_replace("/","_",str_replace(" ", "_", $row[0]));     
+    //$trabajador = str_replace("/","-",str_replace(" ", "_", $trabajador));     
+    //$cliente = str_replace(" ", "_", $row[2])."/";
+    
+    // upload.php
+    // 'csvs' refers to your file input name attribute
+    if (empty($uploaddocs)) {
+        echo json_encode(['error'=>'No files found for upload.']); 
+        // or you can throw an exception 
+        return; // terminate
+    }
+
+    // get the files posted
+    //$uploaddocs = $uploadDocs;
+        
+    // get user id posted
+    //$userid = empty($_POST['userid']) ? '' : $_POST['userid'];
+
+    // get user name posted
+    //$username = empty($_POST['username']) ? '' : $_POST['username'];
+
+    // a flag to see if everything is ok
+    $success = null;
+    function ftp_mksubdirs($ftpcon,$ftpbasedir,$ftpath){
+        @ftp_chdir($ftpcon, $ftpbasedir); // /var/www/uploads
+        $parts = explode('/',$ftpath); // 2013/06/11/username
+        foreach($parts as $part){
+           if(!@ftp_chdir($ftpcon, $part)){
+              if ($part != "") {
+                ftp_mkdir($ftpcon, $part);
+                ftp_chdir($ftpcon, $part);
+              }
+              //ftp_chmod($ftpcon, 0777, $part);
+           }
+        }
+     }
+     
+    // file paths to store
+        $paths= [];
+        $year = date("Y",strtotime($_GET["fecha"]));
+        $month = date("m",strtotime($_GET["fecha"]));
+        $month = str_pad($month, 2, "0", STR_PAD_LEFT);
+        $day = date("d",strtotime($_GET["fecha"]));
+        $basepath = "/_DOCUMENTACION/Calidad/ERP/".$_GET['tipo']."/";
+        //file_put_contents("path.txt", $basepath);
+        $ftp_server = "192.168.3.108";
+        $ftp_username = "admin";
+        $ftp_password = "Sistemas2111";
+        ///share/MD0_DATA/Download/
+    
+    // connection to ftp
+        $ftp_connection = ftp_connect($ftp_server);
+        $connection_result = ftp_login($ftp_connection, $ftp_username, $ftp_password);
+    
+    // crear path si no existiera
+        ftp_mksubdirs($ftp_connection,"",$basepath);
+    
+    // get file names
+    $filenames = $uploaddocs['name'];
+
+    // loop and process files
+    for($i=0; $i < count($filenames); $i++){
+        //file_put_contents($filenames[$i].".txt", $filenames[$i]);
+        $ext = explode('.', basename($filenames[$i]));
+        //$target = "uploads" . DIRECTORY_SEPARATOR . md5(uniqid()) . "." . array_pop($ext);
+        //$name = basename($filenames[$i], ".".$ext);
+        //$target = $basepath.$filenames[$i];
+        $target = $basepath.$nombreDOC."_".$day."_".$month."_".$year.".".array_pop($ext);
+        $destination_directory=$target;
+        $source_directory=$uploaddocs['tmp_name'][$i];
+        
+        $upload = ftp_put($ftp_connection, $destination_directory, $source_directory, FTP_ASCII);
+        if ($upload == 1) {
+            $success = true;
+            $paths[] = $target;
+        }
+        else {
+            $success = false;
+        }       
+        
+        /*
+        if(move_uploaded_file($uploaddocs['tmp_name'][$i], $target)) {
+            $success = true;
+            $paths[] = $target;
+        } else {
+            $success = false;
+            break;
+        }
+        */
+    }
+
+    // check and process based on successful status 
+    if ($success === true) {
+        // call the function to save all data to database
+        // code for the following function `save_data` is not 
+        // mentioned in this example
+        //save_data($userid, $username, $paths);
+
+        // store a successful response (default at least an empty array). You
+        // could return any additional response info you need to the plugin for
+        // advanced implementations.
+        $output = [];
+        // for example you can get the list of files uploaded this way
+        $output = ['uploaded' => $paths];
+    } elseif ($success === false) {
+        $output = ['error'=>'Error subiendo los ficheros.'];
+        // delete any uploaded files
+        foreach ($paths as $file) {
+            unlink($file);
+        }
+    } else {
+        $output = ['error'=>'Ningún fichero procesado.'];
+    }
+
+    // return a json encoded response for plugin to process successfully
+    echo json_encode($output);
+?>

@@ -1,0 +1,19 @@
+UPDATE EMPRESAS SET 
+                        nombre = 'GENELEK SISTEMAS S.L.', 
+                        direccion = 'POL. IND. A.D.U. 21, PLAZA UROLA, S/N', 
+                        cp = 20730,
+                        poblacion = 'ZUMAIA',
+                        provincia = 'GIPUZKOA',
+                        pais = 'ESPAÑA',
+                        telefono = '943143311',
+                        web = 'www.genelek.com',
+                        email = 'genelek@genelek.com',
+                        CIF = 'B75057778',
+                        CIF2 = 'B75115758 - ADU21',
+                        IAE1 = '843.1 - Servicios Técnicos de Ingeniería',
+                        IAE2 = '504.1 - Instalaciones Eléctricas en General',
+                        CNAE1 = '7112 - Servicios técnicos de ingeniería y otras actividades relacionadas con el asesoramiento técnico',
+                        CNAE2 = '4321 - Instalaciones Eléctricas',
+                        horas_convenio = 1697,
+                        vacaciones_ano = 23
+                    WHERE id =1

@@ -1,0 +1,8 @@
+UPDATE
+                        PEDIDOS_PROV_DETALLES 
+                    SET 
+                        PEDIDOS_PROV_DETALLES.unidades=1,
+                        PEDIDOS_PROV_DETALLES.recibido= 1,
+                        PEDIDOS_PROV_DETALLES.fecha_recepcion=now()
+                    WHERE 
+                        PEDIDOS_PROV_DETALLES.id=21311

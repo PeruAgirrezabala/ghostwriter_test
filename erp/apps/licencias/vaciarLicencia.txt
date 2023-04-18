@@ -1,0 +1,7 @@
+UPDATE LICENCIAS SET 
+                        ubicacion = '', 
+                        fecha = '0000-00-00',
+                        activada = 0,
+                        proyecto_id = null,
+                        user_id = null
+                    WHERE id =1

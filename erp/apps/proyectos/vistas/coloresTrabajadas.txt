@@ -1,0 +1,26 @@
+SELECT 
+                                    TAREAS.nombre, PERFILES_HORAS.nombre, sum(ACTIVIDAD_DETALLES_HORAS.cantidad), CONCAT(PERFILES.id,'-',PERFILES_HORAS.id) as Grupo1  
+                                FROM 
+                                    TAREAS, PERFILES, PERFILES_HORAS, ACTIVIDAD_DETALLES_HORAS, ACTIVIDAD, ACTIVIDAD_DETALLES, PROYECTOS  
+                                WHERE 
+                                    ACTIVIDAD.tarea_id = TAREAS.id
+                                AND
+                                    TAREAS.perfil_id = PERFILES.id
+                                AND
+                                    PERFILES_HORAS.perfil_id = PERFILES.id
+                                AND
+                                    PERFILES_HORAS.id = ACTIVIDAD_DETALLES_HORAS.tipo_hora_id
+                                AND
+                                    ACTIVIDAD.item_id = PROYECTOS.id 
+                                AND 
+                                    ACTIVIDAD_DETALLES.actividad_id = ACTIVIDAD.id
+                                AND
+                                    ACTIVIDAD_DETALLES_HORAS.actividad_detalle_id = ACTIVIDAD_DETALLES.id 
+                                AND
+                                    ACTIVIDAD.imputable = 1 
+                                AND 
+                                    PROYECTOS.id = 1357 
+                                GROUP BY 
+                                    Grupo1 
+                                ORDER BY 
+                                    ACTIVIDAD_DETALLES_HORAS.cantidad ASC

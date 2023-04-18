@@ -1,0 +1,8 @@
+UPDATE LICENCIAS SET 
+                        nombre = 'LICENCIA TEMPORAL (03/2023)', 
+                        ubicacion = 'Servidor de Oficina - (192.168.3.139)', 
+                        fecha = '2023-02-23',
+                        activada = 1
+                        , proyecto_id = 1351
+                        , user_id = 86
+                    WHERE id =6

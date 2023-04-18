@@ -1,0 +1,23 @@
+SELECT DISTINCT
+                PREVISIONES.id prev,
+                PREVISIONES.nombre,
+                PREVISIONES.fecha_ini,
+                PREVISIONES.fecha_fin,
+                PREVISIONES.cliente_id,
+                PREVISIONES.instalacion,
+                PREVISIONES.item_id item,
+                PREVISIONES.tipo_prev,
+                PREVISIONES_ESTADOS.nombre,
+                PREVISIONES_ESTADOS.color,
+                (SELECT GROUP_CONCAT(CONCAT(erp_users.nombre,' ', erp_users.apellidos)) FROM erp_users, PREVISIONES_TECNICOS WHERE PREVISIONES_TECNICOS.erpuser_id = erp_users.id AND PREVISIONES_TECNICOS.prevision_id = prev) as tecnicos,
+                (SELECT ref FROM INTERVENCIONES WHERE id = item),
+                (SELECT ref FROM PROYECTOS WHERE id = item),
+                (SELECT ref FROM OFERTAS WHERE id = item),IF((SELECT GROUP_CONCAT(CONCAT(erp_users.nombre,' ', erp_users.apellidos)) FROM erp_users, PREVISIONES_TECNICOS WHERE PREVISIONES_TECNICOS.erpuser_id = erp_users.id AND PREVISIONES_TECNICOS.prevision_id = prev) IS NULL, 0, 1) as existe
+            FROM 
+                PREVISIONES
+            INNER JOIN PREVISIONES_ESTADOS
+                ON PREVISIONES.estado_id = PREVISIONES_ESTADOS.id 
+             WHERE ( PREVISIONES.id =87 OR PREVISIONES.id =71 OR PREVISIONES.id =76 OR PREVISIONES.id =67 OR PREVISIONES.id =65 OR PREVISIONES.id =62 OR PREVISIONES.id =58 OR PREVISIONES.id =63 OR PREVISIONES.id =43 OR PREVISIONES.id =50 OR PREVISIONES.id =42 OR PREVISIONES.id =41 OR PREVISIONES.id =40 OR PREVISIONES.id =39 OR PREVISIONES.id =35 OR PREVISIONES.id =36 OR PREVISIONES.id =33 OR PREVISIONES.id =31 OR PREVISIONES.id =29 OR PREVISIONES.id =23 OR PREVISIONES.id =28 OR PREVISIONES.id =22 OR PREVISIONES.id =32 OR PREVISIONES.id =30 OR PREVISIONES.id =27 OR PREVISIONES.id =26 OR PREVISIONES.id =21 OR PREVISIONES.id =20 OR PREVISIONES.id =18 OR PREVISIONES.id =17 OR PREVISIONES.id =19 OR PREVISIONES.id =15 OR PREVISIONES.id =16 OR PREVISIONES.id =8 OR PREVISIONES.id =14 OR PREVISIONES.id =6 OR PREVISIONES.id =5) HAVING existe = 1
+            ORDER BY 
+                PREVISIONES.fecha_ini DESC
+            LIMIT 0, 20

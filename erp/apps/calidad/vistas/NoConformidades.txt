@@ -1,0 +1,26 @@
+SELECT 
+                CALIDAD_NOCONFORMIDADES.id,
+                CALIDAD_NOCONFORMIDADES.ref,  
+                CALIDAD_NOCONFORMIDADES.detectado_por,
+                CALIDAD_NOCONFORMIDADES.detectado,
+                CALIDAD_NOCONFORMIDADES.proyecto_id,
+                PROYECTOS.nombre,
+                CLIENTES.nombre,
+                CLIENTES.img, 
+                CALIDAD_NOCONFORMIDADES.fecha,
+                CALIDAD_NOCONFORMIDADES.descripcion,
+                CALIDAD_NOCONFORMIDADES.resolucion,
+                CALIDAD_NOCONFORMIDADES.causa,
+                CALIDAD_NOCONFORMIDADES.cierre,
+                CALIDAD_NOCONFORMIDADES.fecha_cierre
+            FROM 
+                CALIDAD_NOCONFORMIDADES, PROYECTOS, CLIENTES, erp_users, PROVEEDORES
+            WHERE 
+                CALIDAD_NOCONFORMIDADES.proyecto_id = PROYECTOS.id
+            AND
+                PROYECTOS.cliente_id = CLIENTES.id
+                    
+            GROUP BY
+		CALIDAD_NOCONFORMIDADES.id ASC
+            ORDER BY 
+                CALIDAD_NOCONFORMIDADES.fecha DESC

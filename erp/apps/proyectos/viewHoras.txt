@@ -1,0 +1,38 @@
+SELECT 
+                    ACTIVIDAD.id as actid,
+                    TAREAS.id as tarea,
+                    TAREAS.nombre,
+                    (SELECT sum(cantidad) FROM ACTIVIDAD_DETALLES_HORAS, ACTIVIDAD_DETALLES WHERE ACTIVIDAD_DETALLES_HORAS.actividad_detalle_id = ACTIVIDAD_DETALLES.id AND ACTIVIDAD_DETALLES.actividad_id = actid) as totalHoras,
+                    ACTIVIDAD.nombre,
+                    ACTIVIDAD_DETALLES.nombre,
+                    erp_users.nombre,
+                    erp_users.apellidos,
+                    ACTIVIDAD_DETALLES_HORAS.id as detalle,
+                    ACTIVIDAD_DETALLES_HORAS.fecha,
+                    PERFILES_HORAS.precio_coste,
+                    ACTIVIDAD_DETALLES_HORAS.cantidad,
+                    ACTIVIDAD_DETALLES.fecha
+                FROM 
+                    TAREAS, PERFILES, PERFILES_HORAS, ACTIVIDAD_DETALLES_HORAS, ACTIVIDAD_DETALLES, ACTIVIDAD, PROYECTOS, erp_users  
+                WHERE 
+                    ACTIVIDAD.tarea_id = TAREAS.id
+                AND
+                    TAREAS.perfil_id = PERFILES.id
+                AND
+                    PERFILES_HORAS.perfil_id = PERFILES.id
+                AND
+                    PERFILES_HORAS.id = ACTIVIDAD_DETALLES_HORAS.tipo_hora_id
+                AND
+                    ACTIVIDAD.item_id = PROYECTOS.id 
+                AND
+                    ACTIVIDAD_DETALLES.actividad_id = ACTIVIDAD.id
+                AND
+                    ACTIVIDAD_DETALLES_HORAS.actividad_detalle_id = ACTIVIDAD_DETALLES.id 
+                AND 
+                    ACTIVIDAD_DETALLES_HORAS.tecnico_id = erp_users.id 
+                AND
+                    ACTIVIDAD.imputable = 1 
+                AND
+                    PROYECTOS.id = 1357
+                ORDER BY 
+                    ACTIVIDAD_DETALLES_HORAS.id ASC

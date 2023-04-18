@@ -1,0 +1,1 @@
+SELECT id,nombre,mail,telefono FROM CLIENTES_CONTACTOS WHERE cliente_id= 11;

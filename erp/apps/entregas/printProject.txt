@@ -1,0 +1,29 @@
+SELECT
+                ENSAYOS.id,
+                ENSAYOS.nombre,
+                ENSAYOS.plantilla_id,
+                PLANTILLAS.nombre,
+                ENTREGAS.proyecto_id,
+                PROYECTOS.nombre,
+                CLIENTES.id,
+                CLIENTES.nombre,
+                ENSAYOS.fecha,
+                ENSAYOS.erp_userid,
+                erp_users.nombre,
+                erp_users.apellidos,
+                ENSAYOS.descripcion,
+                ENTREGAS.instalacion_id,
+                CLIENTES_INSTALACIONES.nombre,
+                CLIENTES_INSTALACIONES.direccion,
+                USERS_DOC.id,
+                USERS_DOC_VERSIONES.doc_path
+            FROM ENSAYOS
+                INNER JOIN ENTREGAS ON ENSAYOS.entrega_id=ENTREGAS.id
+                INNER JOIN PLANTILLAS ON ENSAYOS.plantilla_id=PLANTILLAS.id
+                INNER JOIN PROYECTOS ON ENTREGAS.proyecto_id=PROYECTOS.id
+                INNER JOIN CLIENTES ON PROYECTOS.cliente_id=CLIENTES.id
+                INNER JOIN erp_users ON ENSAYOS.erp_userid=erp_users.id
+                INNER JOIN CLIENTES_INSTALACIONES ON CLIENTES.id=CLIENTES_INSTALACIONES.cliente_id
+                INNER JOIN USERS_DOC ON erp_users.id=USERS_DOC.erpuser_id
+                INNER JOIN USERS_DOC_VERSIONES ON USERS_DOC.id=USERS_DOC_VERSIONES.doc_id
+            WHERE ENSAYOS.id=20 AND USERS_DOC.nombre='FIRMA'

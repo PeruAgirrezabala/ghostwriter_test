@@ -1,0 +1,16 @@
+SELECT 
+                            ACTIVIDAD_DETALLES.id,
+                            ACTIVIDAD_DETALLES.nombre,  
+                            ACTIVIDAD_DETALLES.descripcion,
+                            ACTIVIDAD_DETALLES.fecha,
+                            ACTIVIDAD_DETALLES.fecha_mod,
+                            erp_users.nombre,
+                            erp_users.apellidos
+                        FROM 
+                            ACTIVIDAD_DETALLES, erp_users
+                        WHERE
+                            ACTIVIDAD_DETALLES.erpuser_id = erp_users.id
+                        AND
+                            ACTIVIDAD_DETALLES.actividad_id = 24 
+                        ORDER BY 
+                            ACTIVIDAD_DETALLES.id ASC

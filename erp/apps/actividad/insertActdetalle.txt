@@ -1,0 +1,16 @@
+INSERT INTO ACTIVIDAD_DETALLES 
+                    (nombre,
+                    descripcion,
+                    fecha,
+                    fecha_mod,
+                    actividad_id,
+                    erpuser_id,
+                    completado
+                    )
+                VALUES ('Día 3',
+                '<p>&uacute;ltimo d&iacute;a</p>', 
+                '2022-11-24',
+                now(),
+                419,
+                86,
+                1)

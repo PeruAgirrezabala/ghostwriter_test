@@ -1,0 +1,1 @@
+SELECT id, nombre   FROM MATERIALES_CATEGORIAS WHERE parent_id = 0 ORDER BY nombre ASC

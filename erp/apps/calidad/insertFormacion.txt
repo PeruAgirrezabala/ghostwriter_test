@@ -1,0 +1,9 @@
+INSERT INTO CALIDAD_FORMACION 
+                            (nombre,
+                            descripcion,
+                            fecha) 
+                       VALUES (
+                            'ggg', 
+                            'asdasdaas',
+                            '2002-02-01'    
+                        )

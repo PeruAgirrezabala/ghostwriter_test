@@ -1,0 +1,2 @@
+SELECT id, ensayoplantilla_id, ensayo_id, estado_id, plantilla_id, texto
+                    FROM ENSAYOS_PRUEBAS WHERE ensayo_id=18

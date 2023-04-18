@@ -1,0 +1,14 @@
+SELECT 
+                    JORNADAS_ACCESOS.id,
+                    JORNADAS_ACCESOS.hora_entrada, 
+                    JORNADAS_ACCESOS.hora_salida,
+                    JORNADAS_ACCESOS.tipo_horas
+                FROM 
+                    JORNADAS, JORNADAS_ACCESOS  
+                WHERE 
+                    JORNADAS.id = JORNADAS_ACCESOS.jornada_id 
+                AND
+                    JORNADAS.id = 59179
+                
+                ORDER BY 
+                    JORNADAS_ACCESOS.hora_entrada ASC

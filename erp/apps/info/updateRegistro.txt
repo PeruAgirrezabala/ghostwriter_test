@@ -1,0 +1,9 @@
+UPDATE EMPRESAS_REGISTROS SET 
+                        plataforma = 'https://gus.imqprevencion.es/imqusers/faces/login.xhtml?app=gestordocumental&modo=empresa', 
+                        usuario = '72453954k', 
+                        password = 'Sistemas@2111',
+                        descripcion = 'IMQ Prevención - Descarga de certificados médicos, documentación de empresa (evaluación riesgos...).
+Médico de trabajo: Begoña Porta Cabrero --> begona.porta@imqprevencion.com
+Gestión reconocimiento médico --> Susana Conde susana.conde@imqprevencion.com',
+                        empresa_id = 1
+                    WHERE id =22

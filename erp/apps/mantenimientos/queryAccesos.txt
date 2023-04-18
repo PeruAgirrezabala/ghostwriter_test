@@ -1,0 +1,10 @@
+SELECT 
+                        PROYECTOS_VISITAS.fecha, PROYECTOS.id, PROYECTOS_VISITAS.id, PROYECTOS_VISITAS.realizada, PROYECTOS_VISITAS.actividad_id
+                    FROM 
+                        PROYECTOS_VISITAS, PROYECTOS 
+                    WHERE 
+                        PROYECTOS_VISITAS.proyecto_id = PROYECTOS.id 
+                    AND
+                        PROYECTOS_VISITAS.proyecto_id = 1311
+                    ORDER BY 
+                        PROYECTOS_VISITAS.fecha DESC

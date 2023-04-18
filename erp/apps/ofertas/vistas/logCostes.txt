@@ -1,0 +1,30 @@
+SELECT 
+                    OFERTAS_DETALLES_MATERIALES.id,
+                    MATERIALES.id as material,
+                    MATERIALES.ref,
+                    MATERIALES.nombre,
+                    MATERIALES.modelo,
+                    MATERIALES.descripcion,
+                    MATERIALES_PRECIOS.pvp as precio,
+                    OFERTAS_DETALLES_MATERIALES.cantidad,
+                    OFERTAS_DETALLES_MATERIALES.titulo,
+                    OFERTAS_DETALLES_MATERIALES.descripcion,
+                    OFERTAS_DETALLES_MATERIALES.incremento,
+                    OFERTAS_DETALLES_MATERIALES.dto1, 
+                    OFERTAS_DETALLES_MATERIALES.dto_prov_activo, 
+                    OFERTAS_DETALLES_MATERIALES.dto_mat_activo, 
+                    OFERTAS_DETALLES_MATERIALES.dto_ad_activo, 
+                    PROVEEDORES_DTO.dto_prov, 
+                    MATERIALES.dto2 
+                FROM 
+                    MATERIALES
+                INNER JOIN MATERIALES_PRECIOS
+                    ON MATERIALES_PRECIOS.material_id = MATERIALES.id  
+                INNER JOIN OFERTAS_DETALLES_MATERIALES
+                    ON OFERTAS_DETALLES_MATERIALES.material_tarifa_id = MATERIALES_PRECIOS.id
+                INNER JOIN OFERTAS 
+                    ON OFERTAS_DETALLES_MATERIALES.oferta_id = OFERTAS.id  
+                LEFT JOIN PROVEEDORES_DTO 
+                    ON PROVEEDORES_DTO.id = OFERTAS_DETALLES_MATERIALES.dto_prov_id 
+                WHERE 
+                    OFERTAS_DETALLES_MATERIALES.oferta_id = 855

@@ -1,0 +1,7 @@
+SELECT 
+                                                CALIDAD_INDICADORES_VERSIONES.id,
+                                                CALIDAD_INDICADORES_VERSIONES.anyo
+                                            FROM 
+                                                CALIDAD_INDICADORES_VERSIONES
+                                            WHERE 
+                                                CALIDAD_INDICADORES_VERSIONES.indicador_id=6

@@ -1,0 +1,1 @@
+INSERT INTO PROYECTOS_VISITAS (proyecto_id, fecha, realizada,actividad_id) VALUES (1243,'2021-02-27',1,159)

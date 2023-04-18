@@ -1,0 +1,13 @@
+SELECT DISTINCT
+                                CALENDARIO.id,
+                                CALENDARIO.fecha, 
+                                CALENDARIO.festivo,
+                                CALENDARIO.tipo_jornada, 
+                                MONTH(CALENDARIO.fecha),
+                                DAY(CALENDARIO.fecha)
+                            FROM 
+                                CALENDARIO 
+                            WHERE 
+                                YEAR(CALENDARIO.fecha) = 2021
+                            ORDER BY 
+                                CALENDARIO.fecha ASC

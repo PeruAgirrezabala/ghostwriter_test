@@ -1,0 +1,34 @@
+SELECT DISTINCT
+                PROYECTOS_MATERIALES.id as idmat,
+                MATERIALES.ref,  
+                MATERIALES.nombre,
+                MATERIALES.fabricante,
+                PROYECTOS_MATERIALES.unidades,
+                MATERIALES_PRECIOS.pvp, 
+                PROYECTOS.nombre,
+                MATERIALES_PRECIOS.dto_material, 
+                PROYECTOS_MATERIALES.dto_prov_activo, 
+                PROYECTOS_MATERIALES.dto_mat_activo, 
+                PROYECTOS_MATERIALES.dto_ad_activo, 
+                PROVEEDORES_DTO.dto_prov, 
+                PROYECTOS_MATERIALES.dto, 
+                PROYECTOS_MATERIALES.material_id,
+                PROYECTOS_MATERIALES.material_tarifa_id,
+                (SELECT GROUP_CONCAT(ENVIOS_CLI.ref) FROM ENVIOS_CLI, ENVIOS_CLI_DETALLES WHERE ENVIOS_CLI.id = ENVIOS_CLI_DETALLES.envio_id AND ENVIOS_CLI_DETALLES.material_proyecto_id = idmat) as albREF,
+                PROYECTOS_MATERIALES.pedido_detalle_id
+            FROM 
+                PROYECTOS_MATERIALES
+            INNER JOIN MATERIALES
+                ON PROYECTOS_MATERIALES.material_id = MATERIALES.id 
+            LEFT JOIN MATERIALES_PRECIOS 
+                ON MATERIALES_PRECIOS.id = PROYECTOS_MATERIALES.material_tarifa_id 
+            LEFT JOIN PROYECTOS 
+                ON PROYECTOS.id = PROYECTOS_MATERIALES.proyecto_id 
+            LEFT JOIN PROVEEDORES_DTO 
+                ON PROVEEDORES_DTO.id = PROYECTOS_MATERIALES.dto_prov_id
+            INNER JOIN ENVIOS_CLI_DETALLES
+                ON PROYECTOS.id = ENVIOS_CLI_DETALLES.proyecto_id 
+            WHERE
+                PROYECTOS_MATERIALES.proyecto_id = 1 
+            ORDER BY 
+                MATERIALES_PRECIOS.proveedor_id ASC, MATERIALES.ref ASC

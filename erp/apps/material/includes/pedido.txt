@@ -1,0 +1,32 @@
+SELECT 
+                    PROVEEDORES.nombre,
+                    PROVEEDORES.direccion,
+                    PROVEEDORES.poblacion,
+                    PROVEEDORES.provincia,
+                    PROVEEDORES.cp,
+                    PROVEEDORES.pais,
+                    PROVEEDORES.telefono,
+                    PROVEEDORES.email,
+                    PEDIDOS_PROV.id,
+                    PEDIDOS_PROV.pedido_genelek, 
+                    PEDIDOS_PROV.ref,
+                    PEDIDOS_PROV.titulo,
+                    PEDIDOS_PROV.descripcion,
+                    PEDIDOS_PROV.proveedor_id,
+                    PEDIDOS_PROV.fecha,
+                    PEDIDOS_PROV.fecha_entrega,
+                    PEDIDOS_PROV.tecnico_id,
+                    PEDIDOS_PROV.proyecto_id,
+                    PEDIDOS_PROV.estado_id, 
+                    PEDIDOS_PROV.total, 
+                    PEDIDOS_PROV.path,
+                    PEDIDOS_PROV.ref_oferta_prov,
+                    PROVEEDORES.contacto,
+                    PEDIDOS_PROV.plazo, 
+                    PROVEEDORES.formaPago
+                FROM 
+                    PEDIDOS_PROV, PROVEEDORES 
+                WHERE 
+                    PEDIDOS_PROV.proveedor_id = PROVEEDORES.id
+                AND
+                    PEDIDOS_PROV.id = 6893

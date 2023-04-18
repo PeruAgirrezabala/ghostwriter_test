@@ -1,0 +1,1 @@
+INSERT INTO ACTIVIDAD_USUARIO (actividad_id, user_id) VALUES (88, 86)

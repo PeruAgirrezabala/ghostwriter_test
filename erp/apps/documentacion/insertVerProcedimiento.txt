@@ -1,0 +1,8 @@
+INSERT INTO PROCEDIMIENTOS_VERSIONES 
+                        (procedimiento_id,
+                        doc_path,
+                        fecha_exp
+                        )
+                    VALUES (12,
+                    '/_DOCUMENTACION/PROCEDIMIENTOS/DOC/2019/PROC_CONTR_DOC_01.doc',
+                    '2019-02-15')

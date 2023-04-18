@@ -1,0 +1,23 @@
+INSERT INTO CALIDAD_NOCONFORMIDADES 
+                            (ref,
+                            detectado_por,
+                            detectado,
+                            proyecto_id,
+                            fecha,
+                            descripcion,
+                            resolucion,
+                            causa,
+                            cierre,
+                            fecha_cierre)
+                       VALUES (
+                            'NC230002',
+                            'genelek',
+                            80 ,
+                            1348, 
+                            '2023-02-21', 
+                            'Los de Schneider emiten la factura 3110023953 con fecha 18/02/2023, donde se facturan las PM5660 (pedido P230915) a 838,09€ cuando el comercial nos ha ofrecido un precio neto de 502,85€.',
+                            'Reclamación a nuestro comercial para que lo traslade a administración',
+                            'No grabar correctamente en su aplicación el descuento comercial ofrecido por el cliente (a la hora de aceptar sí se reflejaba el precio correcto).',
+                            '',
+                            '' 
+                        )

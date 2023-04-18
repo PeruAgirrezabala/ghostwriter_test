@@ -1,0 +1,11 @@
+SELECT 
+            PROVEEDORES_DOC.id as docid,
+            PROVEEDORES_DOC.nombre,
+            PROVEEDORES_DOC.descripcion,
+            PROVEEDORES_DOC.doc_path as path
+        FROM 
+            PROVEEDORES_DOC
+        WHERE 
+            PROVEEDORES_DOC.proveedor_id = 224 
+        ORDER BY 
+            PROVEEDORES_DOC.id DESC

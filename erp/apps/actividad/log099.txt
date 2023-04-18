@@ -1,0 +1,3 @@
+UPDATE PROYECTOS_VISITAS 
+                    SET realizada = 1
+                WHERE proyecto_id = 1314 AND fecha ='2021-01-18'

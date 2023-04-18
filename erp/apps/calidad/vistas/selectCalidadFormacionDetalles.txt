@@ -1,0 +1,22 @@
+SELECT 
+                CALIDAD_FORMACION.id,
+                CALIDAD_FORMACION.nombre,
+                CALIDAD_FORMACION.descripcion,
+                CALIDAD_FORMACION.doc_path,
+                CALIDAD_FORMACION_DETALLES.id,
+                CALIDAD_FORMACION_DETALLES.tecnico_id,
+                CALIDAD_FORMACION_DETALLES.descripcion,
+                CALIDAD_FORMACION_DETALLES.fecha,
+                erp_users.id,
+                erp_users.nombre,
+                erp_users.apellidos
+            FROM 
+                CALIDAD_FORMACION, CALIDAD_FORMACION_DETALLES, erp_users
+            WHERE 
+                CALIDAD_FORMACION_DETALLES.formacion_id = CALIDAD_FORMACION.id
+            AND 
+                CALIDAD_FORMACION_DETALLES.formacion_id =9
+            AND
+                CALIDAD_FORMACION_DETALLES.tecnico_id=erp_users.id
+            ORDER BY
+                erp_users.id ASC

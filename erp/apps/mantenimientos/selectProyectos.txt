@@ -1,0 +1,7 @@
+SELECT 
+                            PROYECTOS.nombre,
+                            PROYECTOS.path
+                        FROM
+                            PROYECTOS
+                        WHERE 
+                            PROYECTOS.id = 1243

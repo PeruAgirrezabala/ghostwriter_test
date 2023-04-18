@@ -1,0 +1,3 @@
+UPDATE ACTIVIDAD_CATEGORIAS SET 
+                        nombre = 'Organización' 
+                    WHERE id =10

@@ -1,0 +1,17 @@
+SELECT 
+                OFERTAS_DETALLES_OTROS.cantidad,
+                OFERTAS_DETALLES_OTROS.unitario,
+                OFERTAS_DETALLES_OTROS.titulo,
+                OFERTAS_DETALLES_OTROS.descripcion,
+                OFERTAS_DETALLES_OTROS.incremento,
+                OFERTAS_DETALLES_OTROS.pvp,
+                OFERTAS_DETALLES_OTROS.pvp_total, 
+                OFERTAS_DETALLES_OTROS.id as detalle
+            FROM 
+                OFERTAS_DETALLES_OTROS, OFERTAS  
+            WHERE 
+                OFERTAS_DETALLES_OTROS.oferta_id = OFERTAS.id 
+            AND 
+                OFERTAS.id = 545
+            ORDER BY 
+                OFERTAS_DETALLES_OTROS.id ASC

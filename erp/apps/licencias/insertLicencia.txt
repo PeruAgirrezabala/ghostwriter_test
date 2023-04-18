@@ -1,0 +1,13 @@
+INSERT INTO LICENCIAS 
+                            (nombre,
+                            ubicacion,
+                            user_id,
+                            fecha,
+                            activada) 
+                       VALUES (
+                            '', 
+                            '', 
+                            , 
+                            '', 
+                            0
+                        )

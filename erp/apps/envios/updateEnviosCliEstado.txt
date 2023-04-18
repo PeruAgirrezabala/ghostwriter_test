@@ -1,0 +1,1 @@
+UPDATE ENVIOS_CLI SET estado_id = '5', fecha_recepcion = now() WHERE ENVIOS_CLI.id = (SELECT envio_id FROM ENVIOS_CLI_DETALLES WHERE id ='50' LIMIT 1)

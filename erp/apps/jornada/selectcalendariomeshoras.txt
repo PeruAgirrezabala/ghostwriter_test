@@ -1,0 +1,16 @@
+SELECT 
+                    erp_users.nombre, erp_users.apellidos, sum(CALENDARIO.horas)
+                FROM 
+                    CALENDARIO, JORNADAS, erp_users 
+                WHERE 
+                    CALENDARIO.id = JORNADAS.calendario_id 
+                AND
+                    JORNADAS.user_id = erp_users.id 
+                AND
+                    YEAR(CALENDARIO.fecha) = 2023
+                AND 
+                    MONTH(CALENDARIO.fecha) = 3 
+                AND
+                    erp_users.id = 98
+                GROUP BY 
+                    YEAR(CALENDARIO.fecha)

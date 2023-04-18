@@ -1,0 +1,26 @@
+SELECT 
+                                        INTERVENCIONES_MATERIALES.id,
+                                        MATERIALES.ref,  
+                                        MATERIALES.nombre,
+                                        MATERIALES.fabricante,
+                                        INTERVENCIONES_MATERIALES.unidades,
+                                        INTERVENCIONES_MATERIALES.sustituido,
+                                        INTERVENCIONES_MATERIALES.reparado,
+                                        INTERVENCIONES.id as intid,
+                                        SERIAL_NUMBERS.sn,
+                                        PROVEEDORES.nombre as prov, 
+                                        CLIENTES.nombre as cli
+                                    FROM 
+                                        INTERVENCIONES_MATERIALES
+                                    INNER JOIN SERIAL_NUMBERS
+                                        ON INTERVENCIONES_MATERIALES.material_id = SERIAL_NUMBERS.id 
+                                    INNER JOIN MATERIALES
+                                        ON MATERIALES.id = SERIAL_NUMBERS.material_id 
+                                    LEFT JOIN PROVEEDORES 
+                                        ON PROVEEDORES.id = SERIAL_NUMBERS.proveedor_id 
+                                    LEFT JOIN CLIENTES
+                                        ON SERIAL_NUMBERS.cliente_id = CLIENTES.id
+                                    INNER JOIN INTERVENCIONES 
+                                        ON INTERVENCIONES.id = INTERVENCIONES_MATERIALES.int_id  
+                                    WHERE 
+                                        SERIAL_NUMBERS.id = 1

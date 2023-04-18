@@ -1,0 +1,11 @@
+SELECT
+                        ENVIOS_CLI_DETALLES.pedido_detalle_id, 
+                        ENVIOS_CLI_DETALLES.envio_id, 
+                        ENVIOS_CLI.tipo_envio_id,
+                        ENVIOS_CLI_DETALLES.entregado
+                    FROM 
+                        ENVIOS_CLI_DETALLES 
+                    INNER JOIN ENVIOS_CLI ON 
+                        ENVIOS_CLI_DETALLES.ENVIO_ID=ENVIOS_CLI.id 
+                    WHERE 
+                        ENVIOS_CLI_DETALLES.id=49

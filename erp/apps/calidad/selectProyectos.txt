@@ -1,0 +1,21 @@
+SELECT 
+                        PROYECTOS.id,
+                        PROYECTOS.ref,
+                        PROYECTOS.nombre,
+                        PROYECTOS.fecha_ini,
+                        PROYECTOS.fecha_entrega,
+                        PROYECTOS_ESTADOS.nombre, 
+                        CLIENTES.nombre, 
+                        CLIENTES.img,
+                        PROYECTOS_ESTADOS.color 
+                    FROM 
+                        PROYECTOS, CLIENTES, PROYECTOS_ESTADOS 
+                    WHERE 
+                        PROYECTOS.cliente_id = CLIENTES.id
+                    AND 
+                        PROYECTOS.estado_id = PROYECTOS_ESTADOS.id 
+                    AND
+                        PROYECTOS.tipo_proyecto_id = 1 
+                    ORDER BY 
+                        PROYECTOS.fecha_mod DESC,
+                        PROYECTOS.fecha_ini DESC

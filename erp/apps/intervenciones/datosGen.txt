@@ -1,0 +1,50 @@
+SELECT 
+                    INTERVENCIONES.id,
+                    INTERVENCIONES.ref,
+                    INTERVENCIONES.nombre,
+                    INTERVENCIONES.descripcion,
+                    INTERVENCIONES.fecha,
+                    INTERVENCIONES.fecha_mod,
+                    INTERVENCIONES.instalacion,
+                    INTERVENCIONES.solucion,
+                    INTERVENCIONES.fecha_solucion,
+                    INTERVENCIONES.observaciones,
+                    INTERVENCIONES.proyecto_id,
+                    INTERVENCIONES.fecha_factu,
+                    INTERVENCIONES_ESTADOS.nombre,
+                    INTERVENCIONES_ESTADOS.color,
+                    erp_users.nombre,
+                    erp_users.apellidos,
+                    erp_users.firma_path,
+                    CLIENTES.id,
+                    CLIENTES.nombre,
+                    CLIENTES.direccion,
+                    CLIENTES.poblacion,
+                    CLIENTES.provincia,
+                    CLIENTES.cp,
+                    CLIENTES.pais,
+                    CLIENTES.telefono,
+                    CLIENTES.nif,
+                    CLIENTES.email,
+                    OFERTAS.ref,
+                    PROYECTOS.ref,
+                    PROYECTOS.nombre,
+                    PROYECTOS.descripcion,
+                    PROYECTOS.fecha_entrega,
+                    erp_users.id,
+                    INTERVENCIONES.facturable,
+                    INTERVENCIONES.estado_id
+                FROM 
+                    INTERVENCIONES
+                LEFT JOIN CLIENTES 
+                    ON INTERVENCIONES.cliente_id = CLIENTES.id
+                LEFT JOIN OFERTAS 
+                    ON INTERVENCIONES.oferta_id = OFERTAS.id
+                INNER JOIN erp_users  
+                    ON INTERVENCIONES.tecnico_id = erp_users.id  
+                LEFT JOIN INTERVENCIONES_ESTADOS 
+                    ON INTERVENCIONES.estado_id = INTERVENCIONES_ESTADOS.id 
+                LEFT JOIN PROYECTOS 
+                    ON INTERVENCIONES.proyecto_id = PROYECTOS.id 
+                WHERE
+                    INTERVENCIONES.id = 8

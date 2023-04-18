@@ -1,0 +1,5 @@
+SELECT 
+                    PEDIDOS_PROV.com_interno
+                FROM PEDIDOS_PROV
+                WHERE
+                    PEDIDOS_PROV.id = 6851

@@ -1,0 +1,22 @@
+SELECT 
+                                    ENSAYOS.id as ensayoid,
+                                    ENSAYOS.nombre as ensayonombre,
+                                    ENSAYOS.descripcion,
+                                    ENSAYOS.fecha,
+                                    ENSAYOS.fecha_finalizacion,
+                                    ENTREGAS.id as entregaid, 
+                                    ENSAYOS.estado_id,
+                                    ENSAYOS.plantilla_id,
+                                    (SELECT path FROM ENSAYOS_ADJUNTOS WHERE ensayo_id = ensayoid LIMIT 1) as adjunto,
+                                    erp_users.id as tecnico
+                                FROM 
+                                    ENTREGAS 
+                                INNER JOIN ENSAYOS
+                                    ON  ENTREGAS.id = ENSAYOS.entrega_id 
+                                INNER JOIN ESTADOS_ENSAYOS
+                                    ON  ENSAYOS.estado_id = ESTADOS_ENSAYOS.id 
+                                LEFT JOIN erp_users 
+                                    ON ENSAYOS.erp_userid = erp_users.id 
+                                WHERE
+                                    ENSAYOS.id = 16
+                                LIMIT 1

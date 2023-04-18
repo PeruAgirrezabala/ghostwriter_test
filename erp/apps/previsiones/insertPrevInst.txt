@@ -1,0 +1,8 @@
+INSERT INTO PREVISIONES_INSTALACIONES (
+                    prevision_id, 
+                    instalacion_id
+                    )
+                VALUES (
+                    87,
+                    0
+                    )

@@ -1,0 +1,16 @@
+INSERT INTO EQUIPOS_TALLER 
+                            (hostname,
+                            proyecto_id,
+                            descripcion,
+                            fecha_inicio,
+                            erpuser_id,
+                            estado_id
+                            ) 
+                       VALUES (
+                            'IDFPCFPAOD02', 
+                            797,
+                            '', 
+                            '2020-02-12', 
+                            77,
+                            1
+                        )

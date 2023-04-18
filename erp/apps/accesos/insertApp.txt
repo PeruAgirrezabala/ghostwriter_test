@@ -1,0 +1,7 @@
+INSERT INTO erp_roles_apps 
+                                (role_id,
+                                app_id)
+                           VALUES (
+                                14, 
+                                24
+                            )

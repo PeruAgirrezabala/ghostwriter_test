@@ -1,0 +1,33 @@
+INSERT INTO PEDIDOS_PROV 
+                        (pedido_genelek,
+                        ref,
+                        ref_oferta_prov,
+                        tecnico_id,
+                        titulo,
+                        descripcion,
+                        cliente_id,
+                        proyecto_id,
+                        proveedor_id,
+                        fecha,
+                        fecha_entrega,
+                        forma_pago,
+                        contacto,
+                        plazo,
+                        path
+                        )
+                        VALUES
+                        ('P230887',
+                        '',
+                        '',
+                        86,
+                        'SAIS JAMAICA',
+                        '',
+                        303,
+                        null,
+                        296,
+                        '2023-01-09',
+                        '',
+                        'TRANSFERENCIA BANCARIA SCH',
+                        '',
+                        '1-2 DIAS',
+                        '/2023/P230887_SAIS_JAMAICA/')

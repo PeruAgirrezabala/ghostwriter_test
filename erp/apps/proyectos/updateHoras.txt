@@ -1,0 +1,9 @@
+UPDATE PROYECTOS_HORAS_IMPUTADAS 
+                SET  tarea_id = 21,   
+                     
+                    titulo = 'Prueba tarea01', 
+                    descripcion = 'Prueba tarea01', 
+                    cantidad = 4,  
+                     tecnico_id = 86,   
+                    fecha = '2021-09-08' 
+                WHERE id = 21

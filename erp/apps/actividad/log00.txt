@@ -1,0 +1,72 @@
+SELECT 
+                    ACTIVIDAD.id as actid,
+                    ACTIVIDAD.ref,
+                    ACTIVIDAD.nombre,
+                    ACTIVIDAD.descripcion,
+                    ACTIVIDAD.fecha,
+                    ACTIVIDAD.fecha_mod,
+                    ACTIVIDAD.instalacion,
+                    ACTIVIDAD.solucion,
+                    ACTIVIDAD.fecha_solucion,
+                    ACTIVIDAD.observaciones,
+                    ACTIVIDAD.item_id,
+                    ACTIVIDAD_ESTADOS.nombre,
+                    ACTIVIDAD_ESTADOS.color,
+                    ACTIVIDAD_PRIORIDADES.nombre,
+                    ACTIVIDAD_PRIORIDADES.color,
+                    CREADA.nombre,
+                    CREADA.apellidos,
+                    ASIGNADO.nombre,
+                    ASIGNADO.apellidos,
+                    CLIENTES.id,
+                    CLIENTES.nombre,
+                    CLIENTES.direccion,
+                    CLIENTES.poblacion,
+                    CLIENTES.provincia,
+                    CLIENTES.cp,
+                    CLIENTES.pais,
+                    CLIENTES.telefono,
+                    CLIENTES.nif,
+                    CLIENTES.email,
+                    ACTIVIDAD.item_id as item,
+                    (SELECT PROYECTOS.ref FROM PROYECTOS WHERE id = item),
+                    (SELECT PROYECTOS.nombre FROM PROYECTOS WHERE id = item),
+                    (SELECT PROYECTOS.descripcion FROM PROYECTOS WHERE id = item),
+                    (SELECT PROYECTOS.fecha_ini FROM PROYECTOS WHERE id = item),
+                    (SELECT OFERTAS.ref FROM OFERTAS WHERE id = item),
+                    (SELECT OFERTAS.titulo FROM OFERTAS WHERE id = item),
+                    (SELECT OFERTAS.descripcion FROM OFERTAS WHERE id = item),
+                    (SELECT OFERTAS.fecha FROM OFERTAS WHERE id = item),
+                    ASIGNADO.id,
+                    ACTIVIDAD.estado_id,
+                    ACTIVIDAD.prioridad_id,
+                    TAREAS.nombre,
+                    ACTIVIDAD.tarea_id,
+                    ACTIVIDAD.imputable,
+                    ACTIVIDAD.facturable,
+                    ACTIVIDAD_CATEGORIAS.nombre,
+                    ACTIVIDAD.categoria_id,
+                    ACTIVIDAD.fecha_factu,
+                    TAREAS.perfil_id,
+                    (SELECT sum(cantidad) FROM ACTIVIDAD_DETALLES_HORAS, ACTIVIDAD_DETALLES WHERE ACTIVIDAD_DETALLES_HORAS.actividad_detalle_id = ACTIVIDAD_DETALLES.id AND ACTIVIDAD_DETALLES.actividad_id = actid),
+                    ACTIVIDAD.path,
+                    ACTIVIDAD.fecha_fin,
+                    CREADA.id
+                FROM 
+                    ACTIVIDAD
+                LEFT JOIN CLIENTES 
+                    ON ACTIVIDAD.cliente_id = CLIENTES.id
+                INNER JOIN ACTIVIDAD_PRIORIDADES  
+                    ON ACTIVIDAD.prioridad_id = ACTIVIDAD_PRIORIDADES.id 
+                INNER JOIN erp_users CREADA  
+                    ON ACTIVIDAD.responsable = CREADA.id 
+                LEFT JOIN erp_users AS ASIGNADO
+                    ON ACTIVIDAD.tecnico_id = ASIGNADO.id  
+                LEFT JOIN ACTIVIDAD_ESTADOS 
+                    ON ACTIVIDAD.estado_id = ACTIVIDAD_ESTADOS.id 
+                LEFT JOIN ACTIVIDAD_CATEGORIAS 
+                    ON ACTIVIDAD.categoria_id = ACTIVIDAD_CATEGORIAS.id
+                LEFT JOIN TAREAS 
+                    ON ACTIVIDAD.tarea_id = TAREAS.id
+                WHERE
+                    ACTIVIDAD.id = 422

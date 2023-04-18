@@ -1,0 +1,7 @@
+UPDATE PRL_DOC SET 
+                        nombre = 'FACTURA VIGILANCIA DE LA SALUD', 
+                        descripcion = '',
+                        empresa_id = 1, 
+                        org_id = 4, 
+                        periodicidad_id = 5
+                    WHERE id =9

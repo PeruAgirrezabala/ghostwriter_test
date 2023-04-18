@@ -1,0 +1,12 @@
+INSERT INTO PRL_DOC 
+                            (nombre,
+                            descripcion,
+                            empresa_id,
+                            org_id,
+                            periodicidad_id) 
+                       VALUES (
+                            'PLAN DE CONTINGENCIA COVID.19', 
+                            '', 
+                            1, 
+                            4, 
+                            6)

@@ -1,0 +1,1 @@
+delete from PROYECTOS_MATERIALES WHERE id=121

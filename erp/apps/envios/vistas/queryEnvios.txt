@@ -1,0 +1,43 @@
+SELECT 
+                    ENVIOS_CLI.id,
+                    ENVIOS_CLI.ref_pedido_cliente,
+                    ENVIOS_CLI.nombre,
+                    ENVIOS_CLI.fecha,
+                    ENVIOS_CLI.fecha_entrega,
+                    erp_users.nombre,
+                    PROYECTOS.nombre,
+                    PEDIDOS_PROV_ESTADOS.nombre, 
+                    B.nombre, 
+                    B.img,
+                    PEDIDOS_PROV_ESTADOS.color,
+                    ENVIOS_CLI.ref_oferta_proveedor,
+                    ENVIOS_CLI.transportista_id,
+                    A.nombre,
+                    A.id, 
+                    ENVIOS_CLI.ref,
+                    TRANSPORTISTAS.nombre,
+                    PROVEEDORES.nombre
+                FROM 
+                    ENVIOS_CLI
+                LEFT JOIN CLIENTES A
+                    ON A.id = ENVIOS_CLI.cliente_id
+                LEFT JOIN PROVEEDORES
+                    ON PROVEEDORES.id = ENVIOS_CLI.proveedor_id
+                INNER JOIN PEDIDOS_PROV_ESTADOS
+                    ON ENVIOS_CLI.estado_id = PEDIDOS_PROV_ESTADOS.id 
+                INNER JOIN erp_users 
+                    ON ENVIOS_CLI.tecnico_id = erp_users.id 
+                INNER JOIN TRANSPORTISTAS
+                    ON TRANSPORTISTAS.id = ENVIOS_CLI.transportista_id 
+		LEFT JOIN ENVIOS_CLI_DETALLES
+		    ON ENVIOS_CLI_DETALLES.envio_id = ENVIOS_CLI.id 
+                LEFT JOIN PROYECTOS
+                    ON ENVIOS_CLI.proyecto_id = PROYECTOS.id  
+                LEFT JOIN CLIENTES B
+                    ON PROYECTOS.cliente_id = B.id
+                 WHERE YEAR(fecha) = 2023
+                GROUP BY 
+                    ENVIOS_CLI.id 
+                ORDER BY 
+                    ENVIOS_CLI.fecha DESC
+                LIMIT 0, 10

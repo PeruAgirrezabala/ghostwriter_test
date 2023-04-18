@@ -1,0 +1,12 @@
+SELECT 
+                        CALIDAD_FORMACION_DETALLES.id,
+                        CALIDAD_FORMACION_DETALLES.formacion_id,
+                        CALIDAD_FORMACION_DETALLES.tecnico_id,
+                        CALIDAD_FORMACION_DETALLES.descripcion,
+                        CALIDAD_FORMACION_DETALLES.fecha
+                       FROM 
+                        CALIDAD_FORMACION_DETALLES
+                       WHERE 
+                        CALIDAD_FORMACION_DETALLES.formacion_id=9 
+                       AND 
+                        CALIDAD_FORMACION_DETALLES.tecnico_id=97

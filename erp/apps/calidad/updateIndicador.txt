@@ -1,0 +1,9 @@
+UPDATE CALIDAD_INDICADORES SET 
+                        nombre = 'Nº contratos nuevos mantto.', 
+                        meta = '',
+                        proceso_id = 1,
+                        objetivo = 'Controlar el número de contratos de mantenimiento conseguidos en nuevas obras.',
+                        calculo = 'Sumatorio',
+                        resultado = '',
+                        valor = '2'
+                    WHERE id = 5

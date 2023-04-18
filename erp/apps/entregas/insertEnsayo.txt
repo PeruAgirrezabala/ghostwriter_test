@@ -1,0 +1,20 @@
+INSERT INTO ENSAYOS (
+                        entrega_id,
+                        nombre,
+                        descripcion,
+                        fecha,
+                        fecha_finalizacion,
+                        estado_id,
+                        erp_userid,
+                        plantilla_id
+                        )
+                    VALUES (
+                        760,
+                        'PRUEBA DE CONTROL AEROS LT4',
+                        '',
+                        '2021-05-31',
+                        '2021-05-31',
+                        2,
+                        71,
+                        44
+                        )

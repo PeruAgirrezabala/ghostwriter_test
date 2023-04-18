@@ -1,0 +1,12 @@
+INSERT INTO ADMON_DOC 
+                            (nombre,
+                            descripcion,
+                            empresa_id,
+                            org_id,
+                            periodicidad_id) 
+                       VALUES (
+                            'CERTIFICADO SEGURO RC', 
+                            '', 
+                            1, 
+                            4, 
+                            6)

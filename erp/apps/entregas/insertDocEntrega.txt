@@ -1,0 +1,3 @@
+INSERT INTO ENTREGAS_DOC 
+                                    (titulo,descripcion,entrega_id,doc_path) VALUES
+                                      ('aaa','aaa',775,'/PROYECTOS//2021/G210673_FINANZAUTO_E-SHELTER__CPD_MAD1_6_GRUPOS_CAT_/ENTREGAS/E210036_CUADRO_CONTROL_GRUPO_CCG6/aaa_08_07_2021.jpg')

@@ -1,0 +1,30 @@
+INSERT INTO erp_users 
+                            (nombre,
+                            apellidos,
+                            user_name,
+                            user_email,
+                            telefono,
+                            empresa_id,
+                            NIF,
+                            role_id,
+                            firma_path,
+                            txartela,
+                            activo,
+                            color
+                            
+                            )
+                       VALUES (
+                            'Iñigo',
+                            'Lopez de Goikoetxea Etxeberria',
+                            '',
+                            'ilopez@genelek.com',
+                            '747491677',
+                            1,
+                            '',
+                            2,
+                            '',
+                            '30',
+                            'on',
+                            '' 
+                            
+                        )

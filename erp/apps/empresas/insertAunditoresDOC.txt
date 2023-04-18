@@ -1,0 +1,12 @@
+INSERT INTO AUDITORES_DOC 
+                (nombre,
+                descripcion,
+                doc_path,
+                fecha_subida,
+                auditor_id
+                )
+            VALUES ('1234',
+            '1243',
+            'ERP/AUDITORES/222/CALIDAD_INDICADORES.sql',
+            now(),
+            1)

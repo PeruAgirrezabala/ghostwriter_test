@@ -1,0 +1,15 @@
+SELECT 
+                    erp_users_roles.id,
+                    erp_users.nombre,
+                    erp_users.apellidos,
+                    erp_roles.nombre
+                FROM 
+                    erp_users, erp_users_roles, erp_roles
+                WHERE 
+                    erp_roles.id = erp_users_roles.rol_id 
+                AND
+                    erp_users_roles.toolsuser_id = erp_users.id 
+                AND
+                    erp_users.id = 69
+                ORDER BY 
+                    erp_roles.nombre ASC

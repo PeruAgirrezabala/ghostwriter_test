@@ -1,0 +1,4 @@
+UPDATE ENSAYOS 
+                        SET estado_id = 2, 
+                            erp_userid = 86
+                        WHERE id = 14
